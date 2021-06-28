@@ -1,0 +1,1393 @@
+#~Name~Sponsor~Sponsor 2~Team~Manufacturer~SS~IN~FL~ST~RC~Aggr.~Morale~Age~Titles~Wins~Top 5's~Top 10's~Starts~Years~Engine~Chassis~Aero~Pit Crew~Prestige~Schedule~~
+0~Mike Bliss~NetZero~NetZero~Haas CNC Racing~Chevrolet~63~65~63~65~61~76~100~41~0~0~0~0~6~1~66~65~67~66~64~Full Time~
+1~Martin Truex, Jr.~Bass Pro Shops~Bass Pro Shops~Dale Earnhardt, Inc.~Chevrolet~65~70~66~74~73~79~100~23~0~0~0~0~0~3~73~72~74~86~70~Full Time~
+2~Rusty Wallace~Miller Lite~Miller Lite~Penske Racing~Dodge~84~83~81~87~85~70~100~45~1~54~189~309~598~4~83~81~82~93~89~Full Time~
+4~Mike Wallace~Lucas Oil~Unsponsored~Morgan-McClure Motorsports~Chevrolet~73~70~68~73~70~97~100~47~0~0~2~12~150~1~67~65~67~64~64~Full time~
+5~Kyle Busch~Kellogg's~Delphi~Hendrick Motorsports~Chevrolet~78~79~78~82~80~69~93~22~0~0~0~0~0~4~80~76~78~96~87~Full Time~
+6~Mark Martin~Viagra~Viagra~Roush Racing~Ford~88~88~87~85~89~80~100~45~0~33~200~315~530~3~87~85~84~98~93~Full Time~
+7~Robby Gordon~Jim Beam~Menards~Robby Gordon Racing~Dodge~68~71~71~72~95~100~100~29~0~1~5~11~98~9~53~51~54~49~45~Part Time~
+8~Dale Earnhardt, Jr.~Budweiser~Budweiser~Dale Earnhardt, Inc.~Chevrolet~94~91~86~87~78~85~98~28~0~7~23~37~111~5~87~86~92~86~99~Full Time~
+9~Kasey Kahne~Dodge Dealers~Mountian Dew~Evernham Motorsports~Dodge~80~88~89~86~79~81~100~25~0~0~8~14~36~5~84~84~86~83~84~Full Time~
+10~Scott Riggs~Valvoline~Zerex~MB2 Motorsports~Chevrolet~74~74~78~77~75~73~100~33~0~0~0~0~0~1~75~79~78~77~77~Full Time~
+11~Jason Leffler~FedEx~Old Spice~Joe Gibbs Racing~Chevrolet~67~77~72~70~62~56~100~28~0~0~0~0~36~1~55~75~72~76~79~Full Time~
+12~Ryan Newman~Alltel~Mobil 1~Penske Racing~Dodge~77~89~86~85~90~100~100~27~0~1~16~24~44~10~93~94~90~93~95~Full Time~
+15~Michael Waltrip~NAPA~NAPA~Dale Earnhardt, Inc.~Chevrolet~90~68~70~72~73~74~99~38~0~2~25~95~534~2~78~78~94~86~85~Full Time~
+16~Greg Biffle~National Guard~Subway~Roush Racing~Ford~83~84~84~86~88~51~100~34~0~1~10~20~72~2~84~85~85~98~78~Full Time~
+17~Matt Kenseth~DeWalt Tools~Smirnoff Ice~Roush Racing~Ford~85~86~85~84~83~56~100~32~0~6~20~41~112~4~89~92~88~98~94~Full Time~
+18~Bobby Labonte~Interstate Batteries~MBNA~Joe Gibbs Racing~Chevrolet~73~75~80~79~81~74~100~40~1~19~89~149~330~1~92~82~88~88~97~Full Time~
+19~Jeremy Mayfield~Dodge Dealers~Mountian Dew~Evernham Motorsports~Dodge~75~74~76~79~73~77~100~36~0~3~35~62~273~2~76~75~77~83~75~Full Time~
+20~Tony Stewart~The Home Depot~The Home Depot~Joe Gibbs Racing~Chevrolet~87~90~88~84~93~99~100~33~1~15~54~87~140~4~88~86~87~94~96~Full Time~
+21~Ricky Rudd~Motorcraft~US Air Force~Wood Brothers Racing~Ford~79~76~78~75~80~83~100~47~0~23~187~356~767~3~73~77~75~79~83~Full Time~
+22~Scott Wimmer~Caterpillar~Caterpillar~Bill Davis Racing~Dodge~79~72~65~65~65~74~90~28~0~0~0~0~4~3~79~79~78~73~83~Full Time~
+24~Jeff Gordon~DuPont~Pepsi~Hendrick Motorsports~Chevrolet~94~96~92~91~90~84~100~32~4~61~160~210~329~13~90~90~92~96~100~Full Time~
+25~Brian Vickers~Ditech~GMAC~Hendrick Motorsports~Chevrolet~75~72~74~77~72~63~80~25~0~2~11~35~286~2~80~78~79~96~74~Full Time~
+29~Kevin Harvick~GM Goodwrench~GM Goodwrench~Richard Childress Racing~Chevrolet~84~84~85~83~79~93~100~28~0~5~11~24~70~4~85~90~87~89~92~Full Time~
+31~Jeff Burton~Cingular Wireless~Cingular Wireless~Richard Childress Racing~Chevrolet~79~81~75~78~74~83~100~25~0~17~86~133~295~2~72~89~73~89~73~Full Time~
+32~Bobby Hamilton Jr~Tide~Tide~PPI Motorsports~Chevrolet~64~69~75~77~72~83~100~34~0~1~14~33~216~2~70~70~71~75~69~Full Time~
+33~Kerry Earnhardt~Bass Pro Shops~GM Goodwrench~Richard Childress Racing~Chevrolet~75~62~58~52~52~93~100~34~0~0~0~0~70~1~67~64~73~89~92~Part Time~
+34~Todd Bodine~Unsponsored~Unsponsored~Mach 1 Motorsports~Ford~74~71~69~71~70~85~100~38~0~0~7~20~169~1~67~67~69~65~72~Full Time~
+36~Boris Said~Centrix~Centrix~MB2 Motorsports~Chevrolet~75~65~65~65~85~82~100~41~0~0~0~0~20~2~65~65~70~60~60~Part Time~
+37~Kevin Lepage~Unsponsored~Unsponsored~R&J Racing~Dodge~54~54~50~48~50~67~100~47~0~0~2~8~128~1~55~44~49~31~42~Part Time~
+38~Elliott Sadler~M&M's~Pedigree~Robert Yates Racing~Ford~86~80~76~83~78~89~100~29~0~4~9~17~171~3~79~78~82~81~80~Full Time~
+39~Reed Sorenson~Target~Target~Chip Ganassi Racing~Dodge~65~65~65~65~65~90~100~19~0~0~0~0~0~1~60~60~60~60~43~Part Time~
+40~Sterling Marlin~Coors Light~Coors Light~Chip Ganassi Racing~Dodge~81~75~70~75~75~89~100~47~0~10~79~192~568~1~82~80~83~87~88~Full Time~
+41~Casey Mears~Target~Fuji Film~Chip Ganassi Racing~Dodge~63~62~65~59~51~85~100~26~0~0~0~0~0~4~68~65~66~87~61~Full Time~
+42~Jamie McMurray~Havoline~Energizer~Chip Ganassi Racing~Dodge~89~84~82~74~75~88~100~28~0~1~1~2~6~1~81~81~85~87~82~Full Time~
+43~Jeff Green~Cheerios~Hamburger Helper~Petty Enterprises~Dodge~71~73~75~75~74~91~75~33~0~0~5~9~94~1~76~73~76~89~96~Full Time~
+44~Terry Labonte~Kellogg's~GMAC~Hendrick Motorsports~Chevrolet~76~75~71~73~75~69~93~45~2~21~177~344~744~1~73~69~73~85~87~Part Time~
+45~Kyle Petty~Georgia-Pacific~Brawny~Petty Enterprises~Dodge~77~66~65~66~72~68~100~38~0~8~51~168~645~6~72~70~70~68~66~Full Time~
+46~Carl Long~Al Smith Dodge~Al Smith Dodge~Glenn Racing~Dodge~48~45~48~45~45~48~100~48~0~0~0~0~7~1~32~38~36~19~38~Part Time~
+48~Jimmie Johnson~Lowe's~Lowe's~Hendrick Motorsports~Chevrolet~90~94~87~83~85~78~100~29~0~3~6~21~39~8~91~86~89~96~98~Full Time~
+49~Ken Schrader~Schwan's Home Service~Red Baron Frozen Pizza~BAM Racing~Dodge~68~66~69~68~69~74~100~50~0~4~64~176~564~1~66~65~68~59~65~Full Time~
+50~Jimmy Spencer~Arnold Development~Arnold Development~Arnold Motorsports~Dodge~59~62~61~60~64~51~100~42~0~2~6~32~362~1~41~45~42~34~58~Part Time~
+77~Travis Kvapil~Kodak~Jasper Engines & Transmissions~Penske Racing~Dodge~68~74~67~69~70~62~100~28~0~0~0~0~0~2~71~68~72~73~68~Full Time~
+88~Dale Jarrett~UPS~UPS~Robert Yates Racing~Ford~79~85~83~88~80~85~100~48~1~30~151~228~495~4~83~80~81~81~91~Full Time~
+89~Morgan Shepherd~Racing With Jesus~Racing With Jesus~Victory in Jesus Racing~Ford~49~48~49~50~52~24~100~46~0~4~63~168~487~4~42~43~36~13~47~Part Time~
+91~Bill Elliott~Visteon~Stanley Tools~Evernham Motorsports~Dodge~81~79~75~72~79~81~100~45~1~43~166~310~732~2~75~75~75~75~65~Part Time~
+92~Stanton Barrett~Taco Bell~Taco Bell~Front Row Motorsports~Chevrolet~31~55~45~44~45~36~100~49~0~0~0~0~0~1~50~40~40~60~35~Full Time~
+97~Kurt Busch~Irwin Tools~Sharpie~Roush Racing~Ford~82~85~83~85~81~96~100~26~0~4~15~26~78~1~83~83~83~98~90~Full Time~
+99~Carl Edwards~Scott's~Office Depot~Roush Racing~Ford~79~81~75~78~74~83~100~25~0~0~1~5~13~4~80~79~80~98~86~Full Time~
+00~Kenny Wallace~Aaron's Dream Machine~Aaron's Dream Machine~Michael Waltrip Racing~Chevrolet~68~68~67~69~70~62~100~40~0~0~0~13~111~2~71~68~72~73~68~Part Time~
+01~Joe Nemechek~U.S. Army~USG Sheetrock~MB2 Motorsports~Chevrolet~75~72~74~77~72~63~80~35~0~2~11~35~286~2~80~78~79~96~74~Full Time~
+02~Hermie Sadler~1-800-4-Autism~1-800-4-Autism~SCORE Motorsports~Chevrolet~48~45~47~48~47~61~100~45~0~0~0~0~14~2~36~33~35~26~39~Part Time~
+07~Dave Blaney~Jack Daniels~Jack Daniels~Richard Childress Racing~Chevrolet~68~68~67~69~70~62~100~32~0~0~0~13~111~2~76~73~76~89~76~Full Time~
+08~Shane Hmiel~TrimSPA~WinFuel~Braun Racing~Chevrolet~59~60~64~63~61~62~100~21~0~0~0~13~111~2~76~73~76~89~76~Part Time~
+09~Johnny Sauter~Miccosukee Indian Gaming~Miccosukee Indian Gaming~Phoenix Racing~Dodge~67~72~65~65~60~100~75~35~0~0~0~0~0~1~59~49~55~53~57~Part Time~
+Start Year~Points Format~Starting Cars Per Race~Week~Lowest Cars Per Race~Largest Cars Per Race~Starting Min Driver Age~Lowest Min Driver Age~Largest Min Driver Age~Starting Max Driver Age~Lowest Max Driver Age~Largest Max Driver Age~~~~~~~~~~~~~~~~~~Schedule~~
+2005~2005~43~1~40~43~20~17~21~60~60~65~~~~~~~~~~~~~~~~~~~
+Starting Number of Races~Lowest Number of Races~Largest Number of Races~~~~~~~~~~~~~~~~~~~~~~~~~~~
+36~34~36~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Manufactures~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Name~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Dodge~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Chevy~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Ford~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Toyota~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pontiac~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nissan~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Schedule~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Race #~Race Name~Track Name~Track Type~~~~~~~~~~~~~~~~~~~~~~~~~~
+1~Daytona 500~Daytona~Superspeedway~~~~~~~~~~~~~~~~~~~~~~~~~~
+2~Subway 400~Rockingham~Flat~~~~~~~~~~~~~~~~~~~~~~~~~~
+3~UAW Diamler Chrysler 500~Las Vegas~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~~~
+4~Golden Corral 500~Atlanta~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~~~
+5~Dodge Dealers 500~Darlington~Flat~~~~~~~~~~~~~~~~~~~~~~~~~~
+6~Food City 500~Bristol~Short Track~~~~~~~~~~~~~~~~~~~~~~~~~~
+7~Samsung Radio Shack 500~Texas~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~~~
+8~Advance Auto Parts 500~Martinsville~Short Track~~~~~~~~~~~~~~~~~~~~~~~~~~
+9~Aarons 499~Talladega~Superspeedway~~~~~~~~~~~~~~~~~~~~~~~~~~
+10~Auto Club 500~Fontana~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~~~
+11~Chevy American Revolution 400~Richmond~Short Track~~~~~~~~~~~~~~~~~~~~~~~~~~
+12~Coca-Cola 600~Lowe's~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~~~
+13~MBNA 400~Dover~Flat~~~~~~~~~~~~~~~~~~~~~~~~~~
+14~Pocono 500~Pocono~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~~~
+15~DHL 400~Michigan~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~~~
+16~Dodge/SaveMart 350~Infineon~Road Course~~~~~~~~~~~~~~~~~~~~~~~~~~
+17~Pepsi 400~Daytona~Superspeedway~~~~~~~~~~~~~~~~~~~~~~~~~~
+18~Tropicana 400~Chicagoland~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~~~
+19~Siemens 300~New Hampshire~Flat~~~~~~~~~~~~~~~~~~~~~~~~~~
+20~Pennsylvania 500~Pocono~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~~~
+21~The Brickyard 400~Indianapolis~Flat~~~~~~~~~~~~~~~~~~~~~~~~~~
+22~Cheeze-It 499 @ The Glen~Watkins Glen~Road Course~~~~~~~~~~~~~~~~~~~~~~~~~~
+23~GFS MarketPlace 400~Michigan~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~~~
+24~Sharpie 500~Bristol~Short Track~~~~~~~~~~~~~~~~~~~~~~~~~~
+25~Pop Secret 400~Fontana~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~~~
+26~Chevy Rock & Roll 400~Richmond~Short Track~~~~~~~~~~~~~~~~~~~~~~~~~~
+27~Sylvania 300~New Hampshire~Flat~~~~~~~~~~~~~~~~~~~~~~~~~~
+28~MBNA 400~Dover~Flat~~~~~~~~~~~~~~~~~~~~~~~~~~
+29~EA Sports 500~Talladega~Superspeedway~~~~~~~~~~~~~~~~~~~~~~~~~~
+30~Banquet 500~Kansas~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~~~
+31~Sharpie 500~Bristol~Short Track~~~~~~~~~~~~~~~~~~~~~~~~~~
+32~Sirius 500~Michigan~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~~~
+33~Bass Pro Shops 500~Atlanta~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~~~
+34~Checker Auto Parts 500~Phoenix~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~~~
+35~Southern 500~Darlington~Flat~~~~~~~~~~~~~~~~~~~~~~~~~~
+36~Ford 500~Homestead~Flat~~~~~~~~~~~~~~~~~~~~~~~~~~
+New Races~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Race Name~Track Name~Track Type~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Coca Cola 600~Charlotte ROVAL~Road Course~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Quaker State 400~Iowa~Flat~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Kentucky 300~Kentucky~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Road America 400~Road America~Road Course~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mtn Dew 500~Nashville~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Motorola 400~Montreal~Road Course~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Name~Age~SS~IN~FL~ST~RC~Aggr.~Career Titles~Career Wins~Career Top 5's~Career Top 10's~Career Races~~
+Hudson Logano~-14~-150~-154~-146~-148~-147~0~0~0~0~0~0~
+Tanner Kahne~-12~-130~-131~-126~-132~-130~0~0~0~0~0~0~
+Owen Larson~-11~-121~-123~-117~-122~-125~0~0~0~0~0~0~
+Brexton Busch~-11~-123~-124~-119~-123~-126~0~0~0~0~0~0~
+Keelan Harvick~-9~-103~-106~-102~-99~-100~0~0~0~0~0~0~
+Cash Bowyer~-9~-107~-104~-111~-109~-104~0~0~0~0~0~0~
+Leo Gordon~-7~-89~-91~-90~-85~-86~0~0~0~0~0~0~
+Ty Gibbs~1~-42~-40~-46~-45~-38~0~0~0~0~0~0~
+Sam Mayer~1~-44~-43~-41~-46~-42~0~0~0~0~0~0~
+Tyler Mallon~2~-10~-12~-9~-7~-7~0~0~0~0~0~0~
+Chandler Smith~2~-25~-27~-23~-29~-24~0~0~0~0~0~0~
+Hailie Deegan~3~-11~-15~-7~-13~-15~0~0~0~0~0~0~
+Thad Moffitt~3~-16~-19~-12~-16~-16~0~0~0~0~0~0~
+Raphael Lessard~3~-23~-26~-27~-23~-19~0~0~0~0~0~0~
+Tyler Ankrum~3~-25~-23~-28~-23~-28~0~0~0~0~0~0~
+Derek Kraus~3~-38~-38~-38~-39~-35~0~0~0~0~0~0~
+Kody Vanderwal~3~-54~-54~-57~-58~-50~0~0~0~0~0~0~
+Harrison Burton~4~-22~-24~-24~-21~-23~0~0~0~0~0~0~
+Todd Gilliland~4~-32~-31~-30~-32~-30~0~0~0~0~0~0~
+Christian Eckes~4~-41~-41~-43~-43~-44~0~0~0~0~0~0~
+Tyler Dippel~4~-50~-51~-48~-49~-52~0~0~0~0~0~0~
+Tate Fogleman~4~-52~-49~-54~-50~-53~0~0~0~0~0~0~
+Anthony Alfredo~5~5~4~1~7~5~0~0~0~0~0~0~
+Justin Haley~5~-12~13~14~16~-24~0~0~0~0~0~0~
+Austin Cindric~5~6~9~0~-9~-7~0~0~0~0~0~0~
+Zane Smith~5~-28~-32~-25~-24~-30~0~0~0~0~0~0~
+Tanner Gray~5~-35~-38~-32~-34~-37~0~0~0~0~0~0~
+Riley Herbst~5~-141~-139~-142~-144~-138~0~0~0~0~0~0~
+Dalton Sargeant~6~15~12~18~12~18~0~0~0~0~0~0~
+Kaz Grala~6~10~12~10~7~11~0~0~0~0~0~0~
+Cole Custer~6~-19~-15~-16~-22~-18~0~0~0~0~0~0~
+William Byron~6~-21~-22~-25~-25~-19~0~0~0~0~0~0~
+Noah Gragson~6~-29~-26~-32~-33~-30~0~0~0~0~0~0~
+Spencer Davis~6~-31~-35~-28~-30~-29~0~0~0~0~0~0~
+Gray Gaulding~6~-35~-39~-34~-34~-38~0~0~0~0~0~0~
+Chase Purdy~6~-37~-41~-36~-37~-34~0~0~0~0~0~0~
+Kyle Weatherman~6~19~16~16~16~17~0~0~0~0~0~0~
+Joe Graf, Jr.~6~-41~-39~-42~-39~-41~0~0~0~0~0~0~
+Logan Seavey~7~8~10~9~12~8~0~0~0~0~0~0~
+John Hunter Nemechek~7~-13~-17~-12~-14~-15~0~0~0~0~0~0~
+Jesse Little~7~-18~-15~-16~-14~-19~0~0~0~0~0~0~
+Brandon Jones~7~-23~-22~-23~-25~-24~0~0~0~0~0~0~
+Ben Rhodes~7~-24~-22~-22~-25~-26~0~0~0~0~0~0~
+Sheldon Creed~7~-26~-25~-28~-29~-26~0~0~0~0~0~0~
+Vinnie Miller~7~-33~-30~-30~-30~-34~0~0~0~0~0~0~
+Blake Jones~7~-35~-34~-31~-32~-34~0~0~0~0~0~0~
+Natalie Decker~7~-36~-34~-33~-36~-37~0~0~0~0~0~0~
+Quin Houff~7~-44~-43~-43~-42~-41~0~0~0~0~0~0~
+Chase Elliott~8~17~13~10~16~16~0~0~0~0~0~0~
+Cameron Hayley~8~5~2~4~7~5~0~0~0~0~0~0~
+Tyler Reddick~8~14~15~16~-6~-4~0~0~0~0~0~0~
+Erik Jones~8~21~18~16~15~19~0~0~0~0~0~0~
+Matt Tifft~8~-17~-16~-17~-18~-15~0~0~0~0~0~0~
+Austin Wayne Self~8~-23~-23~-21~-21~-22~0~0~0~0~0~0~
+Bayley Currey~8~-31~-33~-33~-32~-29~0~0~0~0~0~0~
+Cody Coughlin~9~7~7~9~9~4~0~0~0~0~0~0~
+Spencer Boyd~9~-17~-13~-13~-15~-16~0~0~0~0~0~0~
+Josh Bilicki~9~-23~-21~-26~-24~-23~0~0~0~0~0~0~
+Cody Ware~9~-26~-22~-23~-25~-27~0~0~0~0~0~0~
+Mason Mingus~10~4~3~8~1~14~0~0~0~0~0~0~
+Bubba Wallace~10~19~15~10~7~6~0~0~0~0~0~0~
+Gus Dean~10~7~4~4~8~8~0~0~0~0~0~0~
+Ryan Blaney~10~37~30~32~36~25~0~0~0~0~0~0~
+Christopher Bell~10~22~22~27~26~22~0~0~0~0~0~0~
+Myatt Snider~10~6~7~2~10~9~0~0~0~0~0~0~
+Chase Briscoe~10~16~13~12~11~11~0~0~0~0~0~0~
+Austin Hill~10~0~1~-2~-1~1~0~0~0~0~0~0~
+Brandon Brown~10~-7~-11~-3~-10~-7~0~0~0~0~0~0~
+Ty Majeski~10~-7~-4~-10~-10~-7~0~0~0~0~0~0~
+Gus Dean~10~-10~-9~-9~-7~-14~0~0~0~0~0~0~
+Austin Theriault~10~-15~-17~-12~-11~-12~0~0~0~0~0~0~
+Harrison Rhodes~10~-15~-11~-18~-15~-15~0~0~0~0~0~0~
+Dylan Lupton~10~-17~-15~-14~-14~-20~0~0~0~0~0~0~
+Codie Rohrbaugh~10~-18~-14~-19~-17~-17~0~0~0~0~0~0~
+Kevin Donahue~10~-25~-24~-25~-25~-27~0~0~0~0~0~0~
+Alex Labbe~11~15~16~17~19~24~0~0~0~0~0~0~
+Kyle Larson~11~23~21~21~9~12~0~0~0~0~0~0~
+Alex Bowman~11~19~16~19~18~11~0~0~0~0~0~0~
+Chris Buescher~11~27~13~11~16~3~0~0~0~0~0~0~
+Ross Chastain~11~27~15~16~18~16~0~0~0~0~0~0~
+Timmy Hill~11~5~9~4~8~8~0~0~0~0~0~0~
+Max Gresham~11~3~2~7~0~1~0~0~0~0~0~0~
+Brett Moffitt~11~12~10~10~10~14~0~0~0~0~0~0~
+Ryan Reed~11~2~5~-1~5~-2~0~0~0~0~0~0~
+Jeb Burton~11~1~3~5~2~2~0~0~0~0~0~0~
+Josh Williams~11~-9~-10~-13~-10~-13~0~0~0~0~0~0~
+Joey Gase~11~-11~-7~-14~-14~-10~0~0~0~0~0~0~
+Gary Klutt~11~-16~-20~-20~-13~-17~0~0~0~0~0~0~
+Bobby Kennedy~11~-17~-19~-14~-13~-16~0~0~0~0~0~0~
+Matt Martin~12~19~17~21~16~16~0~0~0~0~0~0~
+Johanna Long~12~-8~-6~-1~-8~14~0~0~0~0~0~0~
+Michael Self~12~14~16~13~18~12~0~0~0~0~0~0~
+Matt DiBenedetto~12~23~22~25~16~16~0~0~0~0~0~0~
+Rico Abreu~12~13~17~9~9~13~0~0~0~0~0~0~
+Ty Dillon~12~10~6~13~11~9~0~0~0~0~0~0~
+Daniel Suarez~12~26~22~22~22~10~0~0~0~0~0~0~
+Corey LaJoie~12~14~18~28~24~22~0~0~0~0~0~0~
+Alex Kennedy~12~0~-1~-4~-2~0~0~0~0~0~0~0~
+Ryan Truex~12~-1~-5~-4~3~-4~0~0~0~0~0~0~
+Alon Day~12~-4~-3~-6~-8~-1~0~0~0~0~0~0~
+Garrett Smithley~12~-4~0~-5~-1~-5~0~0~0~0~0~0~
+Korbin Forrister~12~-4~-2~-6~-8~-2~0~0~0~0~0~0~
+Kyle Fowler~12~-10~-10~-12~-14~-12~0~0~0~0~0~0~
+Trevor Bayne~13~23~22~23~25~26~0~0~0~0~0~0~
+Ben Kennedy~13~16~14~13~12~12~0~0~0~0~0~0~
+Daniel Hemric~13~36~38~34~33~19~0~0~0~0~0~0~
+Brennan Poole~13~23~22~21~25~20~0~0~0~0~0~0~
+Dakoda Armstrong~13~12~11~10~11~9~0~0~0~0~0~0~
+Jordan Anderson~13~10~8~8~7~11~0~0~0~0~0~0~
+Ross Kenseth~13~7~5~6~3~5~0~0~0~0~0~0~
+Cole Whitt~13~5~2~4~2~1~0~0~0~0~0~0~
+Ray Black, Jr.~13~1~1~2~-2~1~0~0~0~0~0~0~
+Joey Logano~14~35~39~32~36~39~0~0~0~0~0~0~
+Austin Dillon~14~28~27~25~29~29~0~0~0~0~0~0~
+James Buescher~14~23~19~24~24~20~0~0~0~0~0~0~
+Joey Coulter~14~23~19~22~25~22~0~0~0~0~0~0~
+Ryan Preece~14~21~23~18~18~19~0~0~0~0~0~0~
+Landon Cassill~14~18~18~16~21~21~0~0~0~0~0~0~
+Tyler Young~14~10~10~6~14~7~0~0~0~0~0~0~
+Brad Coleman~14~9~10~8~10~6~0~0~0~0~0~0~
+John Wes Townley~14~9~12~10~6~11~0~0~0~0~0~0~
+Paulie Harraka~14~4~2~7~6~8~0~0~0~0~0~0~
+Ryan Ellis~14~3~7~6~3~0~0~0~0~0~0~0~
+Parker Kligerman~14~0~4~3~-4~-1~0~0~0~0~0~0~
+Paulie Harraka~15~25~23~21~28~28~0~0~0~0~0~0~
+Jeffrey Earnhardt~15~18~19~14~14~16~0~0~0~0~0~0~
+Spencer Gallagher~15~17~19~14~19~16~0~0~0~0~0~0~
+Kevin Swindell~15~12~16~8~11~13~0~0~0~0~0~0~
+Justin Boston~15~7~5~5~4~7~0~0~0~0~0~0~
+Ricky Stenhouse, Jr.~16~43~39~42~45~43~0~0~0~0~0~0~
+Brian Scott~16~24~26~21~24~20~0~0~0~0~0~0~
+Steve Wallace~16~24~21~20~27~20~0~0~0~0~0~0~
+Will Kimmel~16~24~27~22~28~21~0~0~0~0~0~0~
+Dexter Bean~16~20~18~19~20~21~0~0~0~0~0~0~
+Colin Braun~16~13~12~17~13~11~0~0~0~0~0~0~
+Michael McDowell~17~47~47~51~43~43~0~0~0~0~0~0~
+Stephen Leicht~17~39~41~42~36~38~0~0~0~0~0~0~
+Ryan Sieg~17~37~37~41~38~33~0~0~0~0~0~0~
+Andrew Ranger~17~32~36~30~31~31~0~0~0~0~0~0~
+Andy Seuss~17~27~30~26~31~27~0~0~0~0~0~0~
+Tommy Joe Martins~17~27~30~27~28~23~0~0~0~0~0~0~
+Billy Johnson~17~22~25~23~22~19~0~0~0~0~0~0~
+Jesse Iwuji~17~11~8~10~9~14~0~0~0~0~0~0~
+Bryan Silas~17~8~7~9~9~4~0~0~0~0~0~0~
+David Ragan~18~54~51~57~54~52~0~0~0~0~0~0~
+Justin Allgaier~18~43~39~42~42~40~0~0~0~0~0~0~
+Blake Koch~18~40~37~38~36~36~0~0~0~0~0~0~
+Michael Annett~18~38~42~34~34~42~0~0~0~0~0~0~
+Kyle Krisiloff~18~20~19~17~24~22~0~0~0~0~0~0~
+Shelby Howard~18~5~5~4~8~5~0~0~0~0~0~0~
+Grant Enfinger~19~47~45~45~46~51~0~0~0~0~0~0~
+Nelson Piquet, Jr.~19~30~30~28~32~31~0~0~0~0~0~0~
+Cale Gale~19~26~28~27~30~30~0~0~0~0~0~0~
+Blake Bjorklund~19~19~15~17~15~23~0~0~0~0~0~0~
+Wendell Chavous~19~12~13~15~13~14~0~0~0~0~0~0~
+Aric Almirola~20~73~72~68~68~72~0~0~0~0~0~0~
+Brad Keselowski~20~73~67~62~70~63~0~0~0~0~0~0~
+Clay Greenfield~20~51~54~52~52~53~0~0~0~0~0~0~
+Regan Smith~20~56~59~56~56~56~0~0~0~0~0~0~
+Angela Ruch~20~35~39~33~33~33~0~0~0~0~0~0~
+Jeremy Clements~20~44~43~43~47~42~0~0~0~0~0~0~
+Chase Montgomery~20~38~34~38~42~39~0~0~0~0~0~0~
+Chad McCumbee~20~56~42~40~45~34~0~0~0~0~0~0~
+Kelly Bires~20~32~31~29~31~35~0~0~0~0~0~0~
+Kraig Kinser~20~12~12~11~15~16~0~0~0~0~0~0~
+J.C. Stout~20~6~8~3~8~5~0~0~0~0~0~0~
+Stephen Rhodes~20~5~4~6~4~8~0~0~0~0~0~0~
+Scott Speed~21~58~55~52~54~57~0~0~0~0~0~0~
+Brandon Whitt~21~51~47~48~55~49~0~0~0~0~0~0~
+Stewart Friesen~21~50~54~46~51~46~0~0~0~0~0~0~
+B.J. McLeod~21~49~47~53~48~52~0~0~0~0~0~0~
+Josh Wise~21~43~47~41~46~44~0~0~0~0~0~0~
+Boston Reid~21~19~23~22~15~16~0~0~0~0~0~0~
+Miguel Paludo~21~13~10~16~13~13~0~0~0~0~0~0~
+Travis Pastrana~21~13~10~16~10~14~0~0~0~0~0~0~
+A.J. Allmendinger~22~63~64~62~67~63~0~0~0~0~0~0~
+Danica Patrick~22~63~63~60~63~62~0~0~0~0~0~0~
+Brian Keselowski~22~57~54~53~61~61~0~0~0~0~0~0~
+Erik Darnell~22~53~52~50~53~54~0~0~0~0~0~0~
+Jon Wood~22~51~49~50~47~54~0~0~0~0~0~0~
+Robert Richardson, Jr.~22~51~48~55~54~50~0~0~0~0~0~0~
+Patrick Long~22~46~47~46~42~42~0~0~0~0~0~0~
+David Mayhew~22~40~37~37~42~36~0~0~0~0~0~0~
+Shane Sieg~22~30~29~29~28~34~0~0~0~0~0~0~
+Justin Ashburn~22~10~9~12~8~14~0~0~0~0~0~0~
+Blake Feese~22~7~6~10~5~9~0~0~0~0~0~0~
+Clint Bowyer~23~80~82~76~84~83~0~0~0~0~0~0~
+Denny Hamlin~23~80~84~76~83~81~0~0~0~0~0~0~
+Stuart Kirby~23~66~62~69~63~65~0~0~0~0~0~0~
+Steadman Marlin~23~64~64~66~67~68~0~0~0~0~0~0~
+Justin Labonte~23~63~63~67~62~61~0~0~0~0~0~0~
+Justin Marks~23~53~52~57~51~52~0~0~0~0~0~0~
+Paul Wolfe~24~63~62~67~61~62~0~0~0~0~0~0~
+Eddie MacDonald~23~52~56~55~56~51~0~0~0~0~0~0~
+T.J. Bell~23~44~44~44~44~45~0~0~0~0~0~0~
+Erin Crocker~23~41~39~41~37~37~0~0~0~0~0~0~
+Scott Lagasse, Jr.~23~28~26~28~30~27~0~0~0~0~0~0~
+Sam Hornish, Jr.~24~67~65~69~69~67~0~0~0~0~0~0~
+Kevin Conway~24~64~65~61~62~63~0~0~0~0~0~0~
+Timothy Peters~24~63~61~61~62~62~0~0~0~0~0~0~
+Chad Blount~24~57~59~60~53~59~0~0~0~0~0~0~
+Paul Menard~24~66~66~69~67~67~0~0~0~0~0~0~
+Ricky Carmichael~24~21~24~18~19~20~0~0~0~0~0~0~
+German Quiroga~24~14~18~11~16~11~0~0~0~0~0~0~
+Jeff Streeter~24~5~1~9~2~8~0~0~0~0~0~0~
+Todd Kluever~25~70~70~72~72~68~0~0~0~0~0~0~
+Jason Small~25~65~61~61~65~63~0~0~0~0~0~0~
+Jason White~25~65~61~66~66~62~0~0~0~0~0~0~
+Eric McClure~25~62~62~59~58~62~0~0~0~0~0~0~
+Mattias Ekstrom~25~54~54~58~51~55~0~0~0~0~0~0~
+Ronnie Hornaday~25~52~48~54~52~48~0~0~0~0~0~0~
+Jason Rudd~25~42~42~40~46~39~0~0~0~0~0~0~
+Jody Lavender~25~23~21~23~27~21~0~0~0~0~0~0~
+Kevin Hamlin~25~42~46~42~40~44~0~0~0~0~0~0~~
+D.J. Kennington~26~58~50~50~50~69~0~0~0~0~0~0~
+Barry Bodine~26~31~38~37~32~37~0~0~0~0~0~0~
+Tommy Regan~26~61~61~58~60~57~0~0~0~0~0~0~
+Brandon Ash~26~59~61~61~55~58~0~0~0~0~0~0~
+Kevin Grubb~26~47~43~48~49~49~0~0~0~0~0~0~
+Damon Lusk~26~32~33~32~33~35~0~0~0~0~0~0~
+Mark McFarland~26~56~50~59~53~50~0~0~0~0~0~0~
+J.J. Yeley~27~67~69~67~67~71~0~0~0~0~0~0~
+Austin Cameron~27~62~64~65~65~61~0~0~0~0~0~0~
+David Stremme~27~70~77~69~68~63~0~0~0~0~0~0~
+Owen Kelly~27~57~55~61~55~58~0~0~0~0~0~0~
+Juan Pablo Montoya~28~82~80~78~75~94~0~0~0~0~0~0~
+Matt Crafton~28~77~81~77~74~80~0~0~0~0~0~0~
+David Gilliland~28~76~78~80~75~78~0~0~0~0~0~0~
+Brendan Gaughan~39~74~64~63~70~78~0~0~0~1~3~36~
+Marcos Ambrose~28~73~72~73~76~73~0~0~0~0~0~0~
+Victor Gonzalez, Jr.~28~61~60~61~57~62~0~0~0~0~0~0~
+Jason Leffler~28~59~61~62~62~55~0~0~0~0~0~0~
+Andy Lally~29~69~65~67~65~71~0~0~0~0~0~0~
+Hank Parker, Jr.~29~67~66~67~63~67~0~0~0~0~0~0~
+Ryan McGlynn~29~14~14~13~11~18~0~0~0~0~0~0~
+Jan Magnussen~30~70~71~66~70~71~0~0~0~0~0~0~
+Brent Sherman~30~64~61~62~60~64~0~0~0~0~0~0~
+Jason Hedlesky~30~60~58~64~61~62~0~0~0~0~0~0~
+David Keith~30~54~53~56~56~53~0~0~0~0~0~0~
+L.W. Miller~30~16~19~16~17~19~0~0~0~0~0~0~
+Gus Wasson~30~10~8~14~14~10~0~0~0~0~0~0~
+Dario Franchitti~31~70~67~72~70~73~0~0~0~0~0~0~
+Ward Burton~43~75~62~68~63~63~0~0~5~24~82~375~
+Coy Gibbs~31~67~67~65~63~63~0~0~0~0~0~0~
+Jennifer Jo Cobb~31~57~56~54~58~59~0~0~0~0~0~0~
+Joey McCarthy~31~56~56~58~54~58~0~0~0~0~0~0~
+Joey Clanton~31~35~35~33~39~38~0~0~0~0~0~0~
+Ashton Lewis, Jr.~32~71~74~73~68~71~0~0~0~0~0~0~
+Patrick Carpentier~32~68~64~64~69~71~0~0~0~0~0~0~
+Chris Cook~32~65~65~67~61~62~0~0~0~0~0~0~
+Klaus Graf~32~63~61~61~63~64~0~0~0~0~0~0~
+Mario Gosselin~32~63~65~64~64~66~0~0~0~0~0~0~
+Tony Ave~32~63~59~64~65~65~0~0~0~0~0~0~
+Jason Schuler~32~24~22~28~20~24~0~0~0~0~0~0~
+Tracy Hines~32~16~15~13~14~17~0~0~0~0~0~0~
+Chris Bingham~32~8~8~5~9~9~0~0~0~0~0~0~
+Kelly Sutton~32~6~7~3~7~9~0~0~0~0~0~0~
+Glenn Allen, Jr.~33~70~70~69~74~73~0~0~0~0~0~0~
+Andy Houston~33~68~71~70~72~72~0~0~0~0~0~0~
+Jacques Villeneuve~33~66~65~63~70~63~0~0~0~0~0~0~
+Derek White~33~65~66~63~68~67~0~0~0~0~0~0~
+Michael Dokken~33~14~13~12~18~12~0~0~0~0~0~0~
+Ron Barfield, Jr.~33~5~1~1~9~6~0~0~0~0~0~0~
+David Reutimann~34~72~70~74~68~70~0~0~0~0~0~0~
+Max Papis~34~60~56~61~60~58~0~0~0~0~0~0~
+Marc Goossens~34~59~59~55~62~57~0~0~0~0~0~0~
+Jorge Goeters~34~58~57~57~59~59~0~0~0~0~0~0~
+Carlos Contreras~34~15~11~17~16~19~0~0~0~0~0~0~
+Jamie Mosley~34~10~14~9~9~13~0~0~0~0~0~0~
+Chad Chaffin~35~70~68~69~69~69~0~0~0~0~0~0~
+Hermie Sadler~35~66~64~63~67~70~0~0~0~0~0~0~
+Ernie Cope~35~63~60~63~65~60~0~0~0~0~0~0~
+Mark Petty~35~58~55~62~59~60~0~0~0~0~0~0~
+P.J. Jones~35~57~53~60~55~60~0~0~0~0~0~0~
+Wayne Anderson~35~57~53~53~54~58~0~0~0~0~0~0~
+Lance Norick~35~38~42~42~40~35~0~0~0~0~0~0~
+Christian Elder~35~14~15~10~15~11~0~0~0~0~0~0~
+Tina Gordon~35~13~16~17~10~17~0~0~0~0~0~0~
+Terry Cook~36~72~68~73~75~75~0~0~0~0~0~0~
+Tim Steele~36~72~71~73~74~75~0~0~0~0~0~0~
+David Starr~36~62~61~66~61~65~0~0~0~0~0~0~
+Tim Sauter~36~62~59~61~65~59~0~0~0~0~0~0~
+Robert Huffman~36~31~28~28~30~34~0~0~0~0~0~0~
+Dion Ciccarelli~36~6~8~6~9~3~0~0~0~0~0~0~
+Johnny Chapman~36~6~9~10~7~6~0~0~0~0~0~0~
+Stacy Compton~36~66~63~62~62~65~0~0~0~0~0~0~
+Kevin O'Connell~37~61~63~59~65~58~0~0~0~0~0~0~
+Lance Hooper~37~53~50~53~56~51~0~0~0~0~0~0~
+Brian Weber~37~18~14~16~16~15~0~0~0~0~0~0~
+Johnny Miller~38~43~41~43~46~43~0~0~0~0~0~0~
+Jason Keller~38~67~65~67~65~63~0~0~0~0~0~0~
+Christian Fittipaldi~44~14~18~16~15~69~0~0~0~0~0~0~
+Kevin Cywwinski~39~63~61~62~66~59~0~0~0~0~0~0~
+Bobby Hillin, Jr.~39~60~59~63~61~60~0~0~0~0~0~0~
+Shawna Robinson~39~59~58~56~63~59~0~0~0~0~0~0~
+Randy Briggs~39~18~14~15~15~19~0~0~0~0~0~0~
+Anthony Lazzaro~40~59~57~57~60~57~0~0~0~0~0~0~
+Bryan Reffner~40~10~7~13~12~13~0~0~0~0~0~0~
+Wally Dallenbach, Jr.~41~64~61~68~62~67~0~0~0~0~0~0~
+Steve Grissom~41~60~60~59~62~59~0~0~0~0~0~0~
+Dan Pardus~41~57~57~56~55~60~0~0~0~0~0~0~
+Mike Garvey~41~56~54~56~59~56~0~0~0~0~0~0~
+Andy Hillenburg~41~45~49~44~42~43~0~0~0~0~0~0~
+Randy MacDonald~41~28~30~32~32~25~0~0~0~0~0~0~
+Donnie Neuenberger~41~23~19~24~21~25~0~0~0~0~0~0~
+Shigeaki Hattori~41~16~17~13~15~14~0~0~0~0~0~0~
+Phil Bonifield~41~11~15~14~9~11~0~0~0~0~0~0~
+Jay Sauter~42~59~56~63~59~61~0~0~0~0~0~0~
+Kevin Lepage~42~59~57~60~55~56~0~0~0~0~0~0~
+Frank Kimmel~42~57~61~60~58~58~0~0~0~0~0~0~
+Joe Bessey~42~55~58~58~53~54~0~0~0~0~0~0~
+Gary Bradberry~42~54~51~51~52~52~0~0~0~0~0~0~
+Jerry Robertson~42~48~46~49~48~46~0~0~0~0~0~0~
+Jim Inglebright~42~48~50~51~44~45~0~0~0~0~0~0~
+Jimmy Kitchens~42~48~52~47~51~51~0~0~0~0~0~0~
+Randy LaJoie~42~46~50~48~50~43~0~0~0~0~0~0~
+Jerry Hill~42~20~24~20~18~20~0~0~0~0~0~0~
+Hideo Fukayama~45~24~25~28~25~25~0~0~0~0~0~0~
+Rich Bickle~43~62~62~58~59~58~0~0~0~0~0~0~
+Bill Lester~43~52~49~48~52~50~0~0~0~0~0~0~
+Bobby Dotter~43~28~24~29~29~25~0~0~0~0~0~0~
+Larry Gunselman~43~28~27~32~29~32~0~0~0~0~0~0~
+Ron Fellows~44~62~58~64~62~62~0~0~0~0~0~0~
+Brian Simo~44~57~54~60~60~60~0~0~0~0~0~0~
+Dennis Setzer~44~43~44~41~46~43~0~0~0~0~0~0~
+Elton Sawyer~44~32~28~28~30~28~0~0~0~0~0~0~
+Rick Ware~44~4~0~5~5~2~0~0~0~0~0~0~
+David Green~45~68~72~67~72~71~0~0~0~0~0~0~
+Mark Green~45~60~58~63~59~56~0~0~0~0~0~0~
+Jeff Purvis~45~52~56~54~51~54~0~0~0~0~0~0~
+Tomy Drissi~45~52~51~56~52~50~0~0~0~0~0~0~
+Rick Crawford~45~43~43~42~46~44~0~0~0~0~0~0~
+Bobby Gerhart~45~20~17~21~22~24~0~0~0~0~0~0~
+Ron Hornaday, Jr.~46~53~49~53~55~57~0~0~0~0~0~0~
+Mike Harmon~46~48~50~45~52~51~0~0~0~0~0~0~
+Mike McLaughlin~47~48~50~49~52~50~0~0~0~0~0~0~
+Jeff Fuller~48~-7~-11~0~-7~-6~0~0~0~0~0~0~
+Kirk Shelmerdine~46~55~33~32~32~54~0~0~0~0~0~0~
+Norm Benning~53~53~57~52~51~56~0~0~0~0~0~0~
+Johnny Benson~42~67~70~72~74~70~100~0~1~16~54~228~
+Jerry Nadeau~35~67~65~66~68~62~100~0~1~8~18~167~
+Ricky Craven~37~64~74~79~65~65~100~0~1~14~33~216~
+Billy Biggly, Jr~41~55~55~55~55~55~100~0~0~0~0~12~
+Year~#~Team~Manufacturer~Sponsor~Sponsor2~Engine~Chassis~Aero~Pit Crew~Schedule~Chance~~
+2005~11~Joe Gibbs Racing~Chevrolet~FedEx~FedEx~84~81~83~84~Full Time~84~
+2005~14~ppc Racing~Ford~random~random~68~70~69~66~Part Time~66~
+2005~37~R&J Racing~Dodge~random~random~59~61~65~62~Full Time~62~
+2005~66~Peak Fitness Racing~Ford~random~random~58~62~60~59~Part Time~59~
+2005~92~Front Row Motorsports~Chevrolet~random~random~62~64~63~61~Full Time~61~
+2005~07~Richard Childress Racing~Chevrolet~Jack Daniel's~Jack Daniel's~84~85~85~89~Full Time~89~
+2006~79~Evernham Motorsports~Dodge~Trus Joist~Auto Value Bumper to Bumper~77~76~77~83~Part Time~20~
+2006~7~Robby Gordon Motorsports~Chevrolet~Jim Beam~Jim Beam~68~68~69~64~Full Time~64~
+2006~10~Evernham Motorsports~Dodge~Valvoline~Valvoline~77~76~77~83~Full Time~83~
+2006~14~Ginn Racing~Chevrolet~Waste Management~Waste Management~66~68~66~70~Full Time~70~
+2006~34~Front Row Motorsports~Chevrolet~Taco Bell~Taco Bell~65~63~66~67~Full Time~67~
+2006~78~Furniture Row Racing~Chevrolet~Furniture Row~Furniture Row~68~65~65~66~Full Time~66~
+2006~46~Morgan-Dollar Motorsports~Chevrolet~Chevorlet~Chevorlet~75~74~65~62~Full Time~32~
+2006~96~Hall of Fame Racing~Chevrolet~DLP~DLP~65~64~65~62~Full Time~62~
+2007~44~Michael Waltrip Racing~Toyota~UPS~UPS~74~71~70~72~Full Time~72~
+2007~55~Michael Waltrip Racing~Toyota~NAPA~NAPA~72~72~76~72~Full Time~72~
+2007~66~Haas CNC Racing~Chevrolet~Best Buy~Best Buy~61~65~63~66~Full Time~66~
+2007~83~Red Bull Racing~Toyota~Red Bull~Red Bull~75~73~73~77~Full Time~77~
+2007~84~Red Bull Racing~Toyota~Red Bull~Red Bull~73~75~73~77~Full Time~77~
+2007~01~Dale Earnhardt, Inc.~Chevrolet~Principal Financial Group~Principal Financial Group~81~81~82~86~Full Time~86~
+2008~2~Penske Racing~Toyota~random~random~85~85~85~85~Full Time~12~
+2008~20~Joe Gibbs Racing~Toyota~The Home Depot~random~85~85~85~85~Full Time~43~
+2008~98~Evernham Motorsports~Dodge~Valvoline~Valvoline~77~76~77~83~Part Time~83~
+2009~57~Norm Benning Racing~Chevrolet~random~random~50~48~51~52~Part Time~52~
+2009~14~Stewart-Haas Racing~Chevrolet~random~random~85~86~83~87~Full Time~87~
+2009~39~Stewart-Haas Racing~Chevrolet~random~random~84~82~83~81~Full Time~81~
+2009~33~Richard Childress Racing~Chevrolet~Cheerios~Cheerios~86~82~88~89~Full Time~89~
+2009~34~Front Row Motorsports~Ford~random~random~66~63~61~62~Full Time~61~
+2009~36~Tommy Baldwin Racing~Toyota~random~random~63~66~63~64~Full Time~64~
+2009~47~JTG Daugherty Racing~Toyota~Kingsford~Kingsford~74~71~73~74~Full Time~74~
+2009~71~TRG Motorsports~Chevrolet~random~random~60~63~61~61~Full Time~61~
+2009~82~Red Bull Racing~Toyota~Red Bull~Red Bull~73~71~75~77~Full Time~77~
+2009~87~NEMCO Motorsports~Toyota~random~random~60~59~59~62~Full Time~62~
+2009~98~Robert Yates Racing~Ford~Menards~Menards~72~78~73~81~Full Time~81~
+2010~13~Germain Racing~Toyota~GEICO~GEICO~66~67~61~65~Full Time~65~
+2010~22~Penske Racing~Dodge~Pennzoil~Pennzoil~82~85~83~84~Full Time~84~
+2010~26~Latitude 43 Motorsports~Ford~Window World Care~Window World Care~61~60~63~58~Full Time~58~
+2010~21~Richard Childress Racing~Chevrolet~random~random~80~80~83~89~Full Time~25~
+2010~37~Front Row Motorsports~Ford~Extenze~Extenze~64~63~65~69~Full Time~69~
+2010~38~Front Row Motorsports~Ford~Taco Bell~Taco Bell~67~63~66~69~Full Time~69~
+2010~46~Whitney Motorsports~Dodge~random~random~58~57~60~59~Full Time~59~
+2010~56~Michael Waltrip Racing~Toyota~NAPA~NAPA~80~79~81~82~Full Time~82~
+2010~66~Prism Motorsports~Toyota~random~random~55~59~54~56~Full Time~56~
+2011~27~Richard Childress Racing~Chevrolet~random~random~80~80~83~89~Full Time~89~
+2011~37~Max Q Motorsports~Chevrolet~random~random~57~53~53~54~Full Time~54~
+2011~92~K-Automotive Racing~Dodge~Discount Tire~Discount Tire~52~53~51~50~Part Time~50~
+2011~51~Phoenix Racing~Chevrolet~random~random~66~63~66~63~Full Time~63~
+2011~97~NEMCO Motorsports~Toyota~random~random~58~56~58~59~Part Time~59~
+2012~95~Leavine Family Racing~Ford~random~random~68~63~64~67~Full Time~67~
+2012~29~Richard Childress Racing~Dodge~random~random~80~80~83~89~Full Time~25~
+2012~15~Michael Waltrip Racing~Toyota~5-hour Energy~5-hour Energy~85~83~79~82~Full Time~82~
+2012~98~Phil Parsons Racing~Ford~random~random~59~66~62~63~Full Time~63~
+2012~32~FAS Lane Racing~Ford~random~random~64~65~60~63~Full Time~63~
+2012~83~BK Racing~Toyota~Burger King~Burger King~61~63~62~62~Full Time~62~
+2013~7~Tommy Baldwin Racing~Chevrolet~random~random~63~66~61~64~Full Time~64~
+2013~30~Swan Racing~Toyota~random~random~65~62~63~64~Full Time~64~
+2013~35~Front Row Motorsports~Ford~random~random~66~62~64~67~Full Time~67~
+2013~93~BK Racing~Toyota~Burger King~Burger King~61~66~62~63~Full Time~63~
+2014~23~BK Racing~Toyota~Dr. Pepper~Dr. Pepper~60~65~64~63~Full Time~63~
+2014~26~Swan Racing~Toyota~Speed Stick~Speed Stick~64~67~61~64~Full Time~64~
+2014~51~HScott Motorsports~Chevrolet~random~random~68~67~68~71~Full Time~71~
+2014~52~HScott Motorsports~Chevrolet~random~random~63~62~63~64~Full Time~64~
+2014~4~Stewart-Haas Racing~Chevrolet~random~random~86~85~87~87~Full Time~87~
+2015~46~HScott Motorsports~Chevrolet~random~random~67~66~70~71~Full Time~71~
+2016~66~Premium Motorsports~Toyota~random~random~58~57~55~56~Full Time~56~
+2017~72~TriStar Motorsports~Chevrolet~random~random~63~61~61~62~Full Time~62~
+2017~37~JTG Daugherty Racing~Chevrolet~Kroger~Kroger~72~73~75~71~Full Time~74~
+2017~51~Rick Ware Racing~Chevrolet~Jacob Companies~Jacob Companies~46~49~47~48~Full Time~1000~
+2017~77~Furniture Row Racing~Toyota~random~random~83~79~82~81~Full Time~81~
+2017~96~Gaunt Brothers Racing~Toyota~random~random~63~63~64~61~Full Time~61~
+2018~15~Premium Motorsports~Chevrolet~random~random~54~52~52~53~Full Time~53~
+2018~52~Rick Ware Racing~Chevrolet~Jacob Companies~Jacob Companies~47~48~49~53~Full Time~1000~
+2018~62~Beard Motorsports~Chevrolet~Beard Oil~Beard Oil~64~62~64~65~Part Time~65~
+2018~97~Obaika Racing~Toyota~random~random~43~46~42~41~Full Time~41~
+2018~00~StarCom Racing~Chevrolet~StarCom Fiber~StarCom Fiber~58~59~60~61~Full Time~61~
+2018~66~MBM Motorsports~Toyota~random~random~54~51~52~51~Full Time~51~
+2019~99~StarCom Racing~Chevrolet~StarCom Fiber~StarCom Fiber~52~51~56~55~Part Time~55~
+2019~27~Premium Motorsports~Chevrolet~random~random~54~55~52~51~Full Time~51~
+2019~53~Rick Ware Racing~Chevrolet~Jacob Companies~Jacob Companies~47~50~52~53~Full Time~1000~
+2019~36~Front Row Motorsports~Ford~random~random~62~62~63~64~Part Time~64~
+2019~77~Spire Motorsports~Chevrolet~random~random~58~55~56~54~Full Time~54~
+2020~49~MBM Motorsports~Toyota~random~random~55~52~54~54~Part Time~54~
+2020~78~B.J. McLeod Motorsports~Chevrolet~random~random~56~54~54~55~Full Time~55~
+2020~71~Tommy Baldwin Racing~Chevrolet~Accell Construction~Accell Construction~59~56~57~58~Part Time~58~
+2020~54~Rick Ware Racing~Chevrolet~Jacob Companies~Jacob Companies~59~62~58~63~Full Time~1000~
+2021~23~23XI Racing~Toyota~random~random~85~87~86~84~Full Time~84~
+2021~74~Spire Motorsports~Chevrolet~random~random~54~56~54~52~Full Time~52~
+2021~3~JR Motorsports~Chevrolet~random~random~83~96~86~85~Full Time~1000~
+2021~8~JR Motorsports~Chevrolet~random~random~85~97~84~85~Full Time~1000~
+2022~23~GMS Racing~Chevrolet~random~random~76~72~73~75~Full Time~75~
+2022~16~Kaulig Racing~Chevrolet~LeafFilter~LeafFilter~75~73~72~73~Full Time~73~
+2022~60~Roush Racing~Ford~random~random~81~80~78~81~Full Time~81~
+2023~39~RSS Racing~Chevrolet~random~random~65~64~67~66~Full Time~66~
+2023~50~Rick Ware Racing~Chevrolet~Jacob Companies~Jacob Companies~45~47~48~45~Full Time~45~
+2023~57~JTG Daugherty Racing~Chevrolet~Kroger~Kroger~68~74~73~71~Full Time~71~
+2023~25~GMS Racing~Chevrolet~random~random~74~74~74~75~Full Time~75~
+2024~46~Jeff Gordon, Inc.~Chevrolet~random~random~86~78~85~85~Full Time~85~
+2024~11~23XI Racing~Toyota~random~random~83~83~84~84~Full Time~84~
+2024~61~Hattori Racing Enterprises~Toyota~random~random~70~70~70~70~Full Time~50~
+2025~26~GMS Racing~Chevrolet~random~random~77~72~76~75~Full Time~75~
+2025~51~Kyle Busch Motorsports~Toyota~random~random~85~87~84~88~Full Time~88~
+2025~54~DGR Crosley Racing~Ford~random~random~68~72~71~71~Full Time~71~
+2025~7~JR Motorsports~Chevrolet~random~random~79~82~80~77~Full Time~77~
+2026~85~Venturini Motorsports~Toyota~random~random~63~68~65~64~Full Time~94~
+2026~10~Kaulig Racing~Chevrolet~random~random~72~73~71~74~Full Time~74~
+2026~0~JD Motorsports~Chevrolet~random~random~54~53~56~55~Full Time~55~
+2026~98~ThorSport Racing~Ford~random~random~68~65~67~65~Full Time~65~
+2026~15~DGR Crosley Racing~Ford~random~random~65~68~66~66~Full Time~66~
+2026~93~RSS Racing~Chevrolet~random~random~63~67~67~65~Full Time~65~
+2027~1~JD Motorsports~Chevrolet~random~random~51~55~56~54~Full Time~54~
+2028~38~RSS Racing~Chevrolet~random~random~62~61~60~61~Full Time~61~
+2029~13~ThorSport Racing~Ford~random~random~68~65~65~67~Full Time~67~
+2030~46~Kyle Busch Motorsports~Toyota~random~random~85~83~86~85~Full Time~85~
+2031~32~Reaume Brothers Racing~Toyota~random~random~49~46~45~48~Full Time~48~
+2031~06~Kaulig Racing~Chevrolet~random~random~72~71~68~72~Full Time~72~
+2031~75~DGR Crosley Racing~Ford~random~random~64~65~64~67~Full Time~67~
+2032~03~Reaume Brothers Racing~Toyota~random~random~48~45~44~46~Part Time~46~
+2032~92~DGM Racing~Chevrolet~random~random~52~51~55~54~Full Time~54~
+2033~77~Kyle Busch Motorsports~Toyota~random~random~85~87~88~84~Full Time~84~
+2033~68~Brandonbilt Motorsports~Chevrolet~random~random~63~62~60~64~Full Time~64~
+2034~56~Hill Motorsports~Toyota~random~random~59~59~58~62~Full Time~62~
+2035~83~RSS Racing~Chevrolet~random~random~61~66~62~62~Full Time~62~
+2035~57~DGR Crosley Racing~Ford~random~random~64~68~65~62~Full Time~62~
+2036~87~ThorSport Racing~Ford~random~random~65~60~67~62~Full Time~62~
+2036~90~DGM Racing~Chevrolet~random~random~53~52~51~54~Full Time~54~
+2037~91~Bill McAnally Racing~Toyota~random~random~63~62~60~58~Full Time~58~
+2039~86~Brandonbilt Motorsports~Chevrolet~random~random~63~64~64~59~Full Time~59~
+2040~33~Dillon Brothers Racing~Chevrolet~random~random~82~84~82~81~Full Time~81~
+2040~6~Wayne Peterson Motorsports~Dodge~random~random~39~45~42~40~Part Time~40~
+2041~36~DGM Racing~Chevrolet~random~random~52~52~53~51~Full Time~51~
+2041~94~Hill Motorsports~Toyota~random~random~58~60~66~57~Part Time~57~
+2044~0~Wayne Peterson Motorsports~Dodge~random~random~40~42~44~45~Part Time~45~
+2045~92~Chase Elliott Racing~Chevrolet~NAPA~NAPA~79~82~82~81~Full Time~81~
+2045~16~Bill McAnally Racing~Toyota~random~random~62~63~62~64~Full Time~64~
+2046~13~Dillon Brothers Racing~Chevrolet~random~random~83~84~83~82~Full Time~82~
+2046~66~Hill Motorsports~Toyota~random~random~64~63~61~65~Part Time~65~
+2049~9~Chase Elliott Racing~Chevrolet~random~random~83~83~83~83~Full Time~83~
+2054~83~Red Bull Racing~Toyota~Red Bull~Red Bull~73~72~71~74~Full Time~74~
+2051~84~The Guys Racing~Dodge~random~random~38~37~35~36~Full Time~36~
+2056~87~NEMCO Motorsports~Ford~random~random~67~66~69~68~Full Time~68~
+2057~82~Red Bull Racing~Toyota~Red Bull~Red Bull~71~72~73~74~Full Time~74~
+2058~31~Dillon Brothers Racing~Chevrolet~random~random~83~82~83~81~Full Time~81~
+2059~93~RAGE Racing~Dodge~NutriChomps~NutriChomps~58~58~58~58~Full Time~58~
+2060~7~DNF Enterprises~Toyota~random~random~44~44~45~46~Full Time~46~
+2063~97~NEMCO Motorsports~Ford~random~random~67~65~66~64~Full Time~64~
+2066~68~The Guys Racing~Dodge~random~random~20~20~20~20~Full Time~20~
+2067~80~Red Bull Racing~Toyota~Red Bull~Red Bull~70~70~70~70~Full Time~70~
+2068~44~Team Xtreme Racing~Chevrolet~random~random~31~35~34~45~Full Time~45~
+2070~15~RAGE Racing~Dodge~random~random~55~58~54~56~Full Time~56~
+2071~70~DNF Enterprises~Toyota~random~random~42~45~44~43~Full Time~43~
+2075~18~Notepad Racing~Toyota~Intel~Intel~94~96~94~92~Full Time~92~
+2075~32~Notepad Racing~Toyota~The Home Depot~The Home Depot~95~92~93~93~Full Time~93~
+2075~2~Notepad Racing~Toyota~Snap-On~Snap-On~93~95~91~92~Full Time~92~
+2086~86~Fred Jones Motorsports~Chevrolet~Papyrus Racing Games~Papyrus Racing Games~86~86~86~86~Full Time~86~
+2101~01~Enchilada Alley Racing Team~Dodge~Enchilada Alley~Enchilada Alley~82~80~80~80~Full Time~80~
+2105~05~Gibson Racing Enterprises~Dodge~Gibson's Speedy Lube~Gibson's Speedy Lube~80~82~80~80~Full Time~80~
+2108~08~Uncle Jesse's Racing Team~Chevrolet~Uncle Jesse's Floor Wax~Uncle Jesse's Floor Wax~80~80~82~80~Full Time~80~
+2109~09~Caffeine City Cola Race Team~Chevrolet~Caffeine City Cola~Caffeine City Cola~82~80~80~80~Full Time~80~
+2111~11~Filth Busters Race Team~Ford~Filth Busters Cleaning Service~Filth Busters Cleaning Service~80~82~80~80~Full Time~80~
+2115~15~Tiny's Tractors Racing~Toyota~Tiny's Tractors~Tiny's Tractors~80~80~82~80~Full Time~80~
+2117~17~PCFL Racing~Ford~Jerry Fisher's Bait and Tackle~Jerry Fisher's Bait and Tackle~82~80~80~80~Full Time~80~
+2119~19~Juggernaut Racing Team~Toyota~Golden Eagle Airlines~Golden Eagle Airlines~80~82~80~80~Full Time~80~
+2121~21~Xoron Racing~Dodge~Xoron~Xoron~80~80~82~80~Full Time~80~
+2123~23~Juggernaut Racing Team~Toyota~Carver City Steak House~Carver City Steak House~82~80~80~80~Full Time~80~
+2124~24~Juggernaut Racing Team~Toyota~Safe-T-King Fire Extinguishers~Safe-T-King Fire Extinguishers~80~82~80~80~Full Time~80~
+2127~27~Clip 'Em Racing~Chevrolet~Clip 'Em Lawn Service~Clip 'Em Lawn Service~80~80~82~80~Full Time~80~
+2128~28~VUG Racing~Ford~Blizzard Entertainment~Blizzard Entertainment~82~80~80~80~Full Time~80~
+2135~35~Zero Kelvin Racing~Dodge~Zero Kelvin Antifreeze~Zero Kelvin Antifreeze~80~82~80~80~Full Time~80~
+2144~44~Ichabod's Racing~Chevrolet~Ichabod's Iced Tea~Ichabod's Iced Tea~80~80~82~80~Full Time~80~
+2148~48~O'Shea Racing~Dodge~O'Shea Asphalt Company~O'Shea Asphalt Company~82~80~80~80~Full Time~80~
+2153~53~Milton's Racing~Ford~Milton's Mustard~Milton's Mustard~80~82~80~80~Full Time~80~
+2155~55~Shockley's Racing~Ford~Shockley's~Shockley's~80~80~82~80~Full Time~80~
+2162~62~Ted's Racing~Ford~Ted's Chinese Takeout~Ted's Chinese Takeout~82~80~80~80~Full Time~80~
+2168~68~Spinner Racing~Chevrolet~Spinner Rotors~Spinner Rotors~80~82~80~80~Full Time~80~
+2170~70~Papyrus Racing~Toyota~Sierra~Sierra~80~80~82~80~Full Time~80~
+2177~77~Dilpare Racing~Ford~Dilpare Transmissions~Dilpare Transmissions~82~80~80~80~Full Time~80~
+2188~88~Rab-O-Tec Racing~Chevrolet~Rab-O-Tec~Rab-O-Tec~80~82~80~80~Full Time~80~
+2190~90~Spark Boy Racing~Chevrolet~Spark Boy~Spark Boy~80~80~82~80~Full Time~80~
+2191~91~Ocean Point Racing~Chevrolet~Ocean Point Charters~Ocean Point Charters~82~80~80~80~Full Time~80~
+2193~86~Papyrus Racing~Toyota~Papyrus Racing Games~Papyrus Racing Games~80~82~80~80~Full Time~80~
+2200~69~what are you doing here~Toyota~Papyrus Racing Games~Papyrus Racing Games~80~82~80~80~Full Time~80~
+Sponsors~
+1-800-4-Autism~
+31-W Insulation~
+3M~
+5-hour Energy~
+7-Eleven~
+A&W Restaurants~
+AAA Insurance~
+Aaron's~
+AARP~
+Abreu Vineyards~
+Absolut Vodka~
+AC Delco~
+Ace Hardware~
+Acer~
+Acorns~
+Action Racing Collectables~
+Acxiom~
+Adidas~
+Advair~
+Advance Auto Parts~
+Advanced Communications~
+AdventHealth~
+Advil~
+AdvoCare~
+AER~
+AFG~
+Aflac~
+Aftershokz~
+Air Jamaica Vacations~
+Air Products~
+Airbus~
+Al Smith Dodge~
+Albertsons~
+Alert Today, Alive Tomorrow~
+Aleve~
+Alka-Seltzer~
+Allegiant~
+Allerest~
+Allstate Insurance~
+Alltel~
+Ally Financial~
+Alpha Energy Solutions~
+Alsco~
+AM Technical Solutions~
+AM/FM Energy~
+Amazon~
+AMD~
+America Online~
+American Ethanol~
+Amoco~
+Anderson's Maple Syrup~
+APP Gas~
+Apple~
+Arby's~
+ARC Dehooker~
+Arctic Cat~
+ArmorAll~
+Armour Foods~
+Arnold Development~
+Arris~
+AT&T~
+Atomic~
+Auto Trim Design~
+Autotrader~
+Aviation Gin~
+Avis~
+Avocados from Mexico~
+Axalta~
+Axe~
+Bad Boy Buggies~
+Band-Aid~
+Bank of America~
+Banquet Frozen Foods~
+Barbasol~
+Bass Pro Shops~
+Batteries + Bulbs~
+Bayer Products~
+BellSouth~
+Best Buy~
+Big Daddy's BBQ Sauce~
+Blizzard Entertainment~
+Bob Evans~
+Bob Fish~
+BodyArmor~
+Bojangles'~
+Borla Exhaust~
+Braille~
+Brandonbilt Foundations~
+Brandt Agriculture~
+Breyer's~
+Broken Bow Records~
+Brunswick Boat Group~
+Bryant~
+BTS~
+Bubly~
+Budweiser~
+Bugles~
+Burger King~
+Burn Care~
+Burnie All American Grill~
+Busch Beer~
+Buyer's Choice~
+C.H.I. Overhead Doors~
+C&C Boilers~
+Cabela's~
+Cabinets by Hayley~
+California Clean Power~
+Can-Am~
+Cannon~
+Captain Morgan~
+Cargill~
+Carl's Jr.~
+Carlin~
+Carolina Nut~
+Carquest~
+Cars.com~
+Cartoon Network~
+Castrol~
+Caterpillar~
+Cellular One~
+Central Tractor~
+Cessna~
+Champion Spark Plugs~
+Channellock~
+Charlie's Soap~
+Charter~
+Chasco~
+Cheerios~
+Cheez-It~
+Chegg~
+Chek~
+Chipotle Mexican Grills~
+Ciba Vision~
+Cingular Wireless~
+Cintas~
+Circle Bar Motel~
+Circle K~
+Circle Speed~
+Circuit City~
+Citgo~
+Civil Air Patrol~
+Claritin~
+Clean Shower~
+Clearwater Forest Industries~
+Clorox~
+CLR~
+Coast Guard~
+Coca-Cola~
+Colgate~
+Compuware~
+Conseco~
+Cooper Standard~
+Coors Light~
+CorvetteParts.net~
+Cosmo Motors~
+Cottonelle~
+Coyne Textile Services~
+Craftsman~
+CrashClaimsR.Us~
+Crayola~
+Credit One Bank~
+Crosley~
+Crypton Future Media~
+CSX Transportation~
+Culver's Restaurant~
+Cummins~
+Curb Records~
+D.A.B. Constructors, Inc.~
+Dairi-O~
+Dairy Queen~
+Dark Dog~
+DC Solar~
+Dean Foods~
+Defiant Clothing~
+Dell~
+Delphi~
+Denny's~
+Denso~
+Devour Frozen Foods~
+DeWalt Tools~
+Dex Imaging~
+Diamond Gusset~
+Dick's Sporting Goods~
+Dickies~
+Dietz Nuts~
+Discount Tire~
+Ditech~
+DLP~
+Dodge~
+Dodge Dealers~
+DogeCoin~
+Dollar General~
+Dollar Shave Club~
+Dollar Tree~
+Domino's Pizza~
+Donate Life~
+Doosan~
+Doritos~
+Dove~
+Dow~
+Dr. Pepper~
+DraftKings~
+Draw-Tite~
+Drive to End Hunger~
+Drive4COPD~
+Driven2Honor.org~
+Dumont Jets~
+Dunkin Donuts~
+DuPont~
+Dura Lube~
+Duraflame~
+Duragloss~
+E3 Spark Plugs~
+Eagle Jet International~
+Eagle One~
+EastWest Marine~
+Easy Care~
+eBay~
+Eibach Springs~
+Eneos~
+Energizer~
+Enterprise~
+ESGR~
+Exelon~
+Exide Batteries~
+Express Personnel Services~
+Exxon~
+Farm Bureau~
+Farmers Insurance~
+Fast Track~
+Fastenal~
+FDNY~
+Featherlite~
+Federal Mogul~
+Federated Auto Parts~
+FedEx~
+Fiberall~
+Fifth Third Bank~
+Fire Alarm Services~
+Fitzgerald Glider Kits~
+Flex Seal~
+Florida Fresh~
+Florida Gators~
+Florida Lottery~
+Flowmaster~
+Folgers~
+Follett Ice Machines~
+Food City~
+Food Country USA~
+Food Lion~
+Forward Air~
+Fr8Auctions~
+Freddie B's~
+Friendly's Ice Cream~
+Fruit of the Loom~
+Fuji Film~
+Furniture Row~
+Galt~
+Gamache~
+Gamestop~
+Gander Outdoors~
+GBROnline~
+GEICO~
+General Electric~
+Georgia-Pacific~
+Gillette~
+Global Industrial Contractors~
+GM Goodwrench~
+GMAC Financial Services~
+GNC~
+GoDaddy.com~
+Godfather's Pizza~
+Gold Bond~
+Golden Corral~
+Goodwrench~
+Goodyear~
+Google~
+GoPro~
+Goulds Pumps~
+Grainger~
+Great American~
+Great Clips~
+Greenfield Truck Center~
+Grove~
+Gumout~
+GunBroker.com~
+Haas Automation~
+Halmar~
+Hamburger Helper~
+Hardee's~
+Harley-Davidson~
+Harrah's~
+Harris Trucking~
+Hartsville Community Bank~
+Hastings Premium Filters~
+Havill-Spoerl~
+Havoline~
+Hefty~
+Heinz~
+Hellmann's~
+HendrickCars.com~
+Herculiner~
+Hertz~
+Hills Brothers Coffee~
+Hisense~
+Holley EFI~
+Honey Nut Cheerios~
+Hooters~
+Hot Tamales~
+Hot Wheels~
+HP~
+Hulu~
+Humble Bundle~
+Hungry Howies~
+Hunt Brothers Pizza~
+Husky~
+Husqvarna~
+ICanLearn.com~
+Ice-Aid~
+Icehouse Beer~
+iDealDirect~
+iHeartRadio~
+iK9~
+IKEA~
+In-N-Out Burger~
+Inception~
+Infineon~
+Ingersoll Rand~
+Interstate Batteries~
+Irwin Tools~
+ISM Connect~
+IWX Motor Freight~
+IZOD~
+Jack Daniel's~
+Jacob Companies~
+Jani-King~
+Jasper Engines~
+Jasper Engines & Transmissions~
+JBL~
+JEGS Performance~
+JetBlue~
+Jim Beam~
+Jimmy Dean~
+Jimmy John's~
+Jive~
+John Deere~
+Juicy Fruit~
+K-LOVE~
+K&N Filters~
+Kapaya~
+Keen Parts~
+Kelley Blue Book~
+Kellogg's~
+Kentucky Fried Chicken~
+Kenwood~
+Keystone Light~
+Kikkoman~
+Kiklos Olive Oil~
+Kingsford~
+Klaussner~
+Kleenex~
+Kmart~
+KMC Wheels~
+Kodak~
+Kodiak~
+Kohler~
+Kraft~
+Kroger~
+La Paz Margarita Mix~
+Lance Snacks~
+Lays~
+Leaf Filter~
+LEAR~
+LeasePlan~
+LeeBoy~
+LendingTree~
+LesCare Kitchens~
+Lester Building~
+Levi's~
+LG~
+Liberty National Insurance~
+Liberty University~
+Lilly Diabetes~
+Lily Trucking~
+Link Belt~
+Little Caesars~
+Little Hugs~
+Little Trees~
+Lixar~
+Local Motors~
+Loctite~
+Lordco Auto Parts~
+Louisiana Hot Sauce~
+Love's Travel Stops~
+Lowe's~
+Lucas Oil~
+Lucky Dog~
+Lumber~
+Lyson~
+M&M's~
+Maaco~
+MAHLE~
+Martini~
+MasterForce Total Storage~
+Maxwell House~
+MBNA~
+McDonald's~
+MDS Transportation~
+Mello Yello~
+Menards~
+MGM Brakes~
+Miccosukee Indian Gaming~
+Michael's~
+Microsoft~
+Microtel Inn & Suites~
+Midnight Moon~
+Midwest Transit~
+Miller~
+Miller Lite~
+Mission Winnow~
+Mitel~
+Mobil 1~
+Modell's Sporting Goods~
+ModSpace~
+Momo~
+Monaco Coaches~
+MoneyLion~
+Monster Energy~
+MOOG~
+Mopar~
+Morning Fresh~
+Mother's Polish~
+Motorcraft~
+Motorsport.com~
+Mountain Dew~
+Mr. Clean~
+Mr. Pibb~
+Murray~
+Musselman's~
+Mutant Energy Soda~
+N29 Capital Partners~
+NAPA~
+National Cash Lenders~
+National Guard~
+Nations Rent~
+Nationwide Insurance~
+Native~
+Natural Gear~
+Navy~
+Nesquik~
+Nestlé~
+NetZero~
+New Holland~
+New York Yankees~
+Nexteer Automotive~
+NextEra Energy~
+Nike~
+Nikon~
+Nintendo~
+NordVPN~
+North Texas Pipe~
+NOS Energy Drink~
+Oakwood Homes~
+OdoBan~
+Office Depot~
+Okuma~
+Old Spice~
+Ollie's Bargain Outlet~
+OneMain Financial~
+Oreo~
+Orkin~
+Oscar Mayer~
+Outback Steakhouse~
+Outdoor Channel~
+OxiClean~
+Panasonic~
+Panera Bread~
+Papyrus Racing Games~
+Paychex~
+PayDay~
+PEAK Auto~
+Peco Energy~
+Pedigree~
+Penda~
+Pennzoil~
+Penrose~
+Pep Boys~
+Pepsi~
+Performance Plus~
+Permatex~
+Petco~
+PetSmart~
+Pfizer~
+Phantom Fireworks~
+Phelon~
+Philips~
+PHM~
+Phoenix Air~
+Pibb~
+Pilot/Flying J~
+Pirtek~
+Pitstop~
+Pizza Hut~
+Plan B Sales~
+Platinum One Card~
+Playstation~
+PNC Bank~
+Polaris~
+Police Sunglasses~
+Polyphony Digital~
+Porter Cable~
+Power Stroke Diesel~
+Power Team~
+Powertel~
+PPG Paints~
+Premier Glass~
+Prevost~
+Primestar~
+Procore~
+Protection One~
+Purolator~
+Quaker State~
+Qualcomm~
+Quest Diagnostics~
+Quicken Loans~
+Quiznos~
+RaceApe.com~
+Racing With Jesus~
+Ragu~
+Rain-X~
+Rakuten~
+Ralphs~
+Raynor~
+RC Cola~
+RCI Bank & Services~
+RE/MAX~
+Realtree~
+Red Bull~
+Red Cactus Salsa~
+Red Kap Workwear~
+Red Line Synthetic Oil~
+Red Lobster~
+Red Man~
+Reese's~
+Remington Arms~
+Rent-a-Center~
+RepairableVehicles.com~
+Reser's Fine Foods~
+Rewards.com~
+Reynolds Wrap~
+Rheem~
+Ridgid~
+Rinnai~
+Ritchie Bros~
+Ritz~
+Rock Financial~
+Rockstar Energy~
+Rockwell Automation~
+Route 66~
+Royal Crown~
+Rubbermaid~
+Rush Truck Centers~
+S&S Helicopters~
+Safelite Auto Glass~
+Sage Fruit~
+Saia Trucking~
+SCANA~
+Schneider Trucking~
+Schwan's~
+Scotts~
+Scrub Daddy~
+ScubaLife~
+SealMaster~
+Sears~
+SeatGeek~
+SEGA~
+Serta~
+Shark Tank~
+Sharpie~
+Shell~
+Shore Lodge~
+Shriners Hospitals~
+Siemens~
+SimpliSafe~
+Sinclair Oil~
+Sirius Satellite Radio~
+SKF~
+Skittles~
+Skoal~
+Slim Jim~
+Smirnoff Ice~
+Smith & Wesson~
+Smithfield~
+Smoke And Sear~
+Smokey Mountain~
+Snap-on~
+Snickers~
+Sony~
+South Point Hotel & Casino~
+SpaceX~
+Spam~
+Spears Manufacturing~
+Speed Energy~
+Speedpass~
+Speedy Auto Service~
+Spicer~
+Sport Clips~
+Sprint~
+Sprite~
+Square D~
+Squarespace~
+St. Charles Glass~
+Sta-Rite Pumps~
+Stacker 2~
+Staff America~
+Stanley Tools~
+Starbucks~
+Starter Clothing~
+State Farm~
+State Water Heaters~
+Steam~
+Steel-It~
+Sterling Casino~
+Stihl~
+STP~
+Subway~
+Summit Racing Equipment~
+SunEnergy1~
+SunnyD ~
+Sunoco~
+Super 8~
+Super Hot Tamales~
+Superchips~
+SuperCuts~
+Superflo~
+Support Our Troops~
+Surge~
+Swan Rentals~
+Switch Data Centers~
+Sylvania~
+T-Mobile~
+Taco Bell~
+TAG Heuer~
+Target~
+TaxAct~
+TaxSlayer~
+TD Bank~
+Team ASE~
+Tecumseh~
+Telcel~
+Tennessee Mountain Boys~
+Terrible Herbst~
+Texaco~
+Texas 28~
+Texas Instruments~
+The Home Depot~
+The Weather Company~
+TheFanzCar.com~
+Three Stooges Beer~
+Tide~
+Tilted Kilt~
+Tim Hortons~
+Timber Wolf~
+Topps~
+Toyota~
+Toys R Us~
+Track Gear~
+TransLife~
+Traxxas~
+Tri-Analytics~
+Trimspa~
+TropArtic~
+Tropic Beauty~
+Trus Joist~
+Tultex~
+Turbine Solutions~
+Twisted Tea~
+U.S. Air Force~
+U.S. Army~
+U.S. Bank~
+U.S. Concrete~
+U.S. Marine Corps~
+U.S. Micro~
+U.S. Navy~
+U.S. Pavement Services, Inc.~
+UAW-Delphi~
+Ultimate~
+Uncle Bob's Self Storage~
+Uniden~
+UniFirst~
+United Rentals~
+Universal Studios~
+UNOH~
+Unsponsored~
+UPS~
+Upstar~
+USG Sheetrock~
+Valvoline~
+Vector Security~
+Verizon~
+Viagra~
+Virginia Lottery~
+Virginia Tech~
+Visa~
+Viva Auto Group~
+Vivint Solar~
+Vokal Clothing~
+VP Racing Fuels~
+Vroom Brands~
+W.B. Mason~
+Wagner~
+Walmart~
+Waste Management~
+Waterloo Tool Storage~
+Watermelon.org~
+Wawa~
+WeatherTech~
+Wells Fargo~
+Wendy's~
+West Virginia University~
+Whataburger~
+Whelen~
+Whelen Engineering~
+Whirlpool~
+Wicked Energy Gum~
+WILLBROS~
+Winn Dixie~
+Winston~
+Wix Filters~
+Wix.com~
+Wonder Bread~
+World Wide Technology~
+Wrangler~
+WRL General Contractors~
+Wurth~
+WWE~
+WWF~
+X-IR~
+Xbox~
+XYO Network~
+Yahoo~
+Yellow Transportation~
+YJ Stinger~
+Young Guns~
+Young's Building Systems~
+YouTube~
+Zachry~
+Zapf Creations~
+Zaxby's~
+Ziploc~
+Zippo~
+Zoom Performance Clutches~
+Zynga~
