@@ -6,7 +6,7 @@ body {
 
 
 form {
-  width: 800px;
+  width: 1000px;
   margin: 0 auto 0 auto;
   background-color: black;
 }
@@ -103,4 +103,31 @@ p.standings {
   font-size: .75em;
   text-align: left;
   color: white;
+}
+
+.content::after {
+  display: flex;
+  border: 5px solid #555;
+  align-content: center;
+  text-align: center;
+
+}
+
+.content img {
+  margin-right: 10px;
+  display: block;
+  border: 5px solid #555;
+}
+
+h3 {
+  text-align: center;
+  font-size: .9em;
+  margin: 0;
+  vertical-align: middle;
+
+}
+.content p {margin: 0;}
+
+table, th, td {
+  border: 1px solid black;
 }
