@@ -2522,7 +2522,12 @@ function autosim() {
                 carlist2 = game.returnTopCars();
             }
 
-            for (var line = 0; line < 30; line++) {
+            var initialAllowed = 30;
+
+            if (game.week < 2) {
+                initialAllowed = 26;
+            }
+            for (var line = 0; line < initialAllowed; line++) {
                 console.log("carlist 2 line ", carlist2[line]);
                 if(carlist2[line] && carlist2[line].status != "Part Time") {
                     console.log("approved");
@@ -2610,11 +2615,11 @@ function autosim() {
             for (var line = 0; line < lockedIn.length; line++) {
 
                 if(game.schedule[game.week-1].trackType == "Road Course") {
-                    if(lockedIn[line].driver.roadCourse > 85) {
+                    if(lockedIn[line].driver.roadCourse > 83) {
                         elite.push(lockedIn[line]);
                     }
                     else {
-                        if(lockedIn[line].driver.roadCourse > 80) {
+                        if(lockedIn[line].driver.roadCourse > 78) {
                             great.push(lockedIn[line]);
                         }
                         else {
@@ -2661,19 +2666,42 @@ function autosim() {
                         }
                     }
                     else{
-                        if(lockedIn[line].engine > 85) {
-                            elite.push(lockedIn[line]);
-                        }
-                        else {
-                            if(lockedIn[line].engine > 80) {
-                                great.push(lockedIn[line]);
+                        var odds = Math.floor(Math.random() * 100);
+                        if((lockedIn[line].engine + lockedIn[line].driver.intermediate) / 2  > 85) {
+                            if(odds < 90) {
+                                elite.push(lockedIn[line]);
                             }
                             else {
-                                if(lockedIn[line].engine > 70) {
+                                good.push(lockedIn[line]);
+                            }
+
+                        }
+                        else {
+                            if((lockedIn[line].engine + lockedIn[line].driver.intermediate) / 2 > 80) {
+                                if(odds < 80) {
+                                    great.push(lockedIn[line]);
+                                }
+                                else {
+                                    if(odds < 80) {
+                                        elite.push(lockedIn[line]);
+                                    }
+                                    else {
+                                        average.push(lockedIn[line]);
+                                    }
+                                }
+                            }
+                            else {
+                                if((lockedIn[line].engine + lockedIn[line].driver.intermediate) / 2 > 70) {
                                     good.push(lockedIn[line]);
                                 }
                                 else {
-                                    average.push(lockedIn[line]);
+                                    if(odds < 80) {
+                                        average.push(lockedIn[line]);
+                                    }
+                                    else {
+                                        good.push(lockedIn[line]);
+                                    }
+
                                 }
                             }
                         }
@@ -3766,6 +3794,14 @@ function autosim() {
 
             } else {
 
+                var html = '';
+
+                //var html = '<form id="gameform"><fieldset>';
+
+                //var str2 = '<h1>' +  $_POST["name"] + "'s Bulls and Cows</h1>";
+
+                
+
                 document.getElementById("message").innerHTML = "<h1>" + game.year + " Final Standings</h1>";
 
                 var results = game.displayStandings();
@@ -3887,6 +3923,7 @@ function autosim() {
 
 
     document.getElementById("fastsim").onclick = function (event) {
+
         event.preventDefault();
 
         if (game.week-1 != game.schedule.length && game.week != game.schedule.length) {
@@ -3970,6 +4007,39 @@ function autosim() {
             }
 
         } else {
+
+
+            var html = '';
+
+            //var html = '<form id="gameform"><fieldset>';
+
+            //var str2 = '<h1>' +  $_POST["name"] + "'s Bulls and Cows</h1>";
+
+
+            html += '<table class="game">';
+            html += '<div id="guesses">&nbsp;</div>';
+            //html += '<tr> <td>1:</td> <td>same</td> <td><img src="images/bull.png" alt="Bull"> <img src="images/bull.png" alt="Bull"></td> </tr>';
+
+            html += '<div id="buttons">';
+            html += '<p><input type="submit" id = "race" name="guess" value="Continue">';
+            html += '<input type="submit" id = "standings" name="giveup" value="Standings">';
+            html += '<input type="submit" id = "schedule" name="giveup" value="Schedule">';
+            html += '<input type="submit" id = "drivers" name="giveup" value="Drivers">';
+            html += '<input type="submit" id = "team" name="giveup" value="Teams">';
+            html += '<input type="submit" id = "champions" name="giveup" value="Champions">';
+            html += '<input type="submit" id = "save" name="giveup" value="Save">';
+            //html += '<input type="submit" id = "newgame" name="new" value="New Game" onclick="Bullscows()"></p>';
+            //html += '<div id="hint1">'
+            ///html += '<p><input type="submit" id = "hint" name="hint" value="Hint!"></p></div>';
+            //html += '</div>';
+            html += '<p id="message">&nbsp;</p>';
+            html += '<p><input type="submit"  id="exit" name="exit" value="Exit"></p>';
+            html += '</form>'
+            html += '</fieldset>';
+            html += '</body> ';
+
+
+            document.getElementById("play-area").innerHTML = html;
 
 
             document.getElementById("message").innerHTML = "<h1>" + game.year + " Final Standings</h1>";
