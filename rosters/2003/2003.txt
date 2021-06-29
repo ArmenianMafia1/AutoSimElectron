@@ -32,8 +32,8 @@
 42~Jamie McMurray~Havoline~Havoline~Chip Ganassi Racing~Dodge~76~77~79~74~75~88~100~27~0~1~1~2~6~5~81~81~85~87~82~Full Time~
 11~Brett Bodine~Hooters~Hooters~Brett Bodine Racing~Ford~57~55~54~56~56~56~100~44~0~1~16~61~474~1~55~45~42~36~49~Part Time~
 18~Bobby Labonte~Interstate Batteries~Interstate Batteries~Joe Gibbs Racing~Chevrolet~83~95~90~89~81~74~100~39~1~19~89~149~330~7~92~89~91~94~97~Full Time~
-55~Jeff Fultz~Jasper Engines & Transmissions~Jasper Engines & Transmissions~Harrah Racing~Ford~36~38~42~49~37~48~100~34~0~0~0~0~0~1~35~34~32~11~33~Part Time~
-77~Dave Blaney~Jasper Engines & Transmissions~Jasper Engines & Transmissions~Jasper Motorsports~Ford~68~68~67~69~70~62~100~40~0~0~0~13~111~2~71~68~72~73~68~Full Time~
+55~Jeff Fultz~Jasper Engine~Jasper Transmissions~Harrah Racing~Ford~36~38~42~49~37~48~100~34~0~0~0~0~0~1~35~34~32~11~33~Part Time~
+77~Dave Blaney~Jasper Engines~Jasper Transmissions~Jasper Motorsports~Ford~68~68~67~69~70~62~100~40~0~0~0~13~111~2~71~68~72~73~68~Full Time~
 5~Terry Labonte~Kellogg's~Kellogg's~Hendrick Motorsports~Chevrolet~78~79~78~82~80~69~93~46~2~21~177~344~744~1~80~76~78~96~87~Full Time~
 07~Ted Musgrave~Kenwood~Kenwood~Ultra Motorsports~Dodge~52~53~58~56~53~67~100~47~0~0~20~55~304~1~54~56~54~71~51~Part Time~
 66~Hideo Fukuyama~Kikkoman~Kikkoman~BelCar Motorsports~Ford~38~42~44~43~59~52~100~47~0~0~0~0~2~1~43~56~42~65~34~Part Time~
@@ -385,7 +385,7 @@ Stanton Barrett~30~68~68~68~64~66~0~0~0~0~0~0~
 Coy Gibbs~30~67~65~64~66~63~0~0~0~0~0~0~
 Jennifer Jo Cobb~30~57~59~56~57~57~0~0~0~0~0~0~
 Joey McCarthy~30~56~56~53~54~57~0~0~0~0~0~0~
-Joey Clanton~30~35~33~33~36~36~0~0~0~0~0~0~
+Joey Clanton~30~65~53~53~56~56~0~0~0~0~0~0~
 Ashton Lewis, Jr.~31~71~70~71~75~72~0~0~0~0~0~0~
 Patrick Carpentier~31~68~72~65~72~65~0~0~0~0~0~0~
 Chris Cook~31~65~61~66~61~66~0~0~0~0~0~0~
@@ -677,7 +677,7 @@ Year~#~Team~Manufacturer~Sponsor~Sponsor2~Engine~Chassis~Aero~Pit Crew~Schedule~
 2191~91~Ocean Point Racing~Chevrolet~Ocean Point Charters~Ocean Point Charters~82~80~80~80~Full Time~80~
 2193~93~Papyrus Racing~Toyota~Papyrus Racing Games~Papyrus Racing Games~80~82~80~80~Full Time~80~
 2200~69~what are you doing here~Toyota~Papyrus Racing Games~Papyrus Racing Games~80~82~80~80~Full Time~80~
-Sponsor~~
+Sponsors~
 1-800-4-Autism~
 31-W Insulation~
 3M~

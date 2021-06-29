@@ -105,6 +105,12 @@ p.standings {
   color: white;
 }
 
+p.standings2 {
+  font-size: .65em;
+  text-align: left;
+  color: white;
+}
+
 .content::after {
   display: flex;
   border: 5px solid #555;

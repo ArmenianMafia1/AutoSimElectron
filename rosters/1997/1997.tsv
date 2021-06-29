@@ -32,7 +32,7 @@
 42~Joe Nemechek~BellSouth~BellSouth~SABCO Racing~Chevrolet~76~77~79~74~75~88~100~33~0~1~1~7~130~2~75~72~73~72~82~Full Time~
 43~Bobby Hamilton~STP~STP~Petty Enterprises~Pontiac~72~75~72~81~73~79~100~40~0~3~36~55~310~1~74~70~72~68~67~Full Time~
 44~Kyle Petty~Hot Wheels~Hot Wheels~PE2~Pontiac~72~71~70~75~67~68~100~38~0~8~51~168~645~6~67~62~63~63~66~Full Time~
-46~Wally Dallenbach, Jr.~BellSouth~BellSouth~SABCO Racing~Dodge~65~65~65~65~65~65~100~38~0~0~0~0~7~1~55~55~55~55~38~Part Time~
+46~Wally Dallenbach, Jr.~BellSouth~BellSouth~SABCO Racing~Chevrolet~65~65~65~65~65~65~100~38~0~0~0~0~7~1~55~55~55~55~38~Part Time~
 71~Dave Marcis~Realtree~Realtree~Marcis Auto Racing~Chevrolet~77~61~55~56~51~90~100~56~0~5~94~222~800~1~72~65~64~64~44~Full Time~
 77~Robert Pressley~Jasper Engines & Transmissions~Jasper Engines & Transmissions~Jasper Motorsports~Ford~68~68~67~69~70~62~100~40~0~0~0~13~111~2~71~68~72~73~68~Full Time~
 81~Kenny Wallace~Square D~Square D~FILMAR Racing~Chevrolet~66~63~64~65~60~73~100~33~0~0~0~0~0~1~56~52~60~56~62~Part Time~
@@ -372,7 +372,7 @@ Jason Hedlesky~23~52~44~49~50~54~48~0~0~0~0~0~0
 David Keith~23~46~38~48~46~45~44~0~0~0~0~0~0
 L.W. Miller~23~8~0~5~4~12~5~0~0~0~0~0~0
 Gus Wasson~23~2~-6~-1~2~6~1~0~0~0~0~0~0
-Dario Franchitti~24~62~54~64~63~60~65~0~0~0~0~0~0
+Dario Franchitti~18~42~44~54~53~60~65~0~0~0~0~0~0
 Stanton Barrett~24~60~52~63~63~64~58~0~0~0~0~0~0
 Coy Gibbs~24~59~51~62~63~61~56~0~0~0~0~0~0
 Jennifer Jo Cobb~24~49~41~46~46~52~46~0~0~0~0~0~0
@@ -493,7 +493,6 @@ Year~#~Team~Manufacturer~Sponsor~Sponsor2~Engine~Chassis~Aero~Pit Crew~Schedule~
 1999~02~Penske Racing~Ford~Mobil 1~Mobil 1~82~82~82~82~Full Time~40~
 1999~12~Penske Racing~Ford~Mobil 1~Mobil 1~80~78~80~78~Full Time~75~
 1999~17~Roush Racing~Ford~DeWalt Tools~DeWalt Tools~83~83~83~83~Full Time~82~
-1999~69~Team Tabasco~Pontiac~Tabasco Sauce~Tabasco Sauce~59~57~59~59~Part Time~5~
 2000~8~Dale Earnhardt, Inc.~Chevrolet~Budweiser~Budweiser~80~80~80~80~Full Time~99~
 2000~15~Dale Earnhardt, Inc.~Chevrolet~NAPA~NAPA~80~72~72~72~Full Time~80~
 2001~9~Evernham Motorsports~Dodge~Dodge Dealers~Dodge Dealers~88~88~88~88~Full Time~100~
