@@ -2,6 +2,8 @@ body {
   background-color: #00008b;
   margin-top: 0.5em;
   font-family: Helvetica, Arial, sans-serif;
+  margin: auto;
+  text-align: center;
 }
 
 
@@ -16,11 +18,28 @@ p {
   text-align: left;
 }
 
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 form h1 {
   text-align: center;
   font-size: 1.5em;
   font-weight: bold;
   color: white;
+}
+
+#gamemode {
+  text-align: center;
+  margin: auto;
+  border-bottom: 1.5em;
+}
+
+upload input {
+  text-align: center;
 }
 
 form p {
@@ -136,4 +155,8 @@ h3 {
 
 table, th, td {
   border: 1px solid black;
+}
+
+.block {
+  width: 250%;
 }

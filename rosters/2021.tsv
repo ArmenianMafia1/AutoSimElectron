@@ -18,7 +18,7 @@
 24~William Byron~Axalta~Liberty University~Hendrick Motorsports~Chevy~82~82~80~78~74~60~90~22~0~3~16~30~156~2~86~86~84~82~86~Full Time~
 48~Alex Bowman~Ally~Ally~Hendrick Motorsports~Chevy~82~86~81~83~80~70~90~27~0~3~10~25~95~1~83~83~86~86~83~Full Time~
 5~Kyle Larson~HendrickCars.com~Valvoline~Hendrick Motorsports~Chevy~87~99~99~99~85~99~90~30~0~7~55~98~219~2~95~93~95~88~90~Full Time~
-2~Brad Keselowski~Discount Tire~Miller Lite~Team Penske~Ford~98~95~93~95~90~70~90~35~0~33~115~189~366~1~93~94~93~89~93~Full Time~
+2~Brad Keselowski~Discount Tire~Miller Lite~Team Penske~Ford~98~95~93~95~90~70~90~35~1~33~115~189~366~1~93~94~93~89~93~Full Time~
 12~Ryan Blaney~Menards~Body Armor~Team Penske~Ford~96~91~90~88~88~85~90~26~0~5~28~60~96~4~87~94~89~92~87~Full Time~
 22~Joey Logano~Pennzoil~AAA~Team Penske~Ford~88~93~92~89~89~85~90~29~1~30~101~181~472~3~93~94~90~92~93~Full Time~
 4~Kevin Harvick~Busch~Jimmy John's~Stewart-Haas Racing~Ford~90~99~95~92~91~85~90~44~1~49~209~368~550~2~90~86~87~89~97~Full Time~
@@ -333,7 +333,7 @@ Year~#~Team~Manufacturer~Sponsor~Sponsor2~Engine~Chassis~Aero~Pit Crew~Schedule~
 2191~6~Ocean Point Racing~Chevrolet~Ocean Point Charters~Ocean Point Charters~82~80~80~80~Full Time~80~
 2193~93~Papyrus Racing~Toyota~Papyrus Racing Games~Papyrus Racing Games~80~82~80~80~Full Time~80~
 2200~69~what are you doing here~Toyota~Papyrus Racing Games~Papyrus Racing Games~80~82~80~80~Full Time~80~
-Sponsor~~
+Sponsors~
 1-800-4-Autism~
 31-W Insulation~
 3M~

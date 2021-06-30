@@ -12,18 +12,24 @@
 </head>
 <body>
   <h1>AutoSim Electron Alpha</h1>
-  <p>Welcome to your Electron application.</p>
 
   <div id = "uploads">
-
+      <img src="../images/logo_250.png">
+    <h1>Upload Roster File Below | Click Start Game When Uploaded</h1>
    <input type="file" name="file" id="gamemode" value="Upload game.tsv Here">
-
+      <script>
+          function TestsFunction() {
+              var T = document.getElementById("play-area");
+              T.style.display = "block";  // <-- Set it to block
+          }
+      </script>
+    <button onclick="TestsFunction()">Start Game!</button>
   </div>
 
       <form id="gameform">
         <fieldset>
 
-          <div id="play-area"></div>
+          <div id="play-area"  style="display:none"></div>
 
         </fieldset>
     </form>
