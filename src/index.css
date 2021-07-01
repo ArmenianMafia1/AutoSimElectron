@@ -130,6 +130,10 @@ p.standings2 {
   color: white;
 }
 
+h3.white {
+  color: white;
+}
+
 .content::after {
   display: flex;
   border: 5px solid #555;
