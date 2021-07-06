@@ -95,6 +95,7 @@ function autosim() {
             this.newTeams = new Array();
             this.sponsorlist = new Array();
             this.retired = new Array();
+            this.database = new Array();
             this.filtered = new Array();
             this.manulist = new Array();
 
@@ -1187,6 +1188,7 @@ function autosim() {
 
 
 
+            game.database = [];
 
             for (var i = 0; i < game.carlist.length; i++) {
 
@@ -1276,6 +1278,38 @@ function autosim() {
 
                 }
 
+
+
+                if(car.driver.careerWins > 20 && car.driver.age > 37 && !containsObject(car.driver.name, game.database)) {
+
+                    var notFoundName = true;
+
+                    for (var c1 = 0; c1 < game.carlist.length ; c1++) {
+                        var car1 = game.carlist[c1];
+                        var splitTeam = car1.organization.name.split(' ');
+                        console.log("checking ", car1.organization.name, car.driver.name, splitTeam[splitTeam.length-2])
+
+                        console.log("split team", splitTeam);
+                        if(car.driver.name.includes(splitTeam[splitTeam.length-2])) {
+                            notFoundName = false;
+                            break;
+                        }
+
+
+                    }
+
+                    if(notFoundName) {
+                        game.database.push(car.driver.name)
+                        console.log("added gd", car.driver.name)
+                    }
+
+                }
+
+                console.log("game database", game.database);
+
+
+
+
                 var retiredAge = [47,48,49,50,50,51,52,53,54,55,56];
 
                 var odds = Math.floor(Math.random() * retiredAge.length);
@@ -1295,6 +1329,8 @@ function autosim() {
                         + car.driver.careerRaces + "<br>"
 
                     retiredString += retiredString2;
+
+
 
                     car.driver = new Driver("N/A");
                 }
@@ -1712,7 +1748,7 @@ function autosim() {
             var sodds = Math.floor(Math.random() * game.sponsorlist.length);
 
 
-            if (game.sponsorlist[sodds] != "undefined" || (!(game.sponsorlist[sodds].includes(".com")) && (game.year < 2002)) ) {
+            if (game.sponsorlist[sodds] != "undefined" || (!(game.sponsorlist[sodds].includes(".com")) && !(game.sponsorlist[sodds].includes("Coin")) && !(game.sponsorlist[sodds].includes("Youtube"))  && (game.year < 2002)) ) {
                 game.carlist[gameodds].sponsor1 = game.sponsorlist[sodds]
                 retiredString2 = "#" + game.carlist[gameodds].number + " " + game.carlist[gameodds].organization.name + " has a new primary sponsor: " + game.carlist[gameodds].sponsor1 + "!<br>";
                 retiredString += retiredString2;
@@ -1729,806 +1765,62 @@ function autosim() {
                 retiredString += retiredString2;
             }
 
+            var teamOdds2 = Math.floor(Math.random() * 100);
+
+            console.log("team odds 2",  teamOdds2);
+
+            if(game.database.length > 0 && teamOdds2 < 32) {
+
+                var oddsD = Math.floor(Math.random() * game.database.length);
+                var oddsO = Math.floor(Math.random() * game.carlist.length);
+
+                var lastName = game.database[oddsD].split(' ');
+
+                var teamName = ["Racing", "Motorsports", "Racing", "Motorsports", "Racing", "Motorsports", "Inc.", "Enterprises"]
+
+                var teamChoice = teamName[Math.floor(Math.random() * teamName.length)];
+
+                var teamOdds = Math.floor(Math.random() * 100);
+
+                var newTeamName = lastName[1] + " " + teamChoice;
+
+                if(teamOdds < 40) {
+                    newTeamName = lastName[0] + " " + lastName[1] + " " + teamChoice;
+                }
+                else {
+                    if(teamOdds < 80) {
+                        var team1 = game.carlist[oddsO].organization.name.split(' ');
+                        newTeamName = lastName[1] + "-" + team1[team1.length-2] + " " + teamChoice;
+                    }
+
+                }
+
+
+
+                console.log("last name is", lastName)
+                if(game.carlist[oddsO].engine < 90) {
+                    var retiredString2 = game.database[oddsD] + " has bought out " + game.carlist[oddsO].organization.name + "!<br>" +
+                        "The team will now be known as " + newTeamName + "</br>";
+
+
+                    retiredString += retiredString2;
+
+
+                    for (var a = 0; a < game.carlist.length; a++) {
+                            if (game.carlist[a].organization.name == game.carlist[oddsO].organization.name) {
+                                game.carlist[a].organization.name = newTeamName;
+                                game.carlist[a].organization.manufacture = game.carlist[oddsO].organization.manufacture;
+
+                            }
+                        }
+                    }
+                }
+
+
             console.log(game.carlist);
-            console.log("manu list!", game.manulist);
-            console.log("org list!", game.orglist);
+
             console.log(game.retired);
             return retiredString;
-        }
-
-        runRace_Old() {
-
-
-
-            document.getElementById('uploads').innerHTML = "";
-
-
-
-            var carlist2 = [...this.carlist];
-
-            var elite = Array();
-            var great = Array();
-            var good = Array();
-            var average = Array();
-            var backup = Array()
-
-            var carlist3 = Array();
-            var points = 180;
-            var points2011 = 43;
-
-
-            console.log("game run races", game.numRaces);
-
-
-
-
-            for (var line = 0; line < game.carlist.length; line++) {
-                game.carlist[line].driver.formula = game.carlist[line].driver.points + (game.carlist[line].driver.races * 24) + (game.carlist[line].driver.topTens * 11) + (game.carlist[line].driver.careerTopTens * 6) + (game.carlist[line].driver.wins * 35) + (game.carlist[line].driver.careerWins * 20) +  (game.carlist[line].driver.careerTopFives * 8) + (game.carlist[line].engine * 9) + (game.carlist[line].chassis * 8) + (game.carlist[line].prestige * 8)
-                if (game.carlist[line].driver.age > 43 && game.carlist[line].driver.wins < 15) {
-                    game.carlist[line].driver.formula = game.carlist[line].driver.formula / 4
-                }
-
-                if (game.carlist[line].sponsor1 == "random") {
-                    var odds = Math.floor(Math.random() * game.sponsorlist.length);
-                    game.carlist[line].sponsor1 = game.sponsorlist[odds];
-                }
-                if (game.carlist[line].sponsor1 == "undefined") {
-                    var odds = Math.floor(Math.random() * game.sponsorlist.length);
-                    game.carlist[line].sponsor1 = game.sponsorlist[odds];
-                }
-                if (game.carlist[line].sponsor2 == "random") {
-                    var odds = Math.floor(Math.random() * game.sponsorlist.length);
-                    game.carlist[line].sponsor2 = game.sponsorlist[odds];
-                }
-                if (game.carlist[line].sponsor2 == "undefined") {
-                    var odds = Math.floor(Math.random() * game.sponsorlist.length);
-                    game.carlist[line].sponsor2 = game.sponsorlist[odds];
-                }
-            }
-
-            console.log("game week -1!!!!!! ", game.schedule[game.week-1])
-            if (game.schedule[game.week - 1].trackType == "Superspeedway") {
-
-                var luck = [86,84,83,82,80,78,76]
-                var luckOdds = Math.floor(Math.random() * luck.length);
-
-                for (var line = 0; line < carlist2.length; line++) {
-                    //console.log("did it the normal way");
-                    // console.log((carlist2[line].engine + carlist2[line].chassis + carlist2[line].driver.intermediate + carlist2[line].driver.flat) / 4 );
-
-                    var odds = Math.floor(Math.random() * 100);
-
-
-                    var car = carlist2[line];
-
-                    if (carlist2[line].status == "Part Time" && carlist2[line].driver.races > 15) {
-                        if (odds > 60 && !containsObject(car, average)) {
-                            average.push(carlist2[line]);
-                        }
-                    } else {
-                        if ((game.week > 3 && game.week < 8 && carlist2[line].driver.wins > 0 && carlist2[line].driver.age < 42 ) || (game.week > 24 && game.week < 31 && carlist2[line].driver.wins > 2 && carlist2[line].driver.age < 44) || (game.week > 28 && game.week < 33 && (carlist2[line].driver.wins > 3 && carlist2[line].driver.wins < 10))) {
-                            if (odds > 10) {
-                                elite.push(carlist2[line]);
-                            }
-                            else {
-                                good.push(carlist2[line]);
-                            }
-                        }
-                        else {
-                            if (carlist2[line].driver.topTens > 18 && game.week > 21 && game.week < 27) {
-                                if (odds > 60) {
-                                    great.push(carlist2[line]);
-                                } else {
-                                    good.push(carlist2[line]);
-                                }
-
-                            } else {
-                                if (game.week > 20 && game.week < 32 && carlist2[line].driver.topTens < 11 && carlist2[line].races + 2 > game.week) {
-                                    if (odds > 44) {
-                                        great.push(carlist2[line]);
-                                    } else {
-                                        if (odds > 34) {
-                                            elite.push(carlist2[line]);
-                                        } else {
-                                            good.push(carlist2[line]);
-                                        }
-
-                                    }
-                                }
-                                else {
-                                    if (((carlist2[line].engine + carlist2[line].aero + carlist2[line].driver.superspeedway) / 3) > luck[luckOdds] && !containsObject(car, elite)) {
-
-                                        if(odds > 20) {
-                                            elite.push(carlist2[line]);
-                                        }
-                                        else {
-                                            great.push(carlist2[line]);
-                                        }
-
-
-                                    } else if (((carlist2[line].engine + carlist2[line].aero + carlist2[line].driver.superspeedway) / 3) > luck[luckOdds]-7 && !containsObject(car, great)) {
-                                        if (odds > 25) {
-                                            great.push(carlist2[line]);
-                                        } else {
-                                            elite.push(carlist2[line]);
-                                        }
-                                    } else if (((carlist2[line].engine + carlist2[line].aero + carlist2[line].driver.superspeedway) / 3) > luck[luckOdds]-12 && !containsObject(car, good)) {
-                                        good.push(carlist2[line]);
-                                    } else {
-                                        if (!containsObject(car, average)) {
-                                            if (odds > 35) {
-                                                average.push(carlist2[line]);
-                                            } else {
-                                                good.push(carlist2[line]);
-                                            }
-                                        }
-
-                                    }
-                                }
-
-                            }
-                        }
-
-                    }
-
-
-                }
-            }else if (game.schedule[game.week - 1].trackType == "Short Track") {
-
-                var arraychances = [90, 88, 86, 83, 82, 81, 80]
-                if (game.year < 2015) {
-                    arraychances = [84, 83, 82, 81, 80, 78, 76, 75, 74]
-                }
-
-
-                var odds = Math.floor(Math.random() * arraychances.length);
-
-                for (var line = 0; line < carlist2.length; line++) {
-                    //
-                    // console.log("did it the short way");
-                    if (((carlist2[line].aero + carlist2[line].engine + carlist2[line].driver.shortTrack) / 3) > arraychances[odds] || (game.week > 3 && game.week < 8 && carlist2[line].driver.wins > 0) || (game.week > 24 && game.week < 33 && carlist2[line].driver.wins > 2)) {
-                        if(odds > 20) {
-                            elite.push(carlist2[line]);
-                        }
-                        else {
-                            great.push(carlist2[line]);
-                        }
-
-
-                    } else {
-                        if (((carlist2[line].aero + carlist2[line].engine +  carlist2[line].driver.shortTrack) / 3) > arraychances[odds] - 5) {
-
-
-                            great.push(carlist2[line]);
-                        } else {
-                            if (((carlist2[line].aero + carlist2[line].engine +  carlist2[line].driver.shortTrack) / 3) > arraychances[odds] - 9) {
-
-
-                                good.push(carlist2[line]);
-                            } else {
-                                average.push(carlist2[line]);
-                            }
-
-                        }
-
-                    }
-                }
-            } else if (game.schedule[game.week - 1].trackType == "Road Course") {
-
-                for (var line = 0; line < carlist2.length; line++) {
-
-
-                    if (((carlist2[line].chassis + carlist2[line].engine + carlist2[line].driver.roadCourse +
-                        carlist2[line].driver.roadCourse + carlist2[line].driver.roadCourse) / 5) > 82) {
-
-                        elite.push(carlist2[line]);
-                    } else {
-                        if (((carlist2[line].chassis + carlist2[line].engine + carlist2[line].driver.roadCourse +
-                            carlist2[line].driver.roadCourse + carlist2[line].driver.roadCourse) / 5) > 75) {
-
-                            great.push(carlist2[line]);
-                        } else {
-                            good.push(carlist2[line]);
-                        }
-
-                    }
-                }
-            } else {
-                for (var line = 0; line < carlist2.length; line++) {
-                    //console.log("did it the normal way");
-                    // console.log((carlist2[line].engine + carlist2[line].chassis + carlist2[line].driver.intermediate + carlist2[line].driver.flat) / 4 );
-
-                    var odds = Math.floor(Math.random() * 100);
-
-
-                    var car = carlist2[line];
-
-                    if (carlist2[line].status == "Part Time" && carlist2[line].driver.races > 15) {
-                        if (odds > 60 && !containsObject(car, average)) {
-                            average.push(carlist2[line]);
-                        }
-                    } else {
-                        if(game.week > 5 && game.week < 8 && carlist2[line].driver.topTens < 3 && carlist2[line].driver.intermediate > 69 && carlist2[line].status == "Full Time"){
-                            if (odds > 40) {
-                                elite.push(carlist2[line]);
-                            }
-                            else {
-                                good.push(carlist2[line]);
-                            }
-                        }
-                        else {
-                            if ((game.week > 3 && game.week < 8 && carlist2[line].driver.wins > 0 && carlist2[line].driver.age < 42 ) || (game.week > 24 && game.week < 31 && carlist2[line].driver.wins > 2 && carlist2[line].driver.age < 44) || (game.week > 28 && game.week < 33 && (carlist2[line].driver.wins > 3 && carlist2[line].driver.wins < 10))) {
-                                if (odds > 10) {
-                                    elite.push(carlist2[line]);
-                                }
-                                else {
-                                    good.push(carlist2[line]);
-                                }
-                            }
-                            else {
-                                if (carlist2[line].driver.topTens > 18 && game.week > 21 && game.week < 27 || (carlist2[line].driver.topTens < 10 && carlist2[line].driver.topTens > 2)  && game.week > 21 && game.week < 27) {
-                                    if (odds > 60) {
-                                        great.push(carlist2[line]);
-                                    } else {
-                                        good.push(carlist2[line]);
-                                    }
-
-                                } else {
-                                    if (game.week > 20 && game.week < 32 && carlist2[line].driver.topTens < 11 && carlist2[line].races + 2 > game.week) {
-                                        if (odds > 44 || carlist2[line].driver.topTens < 11 && carlist2[line].races + 4 > game.week ) {
-                                            great.push(carlist2[line]);
-                                        } else {
-                                            if (odds > 34) {
-                                                elite.push(carlist2[line]);
-                                            } else {
-                                                good.push(carlist2[line]);
-                                            }
-
-                                        }
-                                    }
-                                    else {
-                                        if (((carlist2[line].engine + carlist2[line].chassis + carlist2[line].driver.intermediate) / 3) > 88 && !containsObject(car, elite)) {
-                                            elite.push(carlist2[line]);
-                                        } else if (((carlist2[line].engine + carlist2[line].chassis + carlist2[line].driver.intermediate) / 3) > 78 && !containsObject(car, great)) {
-                                            great.push(carlist2[line]);
-                                        } else if (((carlist2[line].engine + carlist2[line].chassis + carlist2[line].driver.intermediate) / 3) > 70 && !containsObject(car, good)) {
-                                            good.push(carlist2[line]);
-                                        } else {
-                                            if (!containsObject(car, average)) {
-                                                average.push(carlist2[line]);
-                                            }
-
-                                        }
-                                    }
-
-                                }
-                            }
-
-                        }
-
-                    }
-
-
-                }
-            }
-
-            var array3 = game.returnTopCars();
-
-            for (line = 0; line < array3.length; line++) {
-                var odds1 = Math.floor(Math.random() * 100);
-                if (array3[line].status != "Part Time" || game.schedule[game.week - 1].trackType == "Superspeedway") {
-                    backup.push(array3[line]);
-                } else {
-                    if (odds1 < 60) {
-                        backup.push(array3[line]);
-                    }
-                }
-
-            }
-
-
-
-
-            if (game.week > 5) {
-
-                console.log("elite great1", [...elite], [...great], [...good],[...average]);
-
-
-                var val1 = game.carsInRace - 8;
-
-                if (game.year > 2015) {
-                    val1 = game.carsInRace - 3;
-                }
-
-                for (var line = 0; line < val1; line++) {
-
-                    var car = new Car();
-
-                    var driver = new Driver("first last");
-
-                    var odds = Math.floor(Math.random() * 100);
-
-
-                    if (elite.length > 0) {
-                        var index = Math.floor(Math.random() * elite.length);
-                        carlist3.push(elite[index]);
-                        car = elite[index];
-                        driver = elite[index].driver;
-                        elite.splice(index, 1); // Remove the item from the array
-                    } else {
-                        if (great.length > 0) {
-                            var index = Math.floor(Math.random() * great.length);
-                            carlist3.push(great[index]);
-                            car = great[index];
-                            driver = great[index].driver;
-                            great.splice(index, 1); // Remove the item from the array
-                        } else {
-                            if (good.length > 0) {
-                                var index = Math.floor(Math.random() * good.length);
-                                carlist3.push(good[index]);
-                                car = good[index];
-                                driver = good[index].driver;
-                                good.splice(index, 1); // Remove the item from the array
-                            } else {
-                                if (average.length > 0) {
-                                    var index = Math.floor(Math.random() * average.length);
-                                    carlist3.push(average[index]);
-                                    car = average[index];
-                                    driver = average[index].driver;
-                                    average.splice(index, 1); // Remove the item from the array
-                                }
-                            }
-                        }
-                    }
-
-
-                    if (line == 0) {
-                        if (driver.careerWins < 8 && driver.age < 40) {
-                            driver.intermediate += 4;
-                            driver.superspeedway += 4;
-                            driver.flat += 4;
-                            driver.shortTrack += 4;
-                            driver.roadCourse += 4;
-
-                        }
-
-
-
-                        driver.wins += 1;
-                        driver.careerWins += 1;
-                        driver.topFives += 1;
-                        driver.careerTopFives += 1;
-                        driver.topTens += 1;
-
-                        driver.careerTopTens += 1;
-
-                        var winningStr = "#" + car.number + " " + driver.name + " | " + car.organization.name + " | Win #: " + driver.wins;
-                        game.schedule[this.week - 1].raceWinner = winningStr;
-
-                        if (game.week-1 == 0) {
-                            var str1 = game.year + ' | ' + car.number + ' ' + car.driver.name
-                                + ' | Primary Sponsor: ' + car.sponsor1
-                                + ' | Team: ' + car.organization.name
-                                + ' | Make: ' + car.organization.manufacture + '<br>';
-                            html += str1;
-
-
-                            game.daytona.push(str1)
-                        }
-
-
-
-                    }
-
-                    if (line > 0 && line < 5) {
-                        driver.topFives += 1;
-                        driver.careerTopFives += 1;
-                        driver.topTens += 1;
-                        driver.careerTopTens += 1;
-                    }
-
-                    if (line > 4 && line < 10) {
-                        driver.topTens += 1;
-                        driver.careerTopTens += 1;
-                    }
-
-                    if (line < 5 && (car.engine < 90 || car.aero < 90)) {
-                        car.engine += 4;
-                        car.chassis += 4;
-                        car.aero += 4;
-                        car.pitCrew += 4;
-                    }
-
-                    if (line < 28 && (car.engine < 70 || car.aero < 74)) {
-                        car.engine += 4;
-                        car.chassis += 4;
-                        car.aero += 4;
-                        car.pitCrew += 4;
-                    }
-
-
-                    driver.races += 1
-                    driver.careerRaces += 1;
-
-                    if(game.points > 2010) {
-                        driver.points += points2011;
-                        if (line == 0) {
-                            if(game.points > 2013 && game.week > game.schedule.length - 10 && driver.points > 1500) {
-                                driver.points += 1000;
-                            }
-                            driver.points += 3;
-                        }
-                        points2011 -= 1;
-
-                    }
-                    else {
-                        driver.points += points;
-                    }
-
-
-                    if (points > 150) {
-                        points -= 5;
-                    } else {
-                        points -= 3;
-                    }
-
-
-                }
-
-                var idx = 0;
-
-                for (line; line <= game.carsInRace - 1; line++) {
-
-                    var driver = new Driver("first last");
-
-                    var notFound = true;
-
-                    var filteredArray = backup.filter(function (x) {
-                        return carlist3.indexOf(x) < 0;
-                    });
-
-                    console.log("filtered array", filteredArray);
-
-                    var randIdx = Math.floor(Math.random() * filteredArray.length);
-
-                    if (line < game.carsInRace - 2) {
-                        if (filteredArray[randIdx]) {
-                            carlist3.push(filteredArray[idx])
-                            var driver = filteredArray[idx].driver;
-                        }
-                    } else {
-                        if (filteredArray[randIdx]) {
-                            var driver = filteredArray[randIdx].driver;
-                            carlist3.push(filteredArray[randIdx])
-                        }
-
-                    }
-
-
-                    driver.races += 1
-                    driver.careerRaces += 1;
-                    console.log("points!!!", game.points)
-                    if(game.points > 2010) {
-                        driver.points += points2011;
-                        if (line == 0) {
-                            if(game.points > 2013 && game.week > game.schedule.length - 10) {
-                                driver.points += 300;
-                            }
-                            driver.points += 3;
-                        }
-                        points2011 -= 1;
-
-                    }
-                    else {
-                        driver.points += points;
-                    }
-
-                    if (points > 150) {
-                        points -= 5;
-                    } else {
-                        points -= 3;
-                    }
-
-
-
-                    notFound = true;
-
-
-                }
-
-            } else {
-
-                console.log("elite great1", [...elite], [...great], [...good],[...average]);
-
-                var val1 = game.carsInRace - 8;
-
-                if (game.year > 2015) {
-                    val1 = game.carsInRace - 3;
-                }
-
-                for (var line = 0; line < val1; line++) {
-
-                    var car = new Car();
-
-                    var driver = new Driver("first last");
-
-                    var odds = Math.floor(Math.random() * 100);
-
-                    if (elite.length > 0) {
-                        var index = Math.floor(Math.random() * elite.length);
-                        carlist3.push(elite[index]);
-                        car = elite[index];
-                        driver = elite[index].driver;
-                        elite.splice(index, 1); // Remove the item from the array
-                    } else {
-                        if (great.length > 0) {
-                            var index = Math.floor(Math.random() * great.length);
-                            carlist3.push(great[index]);
-                            car = great[index];
-                            driver = great[index].driver;
-                            great.splice(index, 1); // Remove the item from the array
-                        } else {
-                            if (good.length > 0) {
-                                var index = Math.floor(Math.random() * good.length);
-                                carlist3.push(good[index]);
-                                car = good[index];
-                                driver = good[index].driver;
-                                good.splice(index, 1); // Remove the item from the array
-                            } else {
-                                if (average.length > 0) {
-                                    var index = Math.floor(Math.random() * average.length);
-                                    carlist3.push(average[index]);
-                                    car = average[index];
-                                    driver = average[index].driver;
-                                    average.splice(index, 1); // Remove the item from the array
-                                }
-                            }
-                        }
-                    }
-
-
-                    if (line == 0) {
-                        if (driver.careerWins < 8 && driver.age < 40) {
-                            driver.intermediate += 4;
-                            driver.superspeedway += 4;
-                            driver.flat += 4;
-                            driver.shortTrack += 4;
-                            driver.roadCourse += 4;
-
-                        }
-
-
-
-                        driver.wins += 1;
-                        driver.careerWins += 1;
-                        driver.topFives += 1;
-                        driver.careerTopFives += 1;
-                        driver.topTens += 1;
-                        driver.careerTopTens += 1;
-
-                        var winningStr = "#" + car.number + " " + driver.name + " | " + car.organization.name + " | Win #: " + driver.wins;
-                        game.schedule[this.week - 1].raceWinner = winningStr;
-
-                        if (game.week-1 ==0) {
-                            var str1 = game.year + ' | ' + car.number + ' ' + car.driver.name
-                                + ' | Primary Sponsor: ' + car.sponsor1
-                                + ' | Team: ' + car.organization.name
-                                + ' | Make: ' + car.organization.manufacture + '<br>';
-                            html += str1;
-
-
-                            game.daytona.push(str1)
-                        }
-                    }
-
-                    if (line > 0 && line < 5) {
-                        driver.topFives += 1;
-                        driver.careerTopFives += 1;
-                        driver.topTens += 1;
-                        driver.careerTopTens += 1;
-                    }
-
-                    if (line > 4 && line < 10) {
-                        driver.topTens += 1;
-                        driver.careerTopTens += 1;
-                    }
-
-                    if (line < 5 && (car.engine < 90 || car.aero < 90)) {
-                        car.engine += 4;
-                        car.chassis += 4;
-                        car.aero += 4;
-                        car.pitCrew += 4;
-                    }
-
-                    if (line < 28 && (car.engine < 70 || car.aero < 74)) {
-                        car.engine += 4;
-                        car.chassis += 4;
-                        car.aero += 4;
-                        car.pitCrew += 4;
-                    }
-
-
-                    driver.races += 1
-                    driver.careerRaces += 1;
-
-                    if(game.points > 2010) {
-                        driver.points += points2011;
-                        if (line == 0) {
-                            if(game.points > 2013 && game.week > game.schedule.length - 10 && driver.points > 1500) {
-                                driver.points += 1000;
-                            }
-                            driver.points += 3;
-                        }
-                        points2011 -= 1;
-
-                    }
-                    else {
-                        driver.points += points;
-                    }
-
-
-                    if (points > 150) {
-                        points -= 5;
-                    } else {
-                        points -= 3;
-                    }
-
-
-                }
-
-                var idx = 0;
-
-                for (line; line <= game.carsInRace - 1; line++) {
-
-                    var driver = new Driver("first last");
-
-                    var notFound = true;
-
-                    var filteredArray = backup.filter(function (x) {
-                        return carlist3.indexOf(x) < 0;
-                    });
-
-                    console.log("filtered array", filteredArray);
-
-                    var randIdx = Math.floor(Math.random() * filteredArray.length);
-
-                    if (line < game.carsInRace - 2) {
-                        if (filteredArray[randIdx]) {
-                            carlist3.push(filteredArray[idx])
-                            var driver = filteredArray[idx].driver;
-                        }
-                    } else {
-                        if (filteredArray[randIdx]) {
-                            var driver = filteredArray[randIdx].driver;
-                            carlist3.push(filteredArray[randIdx])
-                        }
-
-                    }
-
-
-                    driver.races += 1
-                    driver.careerRaces += 1;
-                    console.log("points!!!", game.points)
-                    if(game.points > 2010) {
-                        driver.points += points2011;
-                        if (line == 0) {
-                            if(game.points > 2013 && game.week > game.schedule.length - 10) {
-                                driver.points += 300;
-                            }
-                            driver.points += 3;
-                        }
-                        points2011 -= 1;
-
-                    }
-                    else {
-                        driver.points += points;
-                    }
-
-                    if (points > 150) {
-                        points -= 5;
-                    } else {
-                        points -= 3;
-                    }
-
-
-
-                    notFound = true;
-
-
-                }
-
-            }
-
-
-
-            if(game.points > 2003 && game.points < 2014 && game.week == game.schedule.length - 10) {
-                console.log("display points", game.displayStandings())
-                var st =  game.displayStandings();
-                for (var i1 = 0; i1 < 10; i1++) {
-
-                    st[i1].driver.points = 5000 + (st[i1].driver.wins * 5);
-                }
-            }
-
-            if(game.points > 2013) {
-                console.log("schedule!!!", game.schedule)
-
-                console.log("display points", game.calculatePoints())
-                var st = game.calculatePoints();
-                var activate = true;
-                if (game.week == game.schedule.length - 10) {
-                    console.log("sweet 16!!!!")
-                    var pts = game.calculatePoints();
-                    console.log("ST1 is", st);
-                    var ctr = 0;
-                    for (var i1 = 0; i1 < 16; i1++) {
-
-                        if(pts[0][i1]) {
-                            st = pts[0];
-                        } else {
-                            st = pts[1];
-                            if(activate) {
-                                ctr = 0;
-                                activate = false;
-                            }
-
-
-                        }
-                        console.log("St is", st[i1]);
-                        st[ctr].driver.points = 2000 + (st[ctr].driver.wins * 5);
-                        /*if(ctr == 0) {
-                            st[ctr].driver.points += 15;
-                        }
-                        if(i1 == 1) {
-                            st[ctr].driver.points += 10;
-                        }
-                        if(i1 == 2) {
-                            st[ctr].driver.points += 5;
-                        }*/
-                        ctr +=1;
-
-
-
-
-                    }
-
-                }
-                if (game.week == game.schedule.length - 7) {
-                    console.log("sweet 12!!!!")
-                    var st = game.displayStandings();
-                    for (var i1 = 0; i1 < 12; i1++) {
-                        st[i1].driver.points = 3000;
-
-                    }
-
-                }
-                if (game.week == game.schedule.length - 4) {
-                    console.log("sweet 8!!!!")
-                    var st = game.displayStandings();
-                    for (var i1 = 0; i1 < 8; i1++) {
-                        st[i1].driver.points = 4000;
-                    }
-
-                }
-                if (game.week == game.schedule.length - 1) {
-                    console.log("sweet 4!!!!")
-                    var st = game.displayStandings();
-                    for (var i1 = 0; i1 < 4; i1++) {
-                        st[i1].driver.points = 5000;
-                    }
-
-                }
-            }
-
-            var filteredArray = backup.filter(function (x) {
-                return game.carlist.indexOf(x) < 0;
-            });
-
-
-            game.filtered = filteredArray;
-
-
-            return carlist3;
         }
 
         runRace() {
@@ -2933,26 +2225,62 @@ function autosim() {
                     driver.races += 1
                     driver.careerRaces += 1;
 
-                    if(game.points > 2010) {
-                        driver.points += points2011;
-                        if (line == 0) {
-                            if(game.points > 2013 && game.week > game.schedule.length - 10 && driver.points > 1500) {
-                                driver.points += 1000;
-                            }
-                            driver.points += 3;
+                    if(game.points == 0) {
+                        switch (line) {
+                            case 0:
+                                driver.points += 25;
+                                break;
+                            case 1:
+                                driver.points += 18;
+                                break;
+                            case 2:
+                                driver.points += 15;
+                                break;
+                            case 3:
+                                driver.points += 12;
+                                break;
+                            case 4:
+                                driver.points += 10;
+                                break;
+                            case 5:
+                                driver.points += 8;
+                                break;
+                            case 6:
+                                driver.points += 6;
+                                break;
+                            case 7:
+                                driver.points += 4;
+                                break;
+                            case 8:
+                                driver.points += 2;
+                                break;
+                            case 9:
+                                driver.points += 1;
                         }
-                        points2011 -= 1;
-
                     }
                     else {
-                        driver.points += points;
-                    }
+                        if(game.points > 2010) {
+                            driver.points += points2011;
+                            if (line == 0) {
+                                if(game.points > 2013 && game.week > game.schedule.length - 10 && driver.points > 1500) {
+                                    driver.points += 700;
+                                }
+                                driver.points += 3;
+                            }
+                            points2011 -= 1;
+
+                        }
+                        else {
+                            driver.points += points;
+                        }
 
 
-                    if (points > 150) {
-                        points -= 5;
-                    } else {
-                        points -= 3;
+                        if (points > 150) {
+                            points -= 5;
+                        } else {
+                            points -= 3;
+                        }
+
                     }
 
 
@@ -3558,6 +2886,14 @@ function autosim() {
 
                 event.preventDefault();
                 game.points = 2020;
+            }
+            document.getElementById("grand").onclick = function (event) {
+                var T = document.getElementById("game-changes2");
+                T.style.display = "block";  // <-- Set it to block
+                document.getElementById("game-changes2").innerHTML = "<h3 class='white'>Changed points system to the Grand Prix format!</h3>";
+
+                event.preventDefault();
+                game.points = 0;
             }
 
             /*

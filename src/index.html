@@ -11,19 +11,32 @@
   <title>AutoSim</title>
 </head>
 <body>
-  <h1>AutoSim Electron Alpha</h1>
+  <h1>AutoSim - Auto Racing Simulation</h1>
 
   <div id = "uploads">
       <img src="../images/logo_250.png">
+      <h1>by Sevag</h1>
     <h1>Upload Roster File Below | Click Start Game When Uploaded</h1>
    <input type="file" name="file" id="gamemode" value="Upload game.tsv Here">
+
       <script>
           function TestsFunction() {
               var T = document.getElementById("play-area");
               T.style.display = "block";  // <-- Set it to block
+              var j = document.getElementById("credits");
+              j.style.display = "none";
           }
       </script>
     <button onclick="TestsFunction()">Start Game!</button>
+      <div class="credits" id="credits">
+      <p>A Very Special Thank You to our Patreon Backers</p>
+      <h4>Featured Patrons:</h4>
+      <p>Alex Gray<br>CJ Louviere<br>Alexandre Daigle<br>Johnathon Carten<br>Killertoad<br>Alexander Czarnecki<br></p>
+      <h4>Official Patrons:</h4>
+      <p>Mia Marsden<br>Chris Hotaling<br></p>
+      <h4>Featured Partners:</h4>
+      <p>JoeTowNetwork</p>
+      </div>
   </div>
 
       <form id="gameform">
@@ -36,6 +49,7 @@
               <p><input type="submit" id = "original" name="guess" value="Original">
               <p><input type="submit" id = "chase" name="guess" value="Chase">
               <p><input type="submit" id = "playoffs" name="guess" value="Playoffs">
+              <p><input type="submit" id = "grand" name="guess" value="Grand Prix">
           </div>
         </fieldset>
 

@@ -1,5 +1,5 @@
 body {
-  background-color: #00008b;
+  background-color: #00000b;
   margin-top: 0.5em;
   font-family: Helvetica, Arial, sans-serif;
   margin: auto;
@@ -163,4 +163,14 @@ table, th, td {
 
 .block {
   width: 250%;
+}
+
+.credits p {
+  text-align: center;
+  color: white;
+}
+
+.credits h4 {
+  text-align: center;
+  color: white;
 }
