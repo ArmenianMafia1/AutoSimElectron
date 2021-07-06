@@ -590,21 +590,31 @@ function autosim() {
                 'Jimenez',
                 'Johns',
                 'Johnson',
+                'Johnson',
+                'Johnson',
+                'Johnson',
+                'Johnson',
+                'Johnson',
+                'Johnson',
                 'Johnston',
+                'Jones',
+                'Jones',
+                'Jones',
+                'Jones',
                 'Jones',
                 'Jordan',
                 'Joseph',
                 'Joyce',
                 'Joyner',
                 'Juarez',
-                'Justice',
+                'Keller',
                 'Kane',
                 'Kaufman',
                 'Keith',
                 'Keller',
                 'Kelley',
                 'Kelly',
-                'Kemp',
+                'Kennedy',
                 'Kennedy',
                 'Kent',
                 'Kerr',
@@ -657,9 +667,9 @@ function autosim() {
                 'Lott',
                 'Love',
                 'Lowe',
-                'Lowery',
+                'Larson',
                 'Lucas',
-                'Luna',
+                'Lucas',
                 'Lynch',
                 'Lynn',
                 'Lyons',
@@ -742,7 +752,7 @@ function autosim() {
                 'Mills',
                 'Miranda',
                 'Mitchell',
-                'Molina',
+                'Montgomery',
                 'Monroe',
                 'Montgomery',
                 'Montoya',
@@ -863,7 +873,7 @@ function autosim() {
                 'Randall',
                 'Randolph',
                 'Rasmussen',
-                'Ratliff',
+                'Richards',
                 'Ray',
                 'Raymond',
                 'Reed',
@@ -883,21 +893,21 @@ function autosim() {
                 'Riddle',
                 'Riggs',
                 'Riley',
-                'Rios',
-                'Rivas',
+                'Rivers',
+                'Rivers',
                 'Rivera',
                 'Rivers',
-                'Roach',
+                'Rivers',
                 'Robbins',
                 'Roberson',
                 'Roberts',
                 'Robertson',
                 'Robinson',
                 'Robles',
-                'Rocha',
+                'Robertson',
                 'Rodgers',
                 'Rodriguez',
-                'Rodriquez',
+                'Rodriguez',
                 'Rogers',
                 'Rojas',
                 'Rollins',
@@ -1194,7 +1204,7 @@ function autosim() {
 
                 var car = game.carlist[i];
 
-                if (game.year == 2004) {
+                if (game.year >= 2004) {
                     if (car.organization.manufacture == "Pontiac") {
                         car.organization.manufacture = "Chevrolet";
                     }
@@ -1624,6 +1634,12 @@ function autosim() {
 
                             }
 
+                            if (car.status == "Part Time" && car.engine > 65 && odds < 62) {
+                                retiredString2 = "The " + car.organization.name + " #" + car.number + " " + car.organization.manufacture + " will run full time this upcoming season!<br>";
+                                retiredString += retiredString2;
+                                car.status = "Full Time";
+                            }
+
 
                         }
 
@@ -1769,7 +1785,7 @@ function autosim() {
 
             console.log("team odds 2",  teamOdds2);
 
-            if(game.database.length > 0 && teamOdds2 < 32) {
+            if(game.database.length > 0 && teamOdds2 < 59) {
 
                 var oddsD = Math.floor(Math.random() * game.database.length);
                 var oddsO = Math.floor(Math.random() * game.carlist.length);
@@ -1784,13 +1800,19 @@ function autosim() {
 
                 var newTeamName = lastName[1] + " " + teamChoice;
 
-                if(teamOdds < 40) {
+                if(teamOdds < 50) {
                     newTeamName = lastName[0] + " " + lastName[1] + " " + teamChoice;
                 }
                 else {
-                    if(teamOdds < 80) {
+                    if(teamOdds < 75) {
                         var team1 = game.carlist[oddsO].organization.name.split(' ');
                         newTeamName = lastName[1] + "-" + team1[team1.length-2] + " " + teamChoice;
+                    }
+                    else {
+                        if(teamOdds < 85) {
+                            var team1 = game.carlist[oddsO].organization.name.split(' ');
+                            newTeamName = team1[team1.length-2] + "-" + lastName[1] + " " + teamChoice;
+                        }
                     }
 
                 }
@@ -1799,18 +1821,33 @@ function autosim() {
 
                 console.log("last name is", lastName)
                 if(game.carlist[oddsO].engine < 90) {
-                    var retiredString2 = game.database[oddsD] + " has bought out " + game.carlist[oddsO].organization.name + "!<br>" +
+                    var retiredString2 = game.database[oddsD] + " has bought a majority share in " + game.carlist[oddsO].organization.name + "!<br>" +
                         "The team will now be known as " + newTeamName + "</br>";
 
 
                     retiredString += retiredString2;
 
+                    var found = true;
 
                     for (var a = 0; a < game.carlist.length; a++) {
                             if (game.carlist[a].organization.name == game.carlist[oddsO].organization.name) {
                                 game.carlist[a].organization.name = newTeamName;
                                 game.carlist[a].organization.manufacture = game.carlist[oddsO].organization.manufacture;
-
+                                for (var b = 0; b < game.carlist.length; b++) {
+                                    if(found && game.carlist[b].driver.name == game.database[oddsD] && game.carlist[b].driver.name != game.carlist[a].driver.name) {
+                                        var swap = game.carlist[a].driver;
+                                        var swap2 = game.carlist[b].driver;
+                                        game.carlist[a].driver = swap2;
+                                        game.carlist[b].driver = swap;
+                                        var retiredString2 = game.database[oddsD] + " will drive the " + game.carlist[a].organization.name + " #" + game.carlist[a].number + "!<br>";
+                                        retiredString2 += swap.name + " will drive the " + game.carlist[b].organization.name + " #" + game.carlist[b].number + "!<br>";
+                                        game.carlist[a].status = "Full Time";
+                                        game.carlist[a].engine += 5;
+                                        retiredString += retiredString2;
+                                        found = false;
+                                        break;
+                                    }
+                                }
                             }
                         }
                     }
@@ -1852,6 +1889,16 @@ function autosim() {
 
 
             for (var line = 0; line < game.carlist.length; line++) {
+
+                if(game.week < 2) {
+                    game.carlist[line].driver.wins = 0;
+                    game.carlist[line].driver.topFives = 0;
+                    game.carlist[line].driver.topTens = 0;
+                    game.carlist[line].driver.races = 0;
+                }
+
+
+
                 game.carlist[line].driver.formula = game.carlist[line].driver.points + (game.carlist[line].driver.races * 24) + (game.carlist[line].driver.topTens * 11) + (game.carlist[line].driver.careerTopTens * 6) + (game.carlist[line].driver.wins * 35) + (game.carlist[line].driver.careerWins * 20) +  (game.carlist[line].driver.careerTopFives * 8) + (game.carlist[line].engine * 9) + (game.carlist[line].chassis * 8) + (game.carlist[line].prestige * 8)
                 if (game.carlist[line].status == "Part Time" || game.carlist[line].engine < 55 ) {
                     game.carlist[line].driver.formula = game.carlist[line].driver.formula / 4;
@@ -2037,11 +2084,17 @@ function autosim() {
                                 lockedIn[line].driver.wins < 4 && lockedIn[line].driver.age < 40)
                             || (game.week > 22 && game.week < 32 && lockedIn[line].driver.careerTitles > 2 &&
                                 lockedIn[line].driver.wins < 9 && lockedIn[line].driver.wins > 2)) {
-                            if(odds < 80) {
+                            if(odds < 80 && lockedIn[line].engine > 84 && lockedIn[line].aero > 81 && lockedIn[line].driver.intermediate > 81 && lockedIn[line].driver.wins < 8 ) {
                                 superelite.push(lockedIn[line]);
                             }
                             else {
-                                great.push(lockedIn[line]);
+                                if(odds < 85) {
+                                    elite.push(lockedIn[line]);
+                                }
+                                else {
+                                    great.push(lockedIn[line]);
+                                }
+
                             }
 
                         }
@@ -2639,7 +2692,6 @@ function autosim() {
 
                 if(newSponsors) {
                     game.sponsorlist.push(data[0]);
-                    console.log("pushed sponsor", game.sponsorlist)
                 }
 
                 if(newT) {
@@ -2788,6 +2840,7 @@ function autosim() {
                     car.status = data[25];
 
                     game.carlist.push(car);
+                    console.log("pushed car", car)
                 }
 
 
