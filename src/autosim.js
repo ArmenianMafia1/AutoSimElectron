@@ -104,14 +104,15 @@ function autosim() {
             this.year = 2000;
             this.carsInRace = 43;
             this.numRaces = 37;
+            this.maxRaces = 37;
             this.silly = false;
             this.dontSkip = false;
 
         }
 
         randomName() {
-            let first = ["Ashley", "Reagan", "Olivia", "Emma", "Sophia", "Izzy", "Mia", "Charlotte", "Rebecca", "Sasha", "Kayla", "Christie", "Jordie", "Jordan", "Abigail", "Chris", "Corey", "Cory", "Luke", "Ragan", "Avery", "Don", "Donnie", "Ron", "Makayla", "Jaden", "Jason", "Jerry", "John", "Johny", "Marcus", "Markus", "Jeb", "Blake", "Lake", "Chase", "Casey", "Jeffery", "Jeff", "Cole", "Colton", "Hunter", "Aiden", "Ragan", "Darren", "Joey", "Robert", "Cooper", "John", "Jim", "George", "Travis", "Kelly", "Natalie", "Steve", "Steve", "Steven", "Steven", "Joey", "Joe", "Bubba", "Tyrone", "Mario", "George", "Stephen", "Kevin", "Mikey", "Tommy", "Tom", "John", "Jack", "Adam", "Kenny", "Dave", "Ryan", "Joseph", "Johnny", "JJ", "Jeremy", "Jake", "Alex", "Allen", "Aiden", "Ricky", "Bobby", "Robert", "Alexander", "Jimmie", "Kurt", "Rick", "Darren", "Michael", "Colby", "David", "Scott", "Robby", "Henry", "Will", "Ron", "Jon", "Marc", "Mitch", "Mitchell", "Bill", "Barry", "Reed", "Sterling", "Wes", "J.J.", "Blake", "Justin", "Dustin", "Patrick", "Pat", "Will", "Casey", "Larry", "Matthew", "Matt", "Tyler", "Dale", "Louis", "Mark", "Tony", "Joe", "Kyle", "AJ", "Steven", "Jimmy", "Kevin", "Kelly", "Dawson", "Dom", "Dominic", "Jessica", "Bree", "Bri", "Mar", "Mary", "Jessie", "Alex", "Lewis", "John", "Miley", "Riley", "Ben", "Amanda", "Heather", "Jayden", "Evan", "Maria", "Chris", "Marvin", "Marv", "Marty", "Harry"]
-            let last = ['Abbott',
+            let first = ["Ashley", "Reagan", "Olivia", "Emma", "Sophia", "Izzy", "Mia", "Charlotte", "Rebecca", "Sasha", "Kayla", "Christie", "Jordie", "Jordan", "Abigail", "Chris", "Corey", "Cory", "Luke", "Ragan", "Avery", "Don", "Donnie", "Ron", "Makayla", "Jaden", "Jason", "Jerry", "John", "Johny", "Marcus", "Markus", "Jeb", "Blake", "Lake", "Chase", "Casey", "Jeffery", "Jeff", "Cole", "Colton", "Hunter", "Aiden", "Ragan", "Darren", "Joey", "Robert", "Cooper", "John", "Jim", "George", "Travis", "Kelly", "Natalie", "Steve", "Steve", "Steven", "Steven", "Joey", "Joe", "Bubba", "Tyrone", "Mario", "George", "Jeff", "James", "Billy", "Frank", "Freddie", "Larry", "Lawrence", "Jake", "Dane", "Devin", "Paul", "Tay", "Taylor", "Stephen", "Kevin", "Kevin", "Devin", "Martin", "Marvin", "Joe", "Kerry", "Kenny", "Hailey", "Hailee", "Bailey", "Randy", "Boston", "Mikey", "Tommy", "Tom", "John", "Jack", "Adam", "Kenny", "Dave", "Ryan", "Joseph", "Johnny", "JJ", "Jeremy", "Jake", "Alex", "Allen", "Aiden", "Ricky", "Bobby", "Robert", "Alexander", "Jimmie", "Kurt", "Rick", "Darren", "Michael", "Colby", "David", "Scott", "Robby", "Henry", "Will", "Ron", "Jon", "Marc", "Mitch", "Mitchell", "Bill", "Barry", "Reed", "Sterling", "Wes", "J.J.", "Blake", "Justin", "Dustin", "Patrick", "Pat", "Will", "Casey", "Larry", "Matthew", "Matt", "Tyler", "Dale", "Louis", "Mark", "Tony", "Joe", "Kyle", "AJ", "Steven", "Jimmy", "Kevin", "Kelly", "Dawson", "Dom", "Dominic", "Jessica", "Bree", "Bri", "Mar", "Mary", "Jessie", "Alex", "Lewis", "John", "Miley", "Riley", "Ben", "Amanda", "Heather", "Jayden", "Evan", "Maria", "Chris", "Marvin", "Dan", "Daniel", "Riley", "Ricky", "Julian", "Jim", "Marty", "Harry"]
+            let last = ['Lahey', 'Abbott',
                 'Acevedo',
                 'Acosta',
                 'Adams',
@@ -1134,6 +1135,26 @@ function autosim() {
 
             var retiredString = "";
 
+            console.log("GAME MAX RACES", game.maxRaces)
+            if(game.year % 7 == 0 && game.newRaces.length > 0) {
+                while (game.schedule.length < game.maxRaces) {
+                    var race = game.newRaces.pop();
+                    game.schedule.splice(Math.floor(Math.random() * (game.schedule.length + 1)), 0, race);
+                    console.log("ADDED RACE", game.schedule)
+                    retiredString += "Added Race to Schedule! " + race.trackName + "<br>";
+
+
+                }
+            }
+
+
+            if(game.year == 1982 && game.schedule[1].raceName == "Daytona 500") {
+                var d500 = game.schedule[1];
+                var river = game.schedule[0];
+                game.schedule[0] = d500;
+                game.schedule[1] = river;
+                retiredString += game.schedule[0].raceName + " is now the first race of the season!<br>";
+            }
 
             var eliteCars = 0;
             var randomGood = [98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87];
@@ -1324,9 +1345,7 @@ function autosim() {
                     for (var c1 = 0; c1 < game.carlist.length ; c1++) {
                         var car1 = game.carlist[c1];
                         var splitTeam = car1.organization.name.split(' ');
-                        console.log("checking ", car1.organization.name, car.driver.name, splitTeam[splitTeam.length-2])
 
-                        console.log("split team", splitTeam);
                         if(car.driver.name.includes(splitTeam[splitTeam.length-2])) {
                             notFoundName = false;
                             break;
@@ -1337,12 +1356,9 @@ function autosim() {
 
                     if(notFoundName) {
                         game.database.push(car.driver.name)
-                        console.log("added gd", car.driver.name)
                     }
 
                 }
-
-                console.log("game database", game.database);
 
 
 
@@ -2666,7 +2682,6 @@ function autosim() {
                     if(data[0] == "Race Name") {
                         console.log('skip');
                     }
-                    game.numRaces = parseInt(data[0]);
                     startraces = false;
                 }
 
@@ -2796,7 +2811,7 @@ function autosim() {
                         driver.careerRaces = parseInt(data[12]);
 
                         game.freeAgents.push(driver);
-                        console.log("pushed", driver.name, driver.age);
+
                     }
                 }
 
@@ -2808,12 +2823,31 @@ function autosim() {
 
 
                 if (gameinfo == true) {
-                    game.year = parseInt(data[0]);
-                    game.points = parseInt(data[1]);
-                    game.carsInRace = parseInt(data[2]);
-                    game.week = parseInt(data[3]);
-                    gameinfo = false;
-                    startraces = true;
+
+                    if(data[0] == "Starting Number of Races") {
+                        console.log("skip");
+                    }
+                    else {
+                        if(parseInt(data[0]) < 250) {
+                            console.log("data is", data);
+                            game.maxRaces = parseInt(data[2]);
+                            gameinfo = false;
+                            startraces = true;
+                            console.log("game max races", game.maxRaces)
+                        }
+                        else {
+                            game.year = parseInt(data[0]);
+                            game.points = parseInt(data[1]);
+                            game.carsInRace = parseInt(data[2]);
+                            game.week = parseInt(data[3]);
+                            console.log("game week", game.week)
+                        }
+                        console.log("game max races", game.maxRaces)
+
+
+                    }
+
+
 
                 }
 
@@ -2878,7 +2912,7 @@ function autosim() {
                     car.status = data[25];
 
                     game.carlist.push(car);
-                    console.log("pushed car", car)
+
                 }
 
 
@@ -3984,7 +4018,8 @@ function autosim() {
         var str2 = game.year + "~" + game.points + "~" + game.carsInRace + "~" + game.week;
         myCsv += str2;
         myCsv += "~\nStarting Number of Races~Lowest Number of Races~Largest Number of Races~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
-        myCsv += game.numRaces;
+        str2 =  game.numRaces + "~" +  game.numRaces + "~" + game.maxRaces;
+        myCsv += str2;
         myCsv += "~\nManufactures~\n";
         myCsv += "Schedule~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
         myCsv += "Race #~Race Name~Track Name~Track Type~~~~~~~~~~~~~~~~~~~~~~~~~~\n";

@@ -46,7 +46,7 @@
 Start Year~Points Format~Starting Cars Per Race~Week~Lowest Cars Per Race~Largest Cars Per Race~Starting Min Driver Age~Lowest Min Driver Age~Largest Min Driver Age~Starting Max Driver Age~Lowest Min Driver Age~Largest Min Driver Age~~~~~~~~~~~~~~~
 1980~1956~44~1~40~44~20~18~22~65~60~56~~~~~~~~~~~~~~~
 Starting Number of Races~Lowest Number of Races~Largest Number of Races~~~~~~~~~~~~~~~~~~~~~~~~
-36~34~40~~~~~~~~~~~~~~~~~~~~~~~~
+31~34~36~~~~~~~~~~~~~~~~~~~~~~~~
 Manufactures~~~~~~~~~~~~~~~~~~~~~~~~~~
 Name~~~~~~~~~~~~~~~~~~~~~~~~~~
 Oldsmobile~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -91,11 +91,13 @@ Race #~Race Name~Track Name~Track Type~~~~~~~~~~~~~~~~~~~~~~~
 New Races~~~~~~~~~~~~~~~~~~~~~~~~~~
 Race Name~Track Name~Track Type~~~~~~~~~~~~~~~~~~~~~~~~
 VRN 444~Williams Grove Speedway~Dirt Track~~~~~~~~~~~~~~~~~~~~~~~~
-Lucas Oil 350~Watkins Glen International~Road Course~~~~~~~~~~~~~~~~~~~~~~~~
-NASCAR 500~Idianapolis Raceway~Flat~~~~~~~~~~~~~~~~~~~~~~~~
+Cheeze-It 350~Watkins Glen International~Road Course~~~~~~~~~~~~~~~~~~~~~~~~
+The Brickyard 400~Indianapolis Motor Speedway~Flat~~~~~~~~~~~~~~~~~~~~~~~~
 Pennsylvania 400~Pocono~Flat~~~~~~~~~~~~~~~~~~~~~~~~
+Ford 400~Homestead~Flat~~~~~~~~~~~~~~~~~~~~~~~~
 Hooters 500~Atlanta International Raceway~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~
-Pepsi 1000~Daytona Road Course~Road Course~~~~~~~~~~~~~~~~~~~~~~~~
+AAA 500~Fontana~Intermediate~~~~~~~~~~~~~~~~~~~~~~~~
+Pepsi 350~Daytona Road Course~Road Course~~~~~~~~~~~~~~~~~~~~~~~~
 Name~Age~SS~IN~FL~ST~RC~Aggr.~Career Titles~Career Wins~Career Top 5's~Career Top 10's~Career Races~~~~~~~~~~~~~~~
 Jack Ingram~40~65~72~64~68~66~56~0~0~0~0~0~~~~~~~~~~~~~~~
 Sam Ard~36~65~72~64~68~66~56~0~0~0~0~0~~~~~~~~~~~~~~~
@@ -878,12 +880,10 @@ Devour Frozen Foods~
 DeWalt~
 Dex Imaging~
 Diamond Gusset~
-Dietz Nuts~
 Dirty Dick's Crab House~
 Discount Tire~
-Ditech.com~
+Ditech~
 Dodge~
-DogeCoin~
 Dollar General~
 Dollar Shave Club~
 Domino's Pizza~
@@ -897,7 +897,7 @@ DraftKings~
 Draw-Tite~
 Drive to End Hunger~
 Drive4COPD~
-Driven2Honor.org~
+Driven2Honor~
 Dumont Jets~
 Dunkin Donuts~
 DuPont~
@@ -1394,7 +1394,6 @@ Wagner~
 Walmart~
 Waste Management~
 Waterloo Tools~
-Watermelon.org~
 WeatherTech~
 Wells Fargo~
 Wendys~
