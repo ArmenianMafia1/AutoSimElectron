@@ -110,7 +110,7 @@ function autosim() {
         }
 
         randomName() {
-            let first = ["Ashley", "Reagan", "Ragan", "Darren", "Joey", "Robert", "Cooper", "John", "Jim", "George", "Travis", "Kelly", "Natalie", "Steve", "Stephen", "Kevin", "John", "Jack", "Adam", "Kenny", "Dave", "Ryan", "Joseph", "Johnny", "JJ", "Jeremy", "Jake", "Alex", "Allen", "Aiden", "Ricky", "Bobby", "Robert", "Alexander", "Jimmie", "Kurt", "Rick", "Darren", "Michael", "Colby", "David", "Scott", "Robby", "Henry", "Will", "Ron", "Jon", "Marc", "Mitch", "Mitchell", "Bill", "Barry", "Reed", "Sterling", "Wes", "J.J.", "Blake", "Justin", "Dustin", "Patrick", "Pat", "Will", "Casey", "Larry", "Matthew", "Matt", "Tyler", "Dale", "Louis", "Mark", "Tony", "Joe", "Kyle", "AJ", "Steven", "Jimmy", "Kevin", "Kelly", "Dawson", "Dom", "Dominic", "Jessica", "Bree", "Bri", "Mar", "Mary", "Jessie", "Alex", "Lewis", "John", "Miley", "Riley", "Ben", "Amanda", "Heather", "Jayden", "Evan", "Maria", "Chris", "Marvin", "Marv", "Marty", "Harry"]
+            let first = ["Ashley", "Reagan", "Olivia", "Emma", "Sophia", "Izzy", "Mia", "Charlotte", "Rebecca", "Sasha", "Kayla", "Christie", "Jordie", "Jordan", "Abigail", "Chris", "Corey", "Cory", "Luke", "Ragan", "Avery", "Don", "Donnie", "Ron", "Makayla", "Jaden", "Jason", "Jerry", "John", "Johny", "Marcus", "Markus", "Jeb", "Blake", "Lake", "Chase", "Casey", "Jeffery", "Jeff", "Cole", "Colton", "Hunter", "Aiden", "Ragan", "Darren", "Joey", "Robert", "Cooper", "John", "Jim", "George", "Travis", "Kelly", "Natalie", "Steve", "Steve", "Steven", "Steven", "Joey", "Joe", "Bubba", "Tyrone", "Mario", "George", "Stephen", "Kevin", "Mikey", "Tommy", "Tom", "John", "Jack", "Adam", "Kenny", "Dave", "Ryan", "Joseph", "Johnny", "JJ", "Jeremy", "Jake", "Alex", "Allen", "Aiden", "Ricky", "Bobby", "Robert", "Alexander", "Jimmie", "Kurt", "Rick", "Darren", "Michael", "Colby", "David", "Scott", "Robby", "Henry", "Will", "Ron", "Jon", "Marc", "Mitch", "Mitchell", "Bill", "Barry", "Reed", "Sterling", "Wes", "J.J.", "Blake", "Justin", "Dustin", "Patrick", "Pat", "Will", "Casey", "Larry", "Matthew", "Matt", "Tyler", "Dale", "Louis", "Mark", "Tony", "Joe", "Kyle", "AJ", "Steven", "Jimmy", "Kevin", "Kelly", "Dawson", "Dom", "Dominic", "Jessica", "Bree", "Bri", "Mar", "Mary", "Jessie", "Alex", "Lewis", "John", "Miley", "Riley", "Ben", "Amanda", "Heather", "Jayden", "Evan", "Maria", "Chris", "Marvin", "Marv", "Marty", "Harry"]
             let last = ['Abbott',
                 'Acevedo',
                 'Acosta',
@@ -120,7 +120,7 @@ function autosim() {
                 'Aguirre',
                 'Albert',
                 'Alexander',
-                'Alford',
+                'Adams',
                 'Allen',
                 'Allison',
                 'Alston',
@@ -151,8 +151,8 @@ function autosim() {
                 'Barlow',
                 'Barnes',
                 'Barnett',
-                'Barr',
-                'Barrera',
+                'Bartlett',
+                'Barber',
                 'Barrett',
                 'Barron',
                 'Barry',
@@ -176,7 +176,7 @@ function autosim() {
                 'Benson',
                 'Bentley',
                 'Benton',
-                'Berg',
+                'Boston',
                 'Berger',
                 'Bernard',
                 'Berry',
@@ -249,10 +249,10 @@ function autosim() {
                 'Camacho',
                 'Cameron',
                 'Campbell',
-                'Campos',
+                'Campbell',
                 'Cannon',
                 'Cantrell',
-                'Cantu',
+                'Carter',
                 'Cardenas',
                 'Carey',
                 'Carlson',
@@ -267,7 +267,7 @@ function autosim() {
                 'Case',
                 'Casey',
                 'Cash',
-                'Castaneda',
+                'Power',
                 'Castillo',
                 'Castro',
                 'Cervantes',
@@ -368,6 +368,8 @@ function autosim() {
                 'Duffy',
                 'Duke',
                 'Duncan',
+                'Dreamer',
+                'Duncam',
                 'Dunlap',
                 'Dunn',
                 'Duran',
@@ -382,12 +384,10 @@ function autosim() {
                 'England',
                 'English',
                 'Erickson',
-                'Espinoza',
-                'Estes',
                 'Estrada',
                 'Evans',
                 'Everett',
-                'Ewing',
+                'Evans',
                 'Farley',
                 'Farmer',
                 'Farrell',
@@ -433,9 +433,7 @@ function autosim() {
                 'Fulton',
                 'Gaines',
                 'Gallagher',
-                'Gallegos',
                 'Galloway',
-                'Gamble',
                 'Garcia',
                 'Gardner',
                 'Garner',
@@ -444,7 +442,6 @@ function autosim() {
                 'Garza',
                 'Gates',
                 'Gay',
-                'Gentry',
                 'George',
                 'Gibbs',
                 'Gibson',
@@ -1211,6 +1208,9 @@ function autosim() {
                     if (car.organization.manufacture == "Oldsmobile") {
                         car.organization.manufacture = "Chevrolet"
                     }
+                    if (car.organization.manufacture == "Mercury") {
+                        car.organization.manufacture = "Chevrolet"
+                    }
                 }
 
 
@@ -1269,6 +1269,33 @@ function autosim() {
                 }*/
 
 
+
+
+                if (car.driver.age > 35 && game.year == 1985 && car.driver.name != "Dale Earnhardt" && car.driver.name != "Richard Petty") {
+                    car.driver.superspeedway -= 2;
+                    car.driver.intermediate -= 5;
+                    car.driver.flat -= 6;
+                    car.driver.shortTrack -= 6;
+                    car.driver.roadCourse -= 6;
+
+                }
+                if (car.driver.age > 38 && game.year == 1999 && car.driver.name != "Dale Earnhardt" && car.driver.name != "Richard Petty") {
+                    car.driver.superspeedway -= 4;
+                    car.driver.intermediate -= 7;
+                    car.driver.flat -= 7;
+                    car.driver.shortTrack -= 7;
+                    car.driver.roadCourse -= 7;
+
+                }
+
+                if (car.driver.age > 44 && game.year == 2006 && car.driver.name != "Dale Earnhardt" && car.driver.name != "Richard Petty") {
+                    car.driver.superspeedway -= 2;
+                    car.driver.intermediate -= 2;
+                    car.driver.flat -= 2;
+                    car.driver.shortTrack -= 2;
+                    car.driver.roadCourse -= 2;
+
+                }
 
                 if (car.driver.age > 39) {
                     car.driver.superspeedway -= 4;
@@ -1764,12 +1791,23 @@ function autosim() {
             var sodds = Math.floor(Math.random() * game.sponsorlist.length);
 
 
-            if (game.sponsorlist[sodds] != "undefined" || (!(game.sponsorlist[sodds].includes(".com")) && !(game.sponsorlist[sodds].includes("Coin")) && !(game.sponsorlist[sodds].includes("Youtube"))  && (game.year < 2002)) ) {
+            if (game.sponsorlist[sodds] == "undefined" || (!(game.sponsorlist[sodds].includes(".com")) && !(game.sponsorlist[sodds].includes("Coin")) && !(game.sponsorlist[sodds].includes("Youtube"))  && !(game.sponsorlist[sodds].includes("Game"))  && (game.year < 2002)) ) {
                 game.carlist[gameodds].sponsor1 = game.sponsorlist[sodds]
                 retiredString2 = "#" + game.carlist[gameodds].number + " " + game.carlist[gameodds].organization.name + " has a new primary sponsor: " + game.carlist[gameodds].sponsor1 + "!<br>";
                 retiredString += retiredString2;
             }
 
+            for (var cs = 0; cs < game.carlist.length; cs++) {
+                if(game.carlist[cs].driver) {
+                    if(game.carlist[cs].driver.careerTitles > 0 && game.carlist[cs].sponsor1.includes("Unsponsored")) {
+                        sodds = Math.floor(Math.random() * game.sponsorlist.length);
+                        game.carlist[cs].sponsor1 = game.sponsorlist[sodds]
+                        retiredString2 = "#" + game.carlist[cs].number + " " + game.carlist[cs].organization.name + " has a new primary sponsor: " + game.carlist[cs].sponsor1 + "!<br>";
+                        retiredString += retiredString2;
+                    }
+                }
+
+            }
 
             var gameodds = Math.floor(Math.random() * game.carlist.length);
             console.log("sponsorlist!!", game.sponsorlist)
@@ -1785,7 +1823,7 @@ function autosim() {
 
             console.log("team odds 2",  teamOdds2);
 
-            if(game.database.length > 0 && teamOdds2 < 59) {
+            if(game.database.length > 0 && teamOdds2 < 69) {
 
                 var oddsD = Math.floor(Math.random() * game.database.length);
                 var oddsO = Math.floor(Math.random() * game.carlist.length);
@@ -1820,7 +1858,7 @@ function autosim() {
 
 
                 console.log("last name is", lastName)
-                if(game.carlist[oddsO].engine < 90) {
+                if(game.carlist[oddsO].engine < 92) {
                     var retiredString2 = game.database[oddsD] + " has bought a majority share in " + game.carlist[oddsO].organization.name + "!<br>" +
                         "The team will now be known as " + newTeamName + "</br>";
 
