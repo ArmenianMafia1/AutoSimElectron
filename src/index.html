@@ -20,14 +20,93 @@
    <input type="file" name="file" id="gamemode" value="Upload game.tsv Here">
 
       <script>
+
+
+          function SaveTeam() {
+              document.getElementById("selectTeam").onclick = function (event) {
+                  event.preventDefault();
+                  var e = document.getElementById("ddlViewBy");
+                  var value = e.options[e.selectedIndex].value;
+                  var text = e.options[e.selectedIndex].text;
+                  document.getElementById("owner-teams").innerHTML = e.options[e.selectedIndex].text;
+                  console.log("saved!!!!");
+                  TestsFunction2();
+              }
+              event.preventDefault();
+              console.log("saved");
+          }
           function TestsFunction() {
+              console.log("test func");
+              //var T = document.getElementById("play-area");
+              //T.style.display = "block";  // <-- Set it to block
+
+              var html2 = '<div id="buttons">';
+              //html2 += '<button onclick="dropDown()" class="dropbtn" name = "job" id = "job">Drop Down</button>';
+              //html2 += '<p><input onclick="saveTeam()" type="submit" id="selectTeam2" name="selectTeam2" value="Select Team">';
+              //html2 += '<div id="myDropdown" class="dropdown-content">';
+              console.log("ORGLIST", 1);
+              var teamArray = document.getElementById("owner-teams").innerHTML.split("~");
+              console.log("teamArray", teamArray)
+              var teamSet = new Set(teamArray);
+              console.log("teamSet", teamSet)
+              var teamArray2 = Array.from(teamSet);
+              console.log("teamArray2", teamArray2)
+
+              html2 += '<select id="ddlViewBy">';
+              for (var t = 0; t < teamArray2.length; t++) {
+                  html2 += '<option>';
+                  html2 += teamArray2[t];
+                  html2 += '</option>';
+              }
+              html2 += '</select>';
+              html2 += '</div>';
+
+              document.getElementById("owner-select").innerHTML += html2;
+
+
+              if(document.getElementById("credits").innerHTML !== "N/A") {
+                  var j = document.getElementById("credits");
+                  j.style.display = "none";
+                  TestsFunction2();
+              }
+              else {
+                  var T = document.getElementById("game-start");
+                  T.style.display = "block";  // <-- Set it to block
+                  var j = document.getElementById("credits");
+                  j.style.display = "none";
+              }
+
+
+          }
+          function TestsFunction2() {
               var T = document.getElementById("play-area");
               T.style.display = "block";  // <-- Set it to block
-              var j = document.getElementById("credits");
-              j.style.display = "none";
+
+              var T = document.getElementById("owner-select");
+              T.style.display = "none";  // <-- Set it to block
+
+              var T1 = document.getElementById("game-start");
+              T1.style.display = "none";  // <-- Set it to block
           }
+
+          function TestsFunction3() {
+              var T = document.getElementById("owner-select");
+              T.style.display = "block";  // <-- Set it to block
+
+              var T1 = document.getElementById("game-start");
+              T1.style.display = "none";  // <-- Set it to block
+          }
+
+          function dropDown() {
+              document.getElementById("myDropdown").classList.toggle("show");
+          }
+
+
+
+
       </script>
     <button onclick="TestsFunction()">Start Game!</button>
+
       <div class="credits" id="credits">
       <p>A Very Special Thank You to our Patreon Backers</p>
           <div class="article">
@@ -36,7 +115,7 @@
           </div>
           <div class="article">
       <h4>Official Patrons:</h4>
-      <p>Mia Marsden<br>Chris Hotaling<br>LabonteFan<br>Sean Daryman<br>Nathan Baird<br>Tigerband66<br>Alex Miller<br>CB<br></p>
+      <p>Mia Marsden<br>Chris Hotaling<br>LabonteFan<br>Sean Daryman<br>Nathan Baird<br>Tigerband66<br>Alex Miller<br>CB<br>Huston Rhodes<br></p>
           </div>
       <h4>Featured Partners:</h4>
       <p>JoeTowNetwork</p>
@@ -46,9 +125,26 @@
       <form id="gameform">
         <fieldset>
 
-          <div id="play-area"  style="display:none"></div>
+          <div id="play-area"  style="display:none">
 
-          <div id="game-changes"  style="display:none">
+          </div>
+
+            <div id="owner-teams" style="display:none">
+                <p>test1</p>
+            </div>
+
+
+          <div id="game-start"  style="display:none">
+              <p><input type="text" id = "userInput" name="userInput" value="Enter Name!"></p>;
+              <p><input type="submit"  id = "simMode" name="simMode" value="Sim Mode"></p>';
+              <p><input type="submit" id = "ownerMode" name="ownerMode" value="Owner Mode"></p>;
+          </div>
+
+          <div id="owner-select"  style="display:none">
+             <p><input type="submit" onclick="SaveTeam()" id = "selectTeam" name="selectTeam" value="select Team 3"></p>;
+          </div>
+
+            <div id="game-changes"  style="display:none">
               <div id="game-changes2"></div>
               <p><input type="submit" id = "original" name="guess" value="Original">
               <p><input type="submit" id = "chase" name="guess" value="Chase">

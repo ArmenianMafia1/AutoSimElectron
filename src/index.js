@@ -13,7 +13,11 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 1080,
     height: 720,
-    show: false,
+	show: false,
+	  webPreferences: {
+    
+
+  },  
   });
 
   mainWindow.maximize();
@@ -32,7 +36,7 @@ const createWindow = () => {
 app.on('ready', createWindow);
 
 // Quit when all windows are closed, except on macOS. There, it's common
-// for applications and their menu bar to stay active until the user quits
+// for applications and their menu upgradeDriver to stay active until the user quits
 // explicitly with Cmd + Q.
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
