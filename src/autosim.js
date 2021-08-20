@@ -3761,7 +3761,28 @@ class Game {
 
     displayStandings() {
         var carlist2 = [...this.carlist];
-        var carlist3 = Array();
+
+
+
+        carlist2.sort((a, b) => (a.driver.points < b.driver.points) ? 1 : -1);
+
+
+
+        return carlist2;
+
+    }
+
+    displayStandings2() {
+        var carlist2 = [...this.carlist];
+
+        for (var i = 0; i < this.freeAgents.length; i++) {
+            if (this.freeAgents[i].points > 0) {
+                var car1 = new Car();
+                car1.number = "FA";
+                car1.driver = this.freeAgents[i];
+                carlist2.push(car1);
+            }
+        }
 
         carlist2.sort((a, b) => (a.driver.points < b.driver.points) ? 1 : -1);
 
@@ -4016,6 +4037,7 @@ function fireDriver(event, car) {
     selectedCar.driver.name = "Vacant";
 
     console.log( 'upgrade3Driver', selectedCar );
+
 
 
     document.getElementById("teammanager").click();
@@ -4359,6 +4381,19 @@ function hireDriverConfirm(event, car) {
         selectedFA = car;
     }
     console.log("FA is", selectedFA)
+
+
+    document.getElementById("driversNegotiate").click();
+
+
+
+
+}
+
+function hireDriverConfirm2(event) {
+
+    event.preventDefault();
+
 
 
     document.getElementById("driversConfirmHire").click();
@@ -5035,6 +5070,8 @@ function autosim() {
     html += '<input type="submit" id = "sponsorHire" name="giveup" value="Hire Drivers"  style="display:none">';
     html += '<input type="submit" id = "sponsorHireSillySeason" name="giveup" value="Hire Driversss"  style="display:none">';
     html += '<input type="submit" id = "driversHireSillySeason" name="giveup" value="Hire Drivers"  style="display:none">';
+     html += '<input type="submit" id = "driversNegotiate" name="giveup" value="Hire Drivers"  style="display:none">';
+    html += '<input type="submit" id = "driversNegotiateSillySeason" name="giveup" value="Hire Drivers"  style="display:none">';
     html += '<input type="submit" id = "driversConfirmHire" name="giveup" value="Hire Drivers"  style="display:none">';
     html += '<input type="submit" id = "driversConfirmHireSillySeason" name="giveup" value="Hire Drivers"  style="display:none">';
     html += '<input type="submit" id = "teammanagerSillySeason" name="giveup" value="Hire Drivers"  style="display:none">';
@@ -5446,6 +5483,23 @@ function autosim() {
 
         globalMoney = game.player.money;
 
+
+        if(firedDriver) {
+            if(firedDriver.name !== "N/A") {
+              var found = false;
+              for (var i = 0; i < game.freeAgents.length; i++) {
+                    if(game.freeAgents[i].name == firedDriver.name) {
+                        found = true;
+                    }
+              }
+              if(found == false) {
+                game.freeAgents.push(firedDriver);
+              }
+            }
+        }
+
+
+
         if(sillySeason) {
             document.getElementById("teammanagerSillySeason").click();
         }
@@ -5828,6 +5882,14 @@ function autosim() {
             game.carlist[i].driver.points = 0;
         }
 
+        for (var i = 0; i < game.freeAgents.length; i++) {
+            game.freeAgents[i].wins = 0;
+            game.freeAgents[i].topFives = 0;
+            game.freeAgents[i].topTens = 0;
+            game.freeAgents[i].races = 0;
+            game.freeAgents[i].points = 0;
+        }
+
         game.dontSkip = false;
         game.silly = false;
         sillySeason = false;
@@ -5839,6 +5901,108 @@ function autosim() {
 
 
     }
+
+    document.getElementById("driversNegotiate").onclick = function (event) {
+
+
+
+        event.preventDefault();
+
+        randomYrs = [1,2,3,4];
+        randomLow = [12500, 15000, 17500];
+        randomMid = [15000, 17500, 20000, 22500, 25000];
+        randomGood = [20000, 22500, 25000, 27500, 30000, 32500, 35000];
+
+        selectedYr = randomYrs[Math.floor(Math.random() * randomYrs.length)];
+        var contractAmt = 20000;
+
+        if (selectedFA.intermediate > 76) {
+                var contractAmt1  = Math.floor(Math.random() * randomGood.length);
+                contractAmt = randomGood[contractAmt1];
+        }
+        else {
+            if (selectedFA.intermediate > 61) {
+                contractAmt  = Math.floor(Math.random() * randomMid.length);
+                contractAmt = randomMid[contractAmt1];
+            }
+            else {
+                contractAmt  = Math.floor(Math.random() * randomLow.length);
+                contractAmt = randomLow[contractAmt1];
+            }
+        }
+
+
+        event.preventDefault();
+
+        var html = "Name: " + game.player.name + " | Mode: " + game.player.mode + " | Team: " + game.player.team + "<br>";
+
+
+        html += "Funds: ";
+        html += game.player.money;
+        html += "<br>";
+
+        html += "<p class='standings'>";
+
+
+        var src = "../images/num/" + selectedCar.organization.name + selectedCar.number;
+
+        console.log("src ", src)
+
+        html += "<table style=\"width:100%\"><tr><th>" +
+            "<img onclick='teamEditor(" + selectedCar + ")' id='team" + 0 + "\" onerror=\"this.src='../images/num/default" + selectedCar.number + ".png\'\" src='" + src + ".png'></object></th><th>";
+
+
+        html += selectedCar.number;
+
+        html += " ";
+
+        html += selectedCar.organization.name;
+
+        html += " ";
+
+        html += selectedCar.organization.manufacture;
+
+        html += " | Car Rating: ";
+
+        var overall = (selectedCar.engine + selectedCar.aero + selectedCar.chassis +
+            selectedCar.pitCrew ) / 4;
+
+        html += overall;
+
+
+        html += "</table></p>";
+
+        html += "<h1>Hire Driver</h1><br><p class='standings'>"
+
+        html += selectedFA.name
+
+        html += "'s wants: $"
+
+        html += toString(contractAmt);
+
+        html += ", for "
+
+        html += toString(selectedYr);
+
+        html += " years.<br>"
+
+
+            html += '<input type=\"submit\" style=\"width:500px\" value=\"Accept';
+
+
+            html += '\" onclick=\"hireDriverConfirm2(event';
+
+            html += ')\">';
+
+            html += '<br><br>';
+
+        document.getElementById("message").innerHTML = html;
+
+
+
+    }
+
+
 
     document.getElementById("driversConfirmHire").onclick = function (event) {
 
@@ -6373,7 +6537,7 @@ function autosim() {
 
                 html += "</p><h3>Top 10 in Points</h3><p class='standings'>"
 
-                results = game.displayStandings();
+                results = game.displayStandings2();
 
                 console.log(results);
 
@@ -6466,7 +6630,7 @@ function autosim() {
 
                     document.getElementById("message").innerHTML = "<h1>" + game.year + " Final Standings</h1>";
 
-                    var results = game.displayStandings();
+                    var results = game.displayStandings2();
 
                     console.log(results);
 
@@ -7157,7 +7321,7 @@ function autosim() {
 
                     html += "</p><h3>Top 10 in Points</h3><p class='standings'>"
 
-                    results = game.displayStandings();
+                    results = game.displayStandings2();
 
                     console.log(results);
 
@@ -7248,7 +7412,7 @@ function autosim() {
 
                         document.getElementById("message").innerHTML = "<h1>" + game.year + " Final Standings</h1>";
 
-                        var results = game.displayStandings();
+                        var results = game.displayStandings2();
 
                         console.log(results);
 
@@ -7756,7 +7920,7 @@ function autosim() {
         document.getElementById("message").innerHTML = "<h1>" + game.year + " Standings after " + (game.week-1) + " Races </h1>";
 
 
-        var results = game.displayStandings();
+        var results = game.displayStandings2();
 
         console.log(results);
 
@@ -7774,6 +7938,8 @@ function autosim() {
 
 
         }
+
+
 
         html += "</p>";
 
