@@ -15,7 +15,7 @@ const createWindow = () => {
     height: 720,
 	show: false,
 	  webPreferences: {
-    
+        devTools: false
 
   },  
   });

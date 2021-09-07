@@ -12,7 +12,7 @@ class Car {
         this.prestige = 0;
         this.status = "Full Time";
         this.oldDriver = 0;
-
+        this.yearsLeft = 0;
 
     }
 }
@@ -82,7 +82,8 @@ var globalFreeAgents = Array();
 var globalTeam = null;
 var sillySeason=false;
 var carsWithNoSponsor= Array();
-
+var yrsLeft = 0;
+var shutDown = false;
 
 class Game {
     constructor() {
@@ -1752,7 +1753,7 @@ class Game {
 
 
 
-                    if (((odds < 26 && car.driver.name == "N/A" || odds < 33 && car.sponsor1 == "Unsponsored" || (odds < 72 && car.driver.name == "N/A" && car.status == "Part Time")) || (odds < 52 && car.driver.name == "N/A" && car.status == "Part Time")) && (this.carlist.length + 2 > this.carsInRace)) {
+                    if ((((odds < 24 && car.driver.name == "N/A" && car.engine < 77) || odds < 33 && car.sponsor1 == "Unsponsored" || (odds < 72 && car.driver.name == "N/A" && car.status == "Part Time")) || (odds < 52 && car.driver.name == "N/A" && car.status == "Part Time")) && (this.carlist.length + 2 > this.carsInRace)) {
 
 
                         var retiredString2 = "#" + this.carlist[i].number + " " + this.carlist[i].organization.name + " "
@@ -2006,7 +2007,7 @@ class Game {
 
 
             console.log("last name is", lastName)
-            if(this.carlist[oddsO].engine < 88) {
+            if(this.carlist[oddsO].engine < 88 && this.carlist[oddsO].organization.name !== this.player.team) {
                 var retiredString2 = this.database[oddsD] + " has bought a majority share in " + this.carlist[oddsO].organization.name + "!<br>" +
                     "The team will now be known as " + newTeamName + "</br>";
 
@@ -2072,6 +2073,7 @@ class Game {
         var eligibleForExpansion = [];
 
         for(var c = 0; c < this.carlist.length; c++) {
+            this.carlist[c].yearsLeft -= 1;
             if(this.carlist[c].engine > 91 || this.carlist[c].driver.careerTitles > 0) {
                 wantToExpand.add(this.carlist[c].organization);
             }
@@ -2080,6 +2082,8 @@ class Game {
                 if(removeSponsor < 30 && this.carlist[c].organization.name === this.player.team) {
                     retiredString +=  this.carlist[c].sponsor1 + " has departed the #" + this.carlist[c].number + " " + this.carlist[c].organization.name + " team!"  + "<br>";
                     carsWithNoSponsor.push(this.carlist[c].number);
+                    this.carlist[c].sponsor1 = "Unsponsored";
+                    this.carlist[c].sponsor2 = "Unsponsored";
                 }
             }
         }
@@ -2143,19 +2147,27 @@ class Game {
         var randomGood = [98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87];
         var randomMid = [90, 89, 88, 87, 86, 85, 84, 83,82,81,80];
         var randomLow = [77, 74, 76, 77, 78, 85, 84, 83,82,81,80];
+        var randomLoss = [0,1,2,3,4,5,6];
 
         for (var i = this.carlist.length - 1; i >= 0; --i) {
+            if(this.carlist[i].organization.name == this.player.team ) {
+                this.carlist[i].engine -= randomLoss[Math.floor(Math.random() * randomLoss.length)];
+                this.carlist[i].aero -= randomLoss[Math.floor(Math.random() * randomLoss.length)];
+                this.carlist[i].pitCrew -= randomLoss[Math.floor(Math.random() * randomLoss.length)];
+                this.carlist[i].chassis -= randomLoss[Math.floor(Math.random() * randomLoss.length)];
+
+            }
             if(this.carlist[i].driver.intermediate > 90 && this.carlist[i].engine > 90 ) {
                 eliteCars += 1;
                 if(eliteCars > 7 && this.carlist[i].driver.careerTitles < 2) {
                     if (this.carlist[i].driver.superspeedway > 90) {
-                        this.carlist[i].driver.superspeedway = randomMid[Math.floor(Math.random() * randomMid.length)];
+                        this.carlist[i].driver.superspeedway = randomGood[Math.floor(Math.random() * randomMid.length)];
                     }
                     if (this.carlist[i].driver.intermediate > 90) {
-                        this.carlist[i].driver.intermediate = randomMid[Math.floor(Math.random() * randomMid.length)];
+                        this.carlist[i].driver.intermediate = randomGood[Math.floor(Math.random() * randomMid.length)];
                     }
                     if (this.carlist[i].driver.flat > 90) {
-                        this.carlist[i].driver.flat = randomMid[Math.floor(Math.random() * randomMid.length)];
+                        this.carlist[i].driver.flat = randomGood[Math.floor(Math.random() * randomMid.length)];
                     }
                     if (this.carlist[i].driver.shortTrack > 90) {
                         this.carlist[i].driver.shortTrack = randomMid[Math.floor(Math.random() * randomMid.length)];
@@ -2164,16 +2176,16 @@ class Game {
                         this.carlist[i].driver.roadCourse = randomMid[Math.floor(Math.random() * randomMid.length)];
                     }
                     if (this.carlist[i].engine > 90) {
-                        this.carlist[i].engine = randomLow[Math.floor(Math.random() * randomLow.length)];
+                        this.carlist[i].engine = randomMid[Math.floor(Math.random() * randomMid.length)];
                     }
                     if (this.carlist[i].aero > 90) {
-                        this.carlist[i].aero = randomLow[Math.floor(Math.random() * randomLow.length)];
+                        this.carlist[i].aero = randomMid[Math.floor(Math.random() * randomMid.length)];
                     }
                     if (this.carlist[i].chassis > 90) {
-                        this.carlist[i].chassis = randomLow[Math.floor(Math.random() * randomLow.length)];
+                        this.carlist[i].chassis = randomMid[Math.floor(Math.random() * randomMid.length)];
                     }
                     if (this.carlist[i].pitCrew > 90) {
-                        this.carlist[i].pitCrew = randomLow[Math.floor(Math.random() * randomLow.length)];
+                        this.carlist[i].pitCrew = randomMid[Math.floor(Math.random() * randomMid.length)];
                     }
 
                 }
@@ -2262,15 +2274,47 @@ class Game {
                 if (car.driver.age < 27) {
                     if (odds > 75) {
                         this.freeAgents.push(car.driver);
+                        if(car.driver.name != "N/A") {
+                            retiredString += car.driver.name + " has become a free agent!<br>"
+                        }
                         car.driver = new Driver("N/A");
                     }
 
                 } else {
                     if (odds > 55) {
                         this.freeAgents.push(car.driver);
+                        if(car.driver.name != "N/A") {
+                            retiredString += car.driver.name + " has become a free agent!<br>"
+                        }
                         car.driver = new Driver("N/A");
                     }
                 }
+
+            }
+
+            if(car.yearsLeft < 1) {
+                if(car.organization.name != this.player.team) {
+                    var odds = Math.floor(Math.random() * 100);
+                    if(odds < 45 && car.driver.wins < 2 && car.driver.age < 39) {
+                        this.freeAgents.push(car.driver);
+                        if(car.driver.name != "N/A") {
+                            retiredString += car.driver.name + " has become a free agent!<br>"
+                        }
+                        car.driver = new Driver("N/A");
+                    }
+                    else {
+                        retiredString += car.driver.name + " has renewed their contract with " + car.organization.name + "!<br>"
+                        car.yearsLeft = 3;
+                    }
+                }
+                else {
+                    this.freeAgents.push(car.driver);
+                    if(car.driver.name != "N/A") {
+                        retiredString += car.driver.name + " has become a free agent!<br>"
+                    }
+                    car.driver = new Driver("N/A");
+                }
+
 
             }
 
@@ -2563,6 +2607,22 @@ class Game {
         for (var f = 0; f < this.freeAgents.length; f++) {
 
             var FA = this.freeAgents[f];
+
+            if (FA.superspeedway > 90) {
+                FA.superspeedway = randomGood[Math.floor(Math.random() * randomMid.length)];
+            }
+            if (FA.intermediate > 90) {
+                FA.intermediate = randomGood[Math.floor(Math.random() * randomMid.length)];
+            }
+            if (FA.flat > 90) {
+                FA.flat = randomGood[Math.floor(Math.random() * randomMid.length)];
+            }
+            if (FA.shortTrack > 90) {
+                FA.shortTrack = randomMid[Math.floor(Math.random() * randomMid.length)];
+            }
+            if (FA.roadCourse > 90) {
+                FA.roadCourse = randomMid[Math.floor(Math.random() * randomMid.length)];
+            }
 
             if (FA.age > 22 && FA.age < 36 && (FA.superspeedway + FA.intermediate + FA.roadCourse + FA.shortTrack) / 4 > 73) {
 
@@ -3038,10 +3098,26 @@ class Game {
 
         console.log("game run races", this.numRaces);
 
-
-
+        if(this.player.money > 1000000) {
+            this.player.money = 1000000;
+        }
 
         for (var line = 0; line < this.carlist.length; line++) {
+            for (var line1 = 0; line1 < this.freeAgents.length; line1++) {
+                if(this.carlist[line].driver) {
+                    if(this.carlist[line].driver.name == this.freeAgents[line1].name) {
+                        this.freeAgents.splice(line1, 1); // Remove the item from the array
+                    }
+                }
+                if(this.week < 2) {
+                    this.freeAgents[line1].wins = 0;
+                    this.freeAgents[line1].topFives = 0;
+                    this.freeAgents[line1].topTens = 0;
+                    this.freeAgents[line1].races = 0;
+                    this.freeAgents[line1].points = 0;
+                }
+
+            }
 
             for (var line2 = 0; line2 < this.carlist.length; line2++) {
                 if (this.carlist[line].driver.name == this.carlist[line2].driver.name && line != line2) {
@@ -3298,8 +3374,14 @@ class Game {
                                 good.push(lockedIn[line]);
                             }
                             else {
-                                average.push(lockedIn[line]);
-                                console.log("pushed average 8", lockedIn[line], odds , "Game week", this.week);
+                                if (odds < 93) {
+                                    great.push(lockedIn[line]);
+                                }
+                                else {
+                                    average.push(lockedIn[line]);
+                                    console.log("pushed average 8", lockedIn[line], odds , "Game week", this.week);
+                                }
+
                             }
 
                         }
@@ -3321,7 +3403,19 @@ class Game {
 
                             }
                             else {
-                                average.push(lockedIn[line]);
+                                if (odds < 92) {
+                                    average.push(lockedIn[line]);
+                                }
+                                else {
+                                    if (odds < 97) {
+                                        elite.push(lockedIn[line]);
+                                    }
+                                    else {
+                                        great.push(lockedIn[line]);
+                                    }
+
+                                }
+
                                 console.log("pushed average 9", lockedIn[line], odds , "Game week", this.week);
                             }
                         }
@@ -3333,148 +3427,474 @@ class Game {
                     if(this.week > 19 & this.week < 25) {
                         console.log("test period");
                     }
-
-                    if((lockedIn[line].engine + lockedIn[line].driver.intermediate) / 2  > 90 ) {
-                        if (lockedIn[line].driver.topFives > 19 && this.week > 20 && this.week < 25) {
-                            good.push(lockedIn[line]);
-                        }
-                        else {
-                            if(lockedIn[line].driver.wins == 0 && this.week > 16 && this.week < 26) {
-                                superelite.push(lockedIn[line]);
+                    if(this.player.mode == "Owner Mode") {
+                        if(this.player.team == lockedIn[line].organization.name) {
+                            console.log("LETS GOOO TOP")
+                            if((lockedIn[line].engine + lockedIn[line].aero + lockedIn[line].driver.shortTrack + lockedIn[line].driver.intermediate) / 4  > 95 ) {
+                                console.log("LETS GOOO TOP2")
+                                if (lockedIn[line].driver.topFives > 22 && this.week > 20 && this.week < 25 || this.week < 25 && lockedIn[line].driver.wins > 7 || this.week < 34 && lockedIn[line].driver.wins > 11) {
+                                    good.push(lockedIn[line]);
+                                }
+                                else {
+                                    var odds = Math.floor(Math.random() * 100);
+                                    if (odds < 70) {
+                                        console.log("LETS GOOO TOP3", lockedIn[line]);
+                                        superelite.push(lockedIn[line]);
+                                    } else {
+                                        if (odds < 95) {
+                                            elite.push(lockedIn[line]);
+                                        } else {
+                                            average.push(lockedIn[line]);
+                                            console.log("pushed average 1", lockedIn[line], odds, "Game week", this.week);
+                                        }
+                                        }
+                                }
                             }
                             else {
-                                if((odds < 60 && lockedIn[line].driver.wins < 7 && this.week < 16) || (this.week > 32 && lockedIn[line].driver.wins < 7 && lockedIn[line].driver.wins > 3) || (this.week > 23 && this.week < 27 && lockedIn[line].driver.wins > 3 && lockedIn[line].driver.wins < 7) || (this.week > 21 && this.week < 27 && lockedIn[line].driver.wins == 0 )) {
-                                    if(superelite.length < 4) {
-                                        superelite.push(lockedIn[line]);
-                                    }
-                                    else {
-                                        if(((lockedIn[line].driver.intermediate + lockedIn[line].engine + lockedIn[line].aero + lockedIn[line].chassis ) / 3 ) > 95 && superelite.length < 8 ) {
+                                if((lockedIn[line].engine + lockedIn[line].aero + lockedIn[line].driver.shortTrack + lockedIn[line].driver.intermediate) /4  > 86 ) {
+                                    console.log("LETS GOOO TOP4", lockedIn[line], (lockedIn[line].engine + lockedIn[line].aero + lockedIn[line].driver.shortTrack + lockedIn[line].driver.intermediate))
+                                    if( lockedIn[line].driver.topTens > 18 && lockedIn[line].driver.wins == 0) {
+                                        if(odds < 20) {
                                             superelite.push(lockedIn[line]);
                                         }
                                         else {
-                                            elite.push(lockedIn[line]);
-                                        }
-                                    }
-
-                                }
-                                else {
-                                    if (odds < 90) {
-                                        elite.push(lockedIn[line]);
-                                    }
-                                    else {
-                                        if (odds < 95) {
                                             good.push(lockedIn[line]);
                                         }
+                                    }
+                                    else {
+                                        if(odds < 90 && lockedIn[line].driver.topTens < this.schedule.length - 5 || this.week > 23 && this.week < 27 && lockedIn[line].driver.wins > 3) {
+                                            elite.push(lockedIn[line]);
+                                        }
                                         else {
-                                            average.push(lockedIn[line]);
-                                            console.log("pushed average 1", lockedIn[line], odds , "Game week", this.week);
+                                            if (odds < 45) {
+                                                great.push(lockedIn[line]);
+                                            }
+                                            else {
+                                                good.push(lockedIn[line]);
+                                            }
+
+                                        }
+                                    }
+
+
+                                }
+                                else {
+                                    if((lockedIn[line].engine + lockedIn[line].aero + lockedIn[line].driver.shortTrack + lockedIn[line].driver.intermediate) /4 > 79) {
+                                        if(this.week > 20 && this.week < 32 && lockedIn[line].driver.topTens < 12 )
+                                        {
+                                            if(odds < 10) {
+                                                elite.push(lockedIn[line]);
+                                            }
+                                            else {
+                                                if(odds < 30) {
+                                                    great.push(lockedIn[line]);
+                                                }
+                                                else {
+                                                    if(odds < 70) {
+                                                        good.push(lockedIn[line]);
+                                                    }
+                                                    else {
+                                                        average.push(lockedIn[line]);
+                                                    }
+
+                                                    console.log("pushed average 2", lockedIn[line], odds , "Game week", this.week);
+                                                }
+                                            }
+                                        }
+                                        else {
+                                            if(odds < 20) {
+                                                elite.push(lockedIn[line]);
+                                            }
+                                            else {
+                                                if(odds < 80) {
+                                                    great.push(lockedIn[line]);
+                                                }
+                                                else {
+                                                    average.push(lockedIn[line]);
+                                                    console.log("pushed average 4", lockedIn[line], odds , "Game week", this.week);
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        if((lockedIn[line].engine + lockedIn[line].aero + lockedIn[line].driver.shortTrack + lockedIn[line].driver.intermediate) / 4 > 72) {
+
+                                            if(odds < 75) {
+                                                good.push(lockedIn[line]);
+                                            }
+
+                                            else {
+                                                if(odds < 85) {
+                                                    great.push(lockedIn[line]);
+                                                }
+                                                else {
+                                                    average.push(lockedIn[line]);
+                                                    console.log("pushed average 5", lockedIn[line], odds , "Game week", this.week);
+                                                }
+
+                                            }
+                                        }
+                                        else {
+                                            if((lockedIn[line].engine + lockedIn[line].aero + lockedIn[line].driver.shortTrack + lockedIn[line].driver.intermediate) /4 > 66) {
+
+                                                if(odds < 75) {
+                                                    good.push(lockedIn[line]);
+                                                }
+
+                                                else {
+                                                    if(odds < 85) {
+                                                        great.push(lockedIn[line]);
+                                                    }
+                                                    else {
+                                                        average.push(lockedIn[line]);
+                                                        console.log("pushed average 5", lockedIn[line], odds , "Game week", this.week);
+                                                    }
+
+                                                }
+                                            }
+
+
+                                            else {
+                                                if(odds < 90) {
+                                                    average.push(lockedIn[line]);
+                                                }
+                                                else {
+                                                    good.push(lockedIn[line]);
+                                                    console.log("pushed average 7", lockedIn[line], odds , "Game week", this.week);
+                                                }
+
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else {
+                            if((lockedIn[line].engine + lockedIn[line].driver.intermediate) / 2  > 90 ) {
+                                if (lockedIn[line].driver.topFives > 19 && this.week > 20 && this.week < 25) {
+                                    good.push(lockedIn[line]);
+                                }
+                                else {
+                                    if(lockedIn[line].driver.wins > 2 && lockedIn[line].driver.wins < 6  && this.week > 28 && this.week < 33) {
+                                        if(odds < 74) {
+                                            superelite.push(lockedIn[line]);
+                                        }
+                                        else {
+                                            great.push(lockedIn[line]);
+                                        }
+
+                                    }
+                                    else {
+                                        if(lockedIn[line].driver.wins == 0 && this.week > 16 && this.week < 24) {
+                                            superelite.push(lockedIn[line]);
+                                        }
+                                        else {
+                                            if((odds < 60 && lockedIn[line].driver.wins < 7 && this.week < 16) || (this.week > 32 && lockedIn[line].driver.wins < 7 && lockedIn[line].driver.wins > 3) || (this.week > 23 && this.week < 27 && lockedIn[line].driver.wins > 3 && lockedIn[line].driver.wins < 7) || (this.week > 21 && this.week < 27 && lockedIn[line].driver.wins == 0 )) {
+                                                if(superelite.length < 4) {
+                                                    superelite.push(lockedIn[line]);
+                                                }
+                                                else {
+                                                    if(((lockedIn[line].driver.intermediate + lockedIn[line].engine + lockedIn[line].aero + lockedIn[line].chassis ) / 3 ) > 95 && superelite.length < 8 ) {
+                                                        superelite.push(lockedIn[line]);
+                                                    }
+                                                    else {
+                                                        elite.push(lockedIn[line]);
+                                                    }
+                                                }
+
+                                            }
+                                            else {
+                                                if (odds < 80) {
+                                                    great.push(lockedIn[line]);
+                                                }
+                                                else {
+                                                    if (odds < 95) {
+                                                        good.push(lockedIn[line]);
+                                                    }
+                                                    else {
+                                                        average.push(lockedIn[line]);
+                                                        console.log("pushed average 1", lockedIn[line], odds , "Game week", this.week);
+                                                    }
+
+                                                }
+
+                                            }
                                         }
 
                                     }
 
                                 }
-                            }
 
-                        }
-
-                    }
-                    else {
-                        if((lockedIn[line].engine + lockedIn[line].driver.intermediate) / 2  > 84 ) {
-                            if( lockedIn[line].driver.topTens > 18 && lockedIn[line].driver.wins == 0) {
-                                if(odds < 20) {
-                                    superelite.push(lockedIn[line]);
-                                }
-                                else {
-                                    good.push(lockedIn[line]);
-                                }
                             }
                             else {
-                                if(odds < 90 && lockedIn[line].driver.topTens < this.schedule.length - 5 || this.week > 23 && this.week < 27 && lockedIn[line].driver.wins > 3) {
-                                    elite.push(lockedIn[line]);
-                                }
-                                else {
-                                    if (odds < 45) {
-                                        great.push(lockedIn[line]);
+                                if((lockedIn[line].engine + lockedIn[line].driver.intermediate) / 2  > 84 ) {
+                                    if( lockedIn[line].driver.topTens > 18 && lockedIn[line].driver.wins == 0) {
+                                        if(odds < 20) {
+                                            superelite.push(lockedIn[line]);
+                                        }
+                                        else {
+                                            if(odds < 70) {
+                                                elite.push(lockedIn[line]);
+                                            }
+                                            else {
+                                                good.push(lockedIn[line]);
+                                            }
+
+                                        }
                                     }
                                     else {
-                                        good.push(lockedIn[line]);
+                                        if(odds < 90 && lockedIn[line].driver.topTens < this.schedule.length - 5 || this.week > 23 && this.week < 27 && lockedIn[line].driver.wins > 3) {
+                                            elite.push(lockedIn[line]);
+                                        }
+                                        else {
+                                            if (odds < 45) {
+                                                great.push(lockedIn[line]);
+                                            }
+                                            else {
+                                                if (odds < 75) {
+                                                    elite.push(lockedIn[line]);
+                                                }
+                                                else {
+                                                    good.push(lockedIn[line]);
+                                                }
+
+                                            }
+
+                                        }
+                                    }
+
+
+                                }
+                                else {
+                                    if((lockedIn[line].engine + lockedIn[line].driver.intermediate) / 2 > 80) {
+                                        if(this.week > 20 && this.week < 32 && lockedIn[line].driver.topTens < 12 )
+                                        {
+                                            if(odds < 80) {
+                                                elite.push(lockedIn[line]);
+                                            }
+                                            else {
+                                                if(odds < 90) {
+                                                    great.push(lockedIn[line]);
+                                                }
+                                                else {
+                                                    average.push(lockedIn[line]);
+                                                    console.log("pushed average 2", lockedIn[line], odds , "Game week", this.week);
+                                                }
+                                            }
+                                        }
+                                        else {
+                                            if(odds < 80) {
+                                                great.push(lockedIn[line]);
+                                            }
+                                            else {
+                                                if(odds < 80) {
+                                                    elite.push(lockedIn[line]);
+                                                }
+                                                else {
+                                                    average.push(lockedIn[line]);
+                                                    console.log("pushed average 4", lockedIn[line], odds , "Game week", this.week);
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        if((lockedIn[line].engine + lockedIn[line].driver.intermediate) / 2 > 70) {
+
+                                            if(odds < 75) {
+                                                good.push(lockedIn[line]);
+                                            }
+
+                                            else {
+                                                if(odds < 85) {
+                                                    great.push(lockedIn[line]);
+                                                }
+                                                else {
+                                                    average.push(lockedIn[line]);
+                                                    console.log("pushed average 5", lockedIn[line], odds , "Game week", this.week);
+                                                }
+
+                                            }
+                                        }
+                                        else {
+                                            if(odds < 75) {
+                                                average.push(lockedIn[line]);
+                                                console.log("pushed average 6", lockedIn[line], odds , "Game week", this.week);
+                                            }
+
+                                            else {
+                                                if(odds < 80) {
+                                                    great.push(lockedIn[line]);
+                                                }
+                                                else {
+                                                    average.push(lockedIn[line]);
+                                                    console.log("pushed average 7", lockedIn[line], odds , "Game week", this.week);
+                                                }
+
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else {
+                        if((lockedIn[line].engine + lockedIn[line].driver.intermediate) / 2  > 90 ) {
+                            if (lockedIn[line].driver.topFives > 19 && this.week > 20 && this.week < 25) {
+                                good.push(lockedIn[line]);
+                            }
+                            else {
+                                if(lockedIn[line].driver.wins > 2 && lockedIn[line].driver.wins < 6  && this.week > 28 && this.week < 33) {
+                                    if(odds < 74) {
+                                        superelite.push(lockedIn[line]);
+                                    }
+                                    else {
+                                        great.push(lockedIn[line]);
                                     }
 
                                 }
-                            }
+                                else {
+                                    if(lockedIn[line].driver.wins == 0 && this.week > 16 && this.week < 24) {
+                                        superelite.push(lockedIn[line]);
+                                    }
+                                    else {
+                                        if((odds < 60 && lockedIn[line].driver.wins < 7 && this.week < 16) || (this.week > 32 && lockedIn[line].driver.wins < 7 && lockedIn[line].driver.wins > 3) || (this.week > 23 && this.week < 27 && lockedIn[line].driver.wins > 3 && lockedIn[line].driver.wins < 7) || (this.week > 21 && this.week < 27 && lockedIn[line].driver.wins == 0 )) {
+                                            if(superelite.length < 4) {
+                                                superelite.push(lockedIn[line]);
+                                            }
+                                            else {
+                                                if(((lockedIn[line].driver.intermediate + lockedIn[line].engine + lockedIn[line].aero + lockedIn[line].chassis ) / 3 ) > 95 && superelite.length < 8 ) {
+                                                    superelite.push(lockedIn[line]);
+                                                }
+                                                else {
+                                                    elite.push(lockedIn[line]);
+                                                }
+                                            }
 
+                                        }
+                                        else {
+                                            if (odds < 90) {
+                                                elite.push(lockedIn[line]);
+                                            }
+                                            else {
+                                                if (odds < 95) {
+                                                    good.push(lockedIn[line]);
+                                                }
+                                                else {
+                                                    average.push(lockedIn[line]);
+                                                    console.log("pushed average 1", lockedIn[line], odds , "Game week", this.week);
+                                                }
+
+                                            }
+
+                                        }
+                                    }
+
+                                }
+
+                            }
 
                         }
                         else {
-                            if((lockedIn[line].engine + lockedIn[line].driver.intermediate) / 2 > 80) {
-                                if(this.week > 20 && this.week < 32 && lockedIn[line].driver.topTens < 12 )
-                                {
-                                    if(odds < 80) {
-                                        elite.push(lockedIn[line]);
+                            if((lockedIn[line].engine + lockedIn[line].driver.intermediate) / 2  > 84 ) {
+                                if( lockedIn[line].driver.topTens > 18 && lockedIn[line].driver.wins == 0) {
+                                    if(odds < 20) {
+                                        superelite.push(lockedIn[line]);
                                     }
                                     else {
-                                        if(odds < 90) {
-                                            great.push(lockedIn[line]);
-                                        }
-                                        else {
-                                            average.push(lockedIn[line]);
-                                            console.log("pushed average 2", lockedIn[line], odds , "Game week", this.week);
-                                        }
+                                        good.push(lockedIn[line]);
                                     }
                                 }
                                 else {
-                                    if(odds < 80) {
-                                        great.push(lockedIn[line]);
+                                    if(odds < 90 && lockedIn[line].driver.topTens < this.schedule.length - 5 || this.week > 23 && this.week < 27 && lockedIn[line].driver.wins > 3) {
+                                        elite.push(lockedIn[line]);
                                     }
                                     else {
+                                        if (odds < 45) {
+                                            great.push(lockedIn[line]);
+                                        }
+                                        else {
+                                            good.push(lockedIn[line]);
+                                        }
+
+                                    }
+                                }
+
+
+                            }
+                            else {
+                                if((lockedIn[line].engine + lockedIn[line].driver.intermediate) / 2 > 80) {
+                                    if(this.week > 20 && this.week < 32 && lockedIn[line].driver.topTens < 12 )
+                                    {
                                         if(odds < 80) {
                                             elite.push(lockedIn[line]);
                                         }
                                         else {
-                                            average.push(lockedIn[line]);
-                                            console.log("pushed average 4", lockedIn[line], odds , "Game week", this.week);
+                                            if(odds < 90) {
+                                                great.push(lockedIn[line]);
+                                            }
+                                            else {
+                                                average.push(lockedIn[line]);
+                                                console.log("pushed average 2", lockedIn[line], odds , "Game week", this.week);
+                                            }
                                         }
                                     }
-                                }
-                            }
-                            else {
-                                if((lockedIn[line].engine + lockedIn[line].driver.intermediate) / 2 > 70) {
-
-                                    if(odds < 75) {
-                                        good.push(lockedIn[line]);
-                                    }
-
-                                    else {
-                                        if(odds < 85) {
-                                            great.push(lockedIn[line]);
-                                        }
-                                        else {
-                                            average.push(lockedIn[line]);
-                                            console.log("pushed average 5", lockedIn[line], odds , "Game week", this.week);
-                                        }
-
-                                    }
-                                }
-                                else {
-                                    if(odds < 75) {
-                                        average.push(lockedIn[line]);
-                                        console.log("pushed average 6", lockedIn[line], odds , "Game week", this.week);
-                                    }
-
                                     else {
                                         if(odds < 80) {
                                             great.push(lockedIn[line]);
                                         }
                                         else {
+                                            if(odds < 80) {
+                                                elite.push(lockedIn[line]);
+                                            }
+                                            else {
+                                                average.push(lockedIn[line]);
+                                                console.log("pushed average 4", lockedIn[line], odds , "Game week", this.week);
+                                            }
+                                        }
+                                    }
+                                }
+                                else {
+                                    if((lockedIn[line].engine + lockedIn[line].driver.intermediate) / 2 > 70) {
+
+                                        if(odds < 75) {
+                                            good.push(lockedIn[line]);
+                                        }
+
+                                        else {
+                                            if(odds < 85) {
+                                                great.push(lockedIn[line]);
+                                            }
+                                            else {
+                                                average.push(lockedIn[line]);
+                                                console.log("pushed average 5", lockedIn[line], odds , "Game week", this.week);
+                                            }
+
+                                        }
+                                    }
+                                    else {
+                                        if(odds < 75) {
                                             average.push(lockedIn[line]);
-                                            console.log("pushed average 7", lockedIn[line], odds , "Game week", this.week);
+                                            console.log("pushed average 6", lockedIn[line], odds , "Game week", this.week);
+                                        }
+
+                                        else {
+                                            if(odds < 80) {
+                                                great.push(lockedIn[line]);
+                                            }
+                                            else {
+                                                average.push(lockedIn[line]);
+                                                console.log("pushed average 7", lockedIn[line], odds , "Game week", this.week);
+                                            }
+
                                         }
 
                                     }
-
                                 }
                             }
                         }
+
                     }
 
 
@@ -3897,7 +4317,7 @@ function upgradeDriver(event, car, cost) {
 
 
     event.preventDefault();
-    console.log("car is", car)
+    //console.log("car is", car)
 
     try {
         // Parse a JSON
@@ -3913,49 +4333,54 @@ function upgradeDriver(event, car, cost) {
     console.log("driver is", selectedCar.driver)
 
     console.log( 'upgradeDriver' );
+    if (globalMoney - cost > 0) {
+        if (selectedCar.driver.intermediate < 100) {
+            selectedCar.driver.intermediate += 3;
 
-    if(selectedCar.driver.intermediate < 100) {
-        selectedCar.driver.intermediate += 7;
+        }
+        if (selectedCar.driver.intermediate > 100) {
+            selectedCar.driver.intermediate = 100;
+        }
 
+        if (selectedCar.driver.superspeedway < 100) {
+            selectedCar.driver.superspeedway += 3;
+
+        }
+        if (selectedCar.driver.superspeedway > 100) {
+            selectedCar.driver.superspeedway = 100;
+        }
+        if (selectedCar.driver.flat < 100) {
+            selectedCar.driver.flat += 3;
+
+        }
+        if (selectedCar.driver.flat > 100) {
+            selectedCar.driver.flat = 100;
+        }
+
+        if (selectedCar.driver.roadCourse < 100) {
+            selectedCar.driver.roadCourse += 3;
+
+        }
+        if (selectedCar.driver.roadCourse > 100) {
+            selectedCar.driver.roadCourse = 100;
+        }
+
+        if (selectedCar.driver.shortTrack < 100) {
+            selectedCar.driver.shortTrack += 3;
+
+        }
+        if (selectedCar.driver.shortTrack > 100) {
+            selectedCar.driver.shortTrack = 100;
+        }
+        globalCost = cost;
     }
-    if(selectedCar.driver.intermediate > 100) {
-        selectedCar.driver.intermediate = 100;
+    else {
+        alert("Insufficent Funds!");
     }
 
-    if(selectedCar.driver.superspeedway < 100) {
-        selectedCar.driver.superspeedway += 7;
-
-    }
-    if(selectedCar.driver.superspeedway > 100) {
-        selectedCar.driver.superspeedway = 100;
-    }
-    if(selectedCar.driver.flat < 100) {
-        selectedCar.driver.flat += 7;
-
-    }
-    if(selectedCar.driver.flat > 100) {
-        selectedCar.driver.flat = 100;
-    }
-
-    if(selectedCar.driver.roadCourse < 100) {
-        selectedCar.driver.roadCourse += 7;
-
-    }
-    if(selectedCar.driver.roadCourse > 100) {
-        selectedCar.driver.roadCourse = 100;
-    }
-
-    if(selectedCar.driver.shortTrack < 100) {
-        selectedCar.driver.shortTrack += 7;
-
-    }
-    if(selectedCar.driver.shortTrack > 100) {
-        selectedCar.driver.shortTrack = 100;
-    }
-
-    globalCost = cost;
 
     document.getElementById("teammanager").click();
+
 
 }
 
@@ -3976,43 +4401,52 @@ function upgradeStat(event, car, cost, stat) {
 
     console.log('upgradeDriver');
 
-    switch(stat) {
-        case 1:
-            if(selectedCar.engine < 100) {
-                selectedCar.engine += 5;
-                if(selectedCar.engine > 100) {
-                    selectedCar.engine = 100;
+
+    console.log("global money is", globalMoney, cost)
+    if (globalMoney - cost > 0) {
+        switch (stat) {
+            case 1:
+                if (selectedCar.engine < 100) {
+                    selectedCar.engine += 3;
+                    if (selectedCar.engine > 100) {
+                        selectedCar.engine = 100;
+                    }
                 }
-            }
-            break;
-        case 2:
-            if(selectedCar.chassis < 100) {
-                selectedCar.chassis += 5;
-                if(selectedCar.chassis > 100) {
-                    selectedCar.chassis = 100;
+                break;
+            case 2:
+                if (selectedCar.chassis < 100) {
+                    selectedCar.chassis += 3;
+                    if (selectedCar.chassis > 100) {
+                        selectedCar.chassis = 100;
+                    }
                 }
-            }
-            break;
-        case 3:
-            if(selectedCar.aero < 100) {
-                selectedCar.aero += 5;
-                if(selectedCar.aero > 100) {
-                    selectedCar.aero = 100;
+                break;
+            case 3:
+                if (selectedCar.aero < 100) {
+                    selectedCar.aero += 3;
+                    if (selectedCar.aero > 100) {
+                        selectedCar.aero = 100;
+                    }
                 }
-            }
-            break;
-        case 4:
-            if(selectedCar.pitCrew < 100) {
-                selectedCar.pitCrew += 5;
-                if(selectedCar.pitCrew > 100) {
-                    selectedCar.pitCrew = 100;
+                break;
+            case 4:
+                if (selectedCar.pitCrew < 100) {
+                    selectedCar.pitCrew += 3;
+                    if (selectedCar.pitCrew > 100) {
+                        selectedCar.pitCrew = 100;
+                    }
                 }
-            }
-            break;
+                break;
+        }
+        globalCost = cost;
+
+    }
+    else {
+        alert("Insufficent Funds!");
     }
 
-    globalCost = cost;
 
+    document.getElementById("teammanager").click();
     document.getElementById("teammanager").click();
 
 }
@@ -4107,47 +4541,52 @@ function upgradeDriverSS(event, car, cost) {
 
     console.log( 'upgradeDriver' );
 
+    if (globalMoney - cost > 0) {
+        if (selectedCar.driver.intermediate < 100) {
+            selectedCar.driver.intermediate += 3;
 
-    if(selectedCar.driver.intermediate < 100) {
-        selectedCar.driver.intermediate += 7;
+        }
+        if (selectedCar.driver.intermediate > 100) {
+            selectedCar.driver.intermediate = 100;
+        }
 
+        if (selectedCar.driver.superspeedway < 100) {
+            selectedCar.driver.superspeedway += 3;
+
+        }
+        if (selectedCar.driver.superspeedway > 100) {
+            selectedCar.driver.superspeedway = 100;
+        }
+        if (selectedCar.driver.flat < 100) {
+            selectedCar.driver.flat += 3;
+
+        }
+        if (selectedCar.driver.flat > 100) {
+            selectedCar.driver.flat = 100;
+        }
+
+        if (selectedCar.driver.roadCourse < 100) {
+            selectedCar.driver.roadCourse += 3;
+
+        }
+        if (selectedCar.driver.roadCourse > 100) {
+            selectedCar.driver.roadCourse = 100;
+        }
+
+        if (selectedCar.driver.shortTrack < 100) {
+            selectedCar.driver.shortTrack += 3;
+
+        }
+        if (selectedCar.driver.shortTrack > 100) {
+            selectedCar.driver.shortTrack = 100;
+        }
+        globalCost = cost;
     }
-    if(selectedCar.driver.intermediate > 100) {
-        selectedCar.driver.intermediate = 100;
+    else {
+        alert("Insufficent Funds!");
     }
 
-    if(selectedCar.driver.superspeedway < 100) {
-        selectedCar.driver.superspeedway += 7;
 
-    }
-    if(selectedCar.driver.superspeedway > 100) {
-        selectedCar.driver.superspeedway = 100;
-    }
-    if(selectedCar.driver.flat < 100) {
-        selectedCar.driver.flat += 7;
-
-    }
-    if(selectedCar.driver.flat > 100) {
-        selectedCar.driver.flat = 100;
-    }
-
-    if(selectedCar.driver.roadCourse < 100) {
-        selectedCar.driver.roadCourse += 7;
-
-    }
-    if(selectedCar.driver.roadCourse > 100) {
-        selectedCar.driver.roadCourse = 100;
-    }
-
-    if(selectedCar.driver.shortTrack < 100) {
-        selectedCar.driver.shortTrack += 7;
-
-    }
-    if(selectedCar.driver.shortTrack > 100) {
-        selectedCar.driver.shortTrack = 100;
-    }
-
-    globalCost = cost;
 
     document.getElementById("teammanagerSillySeason").click();
 
@@ -4169,43 +4608,47 @@ function upgradeStatSS(event, car, cost, stat) {
     console.log("car is", selectedCar)
 
     console.log('upgradeDriver');
-
-    switch(stat) {
-        case 1:
-            if(selectedCar.engine < 100) {
-                selectedCar.engine += 5;
-                if(selectedCar.engine > 100) {
-                    selectedCar.engine = 100;
+    if (globalMoney - cost > 0) {
+        switch (stat) {
+            case 1:
+                if (selectedCar.engine < 100) {
+                    selectedCar.engine += 3;
+                    if (selectedCar.engine > 100) {
+                        selectedCar.engine = 100;
+                    }
                 }
-            }
-            break;
-        case 2:
-            if(selectedCar.chassis < 100) {
-                selectedCar.chassis += 5;
-                if(selectedCar.chassis > 100) {
-                    selectedCar.chassis = 100;
+                break;
+            case 2:
+                if (selectedCar.chassis < 100) {
+                    selectedCar.chassis += 3;
+                    if (selectedCar.chassis > 100) {
+                        selectedCar.chassis = 100;
+                    }
                 }
-            }
-            break;
-        case 3:
-            if(selectedCar.aero < 100) {
-                selectedCar.aero += 5;
-                if(selectedCar.aero > 100) {
-                    selectedCar.aero = 100;
+                break;
+            case 3:
+                if (selectedCar.aero < 100) {
+                    selectedCar.aero += 3;
+                    if (selectedCar.aero > 100) {
+                        selectedCar.aero = 100;
+                    }
                 }
-            }
-            break;
-        case 4:
-            if(selectedCar.pitCrew < 100) {
-                selectedCar.pitCrew += 5;
-                if(selectedCar.pitCrew > 100) {
-                    selectedCar.pitCrew = 100;
+                break;
+            case 4:
+                if (selectedCar.pitCrew < 100) {
+                    selectedCar.pitCrew += 3;
+                    if (selectedCar.pitCrew > 100) {
+                        selectedCar.pitCrew = 100;
+                    }
                 }
-            }
-            break;
+                break;
+        }
+        globalCost = cost;
+    }
+    else {
+        alert("Insufficent Funds!");
     }
 
-    globalCost = cost;
 
     document.getElementById("teammanagerSillySeason").click();
 
@@ -4390,11 +4833,13 @@ function hireDriverConfirm(event, car) {
 
 }
 
-function hireDriverConfirm2(event) {
+function hireDriverConfirm2(event, contractAmt, yrsLeft1) {
 
     event.preventDefault();
 
+    yrsLeft = yrsLeft1;
 
+    globalCost = contractAmt;
 
     document.getElementById("driversConfirmHire").click();
 
@@ -4402,6 +4847,22 @@ function hireDriverConfirm2(event) {
 
 
 }
+
+function hireDriverConfirm2SS(event, contractAmt, yrsLeft1) {
+
+    event.preventDefault();
+
+    yrsLeft = yrsLeft1;
+
+    globalCost = contractAmt;
+
+    document.getElementById("driversConfirmHireSillySeason").click();
+
+
+
+
+}
+
 
 function hireDriverConfirmSS(event, car) {
 
@@ -4421,13 +4882,62 @@ function hireDriverConfirmSS(event, car) {
     }
     console.log("FA is", selectedFA)
 
+    document.getElementById("driversNegotiateSillySeason").click();
 
-    document.getElementById("driversConfirmHireSillySeason").click();
+
 
 
 
 
 }
+
+function shutDownTeam(event, car) {
+
+    event.preventDefault();
+    console.log("car is", car)
+
+    try {
+        // Parse a JSON
+        selectedCar = JSON.parse(car);
+    } catch (e) {
+        // You can read e for more info
+        // Let's assume the error is that we already have parsed the payload
+        // So just return that
+        selectedCar = car;
+    }
+    console.log("FA is", selectedCar)
+
+    document.getElementById("shutDownTeam1").click();
+
+
+
+
+}
+
+function shutDownTeamSS(event, car) {
+
+    event.preventDefault();
+
+    console.log("car is", car)
+
+    try {
+        // Parse a JSON
+        selectedCar = JSON.parse(car);
+    } catch (e) {
+        // You can read e for more info
+        // Let's assume the error is that we already have parsed the payload
+        // So just return that
+        selectedCar = car;
+    }
+    console.log("FA is", selectedCar)
+
+    document.getElementById("shutDownTeam1SillySeason").click();
+
+
+
+
+}
+
 
 function createTeam(event) {
 
@@ -4445,6 +4955,7 @@ function createTeamSubmit(event, rating, cost, type) {
 
     event.preventDefault();
 
+    console.log("global money is", globalMoney, cost)
     if (globalMoney - cost > 0) {
 
         selectedCar = new Car();
@@ -4471,6 +4982,59 @@ function createTeamSubmit(event, rating, cost, type) {
 
 
 }
+
+function shutDownTeamSubmit(event) {
+
+    event.preventDefault();
+
+    globalCost = -50000;
+
+    shutDown = true;
+
+
+    document.getElementById("shutDownTeam2").click();
+
+
+
+}
+
+function shutDownTeamSubmitSS(event) {
+
+    event.preventDefault();
+
+    globalCost = -50000;
+
+
+    document.getElementById("shutDownTeam2SillySeason").click();
+
+
+
+}
+
+function teamManagerReturnSS(event) {
+
+    event.preventDefault();
+
+    selectedCar = null;
+
+    selectedFA = null;
+
+    document.getElementById("teammanagerSillySeason").click();
+
+}
+
+function teamManagerReturn(event) {
+
+    event.preventDefault();
+
+    selectedCar = null;
+
+    selectedFA = null;
+
+    document.getElementById("teammanager").click();
+
+}
+
 
 function createTeamSubmit2(event, num) {
 
@@ -4607,7 +5171,11 @@ function teamEditor(g) {
 
     html += carsInOrg[i].driver.name;
 
-    html += " | Driver Rating: ";
+    html += " | Years Left On Contract: ";
+
+    html += carsInOrg[i].yearsLeft;
+
+    html += "<br>Driver Rating: ";
 
     var overall = (carsInOrg[i].driver.superspeedway + carsInOrg[i].driver.intermediate + carsInOrg[i].driver.flat +
         carsInOrg[i].driver.roadCourse + carsInOrg[i].driver.shortTrack) / 5;
@@ -4785,9 +5353,14 @@ function autosim() {
                     }
                 }
 
+                if (data[0] == "PlayerData") {
+                    daytona = false;
+                }
+
                 if (daytona) {
                     game.daytona.push(data[0]);
                 }
+
 
                 if (data[0] == "Season Opener Winners") {
                     champ = false;
@@ -5008,7 +5581,8 @@ function autosim() {
 
 
                     car.sponsor2 = data[3];
-
+                    console.log("YEARS LEFT", data[19]);
+                    car.yearsLeft = parseInt(data[19]);
                     car.engine = parseInt(data[20]);
                     car.chassis = parseInt(data[21]);
                     car.aero = parseInt(data[22]);
@@ -5076,6 +5650,10 @@ function autosim() {
     html += '<input type="submit" id = "driversConfirmHireSillySeason" name="giveup" value="Hire Drivers"  style="display:none">';
     html += '<input type="submit" id = "teammanagerSillySeason" name="giveup" value="Hire Drivers"  style="display:none">';
     html += '<input type="submit" id = "continueSillySeason" name="giveup" value="Hire Drivers"  style="display:none">';
+    html += '<input type="submit" id = "shutDownTeam1" name="giveup" value="Hire Drivers"  style="display:none">';
+    html += '<input type="submit" id = "shutDownTeam1SillySeason" name="giveup" value="Hire Drivers"  style="display:none">';
+    html += '<input type="submit" id = "shutDownTeam2" name="giveup" value="Hire Drivers"  style="display:none">';
+    html += '<input type="submit" id = "shutDownTeam2SillySeason" name="giveup" value="Hire Drivers"  style="display:none">';
     html += '<input type="submit" id = "createTeam1" name="giveup" value="Hire Drivers"  style="display:none">';
     html += '<input type="submit" id = "createTeam2" name="giveup" value="Hire Drivers"  style="display:none">';
     html += '<input type="submit" id = "createTeam3" name="giveup" value="Hire Drivers"  style="display:none">';
@@ -5132,10 +5710,15 @@ function autosim() {
 
     document.getElementById("teammanagerSillySeason").onclick = function (event) {
 
-
-
         event.preventDefault();
+        document.getElementById('uploads').innerHTML = "";
+        if(shutDown) {
 
+            game.player.money -= globalCost;
+            globalCost = 0;
+            shutDown = false;
+        }
+        globalMoney = game.player.money;
         if (game.player.mode == "Owner Mode") {
             document.getElementById("message").innerHTML = "Name: " + game.player.name + " | Mode: " + game.player.mode + " | Team: " + game.player.team + "<br>";
 
@@ -5177,12 +5760,13 @@ function autosim() {
                 }
             }
             var html = '';
+
             if(game.player.mode == "Owner Mode") {
                 html = '<input type="submit" value="Continue" onclick="sillySeasonContinue(event)"><br>';
             }
-            html += "Funds: ";
+            html += "Funds: $";
             html += game.player.money;
-
+            html += "<br>Upgrade Prices | Driver: $30000 | Engine: $50000 | Chassis: $35000 | Aero: $25000 | Pit Crew: $25000 ";
             if (carsInOrg.length < 5) {
                 html += "<br>";
                 html += '<input type=\"submit\" style=\"width:250px\" value=\"Create Team\" onclick=\"createTeam(event)\">';
@@ -5193,6 +5777,14 @@ function autosim() {
 
 
             for (var i = 0; i < carsInOrg.length ; i++) {
+
+                carsInOrg[i].sponsor1 = carsInOrg[i].sponsor1.replace(/'/g, '′');
+
+                carsInOrg[i].sponsor2 = carsInOrg[i].sponsor2.replace(/'/g, '′');
+
+                carsInOrg[i].sponsor1 = carsInOrg[i].sponsor1.replace('%u2032', '′');
+
+                carsInOrg[i].sponsor2 = carsInOrg[i].sponsor2.replace('%u2032', '′');
 
                 var src = "../images/num/" + carsInOrg[i].organization.name + carsInOrg[i].number;
 
@@ -5239,7 +5831,7 @@ function autosim() {
 
                 html +=  car2;
                 html += ",";
-                html +=  10000  ;
+                html +=  30000  ;
                 html += ')\">';
                 html += '<br>';
                 console.log("selected car", car)
@@ -5293,7 +5885,7 @@ function autosim() {
 
                 html +=  car2;
                 html += ",";
-                html +=  50000;
+                html +=  35000;
                 html += ",";
                 html +=  3;
                 html += ')\">';
@@ -5480,24 +6072,56 @@ function autosim() {
 
 
         event.preventDefault();
+        document.getElementById('uploads').innerHTML = "";
+        if(shutDown) {
 
+            game.player.money -= globalCost;
+            globalCost = 0;
+            shutDown = false;
+        }
         globalMoney = game.player.money;
-
 
         if(firedDriver) {
             if(firedDriver.name !== "N/A") {
               var found = false;
               for (var i = 0; i < game.freeAgents.length; i++) {
-                    if(game.freeAgents[i].name == firedDriver.name) {
+                    if(game.freeAgents[i].name === firedDriver.name) {
                         found = true;
                     }
               }
-              if(found == false) {
+              if(found === false) {
                 game.freeAgents.push(firedDriver);
               }
             }
         }
 
+        for (var i = 0; i < game.carlist.length; i++) {
+            if(selectedCar) {
+                if(selectedCar.number === game.carlist[i].number) {
+                    game.carlist[i].sponsor1 = selectedCar.sponsor1;
+                    game.carlist[i].sponsor2 = selectedCar.sponsor2;
+                    game.carlist[i].engine = selectedCar.engine;
+                    game.carlist[i].aero = selectedCar.aero;
+                    game.carlist[i].chassis = selectedCar.chassis;
+                    game.carlist[i].pitCrew = selectedCar.pitCrew;
+                    if(game.carlist[i].driver && selectedCar.driver) {
+                        game.carlist[i].driver.intermediate = selectedCar.driver.intermediate;
+                        game.carlist[i].driver.superspeedway = selectedCar.driver.superspeedway;
+                        game.carlist[i].driver.flat = selectedCar.driver.flat;
+                        game.carlist[i].driver.roadCourse = selectedCar.driver.roadCourse;
+                        game.carlist[i].driver.shortTrack = selectedCar.driver.shortTrack;
+                    }
+                    console.log("selected car", selectedCar);
+
+                    console.log("selected car", game.carlist[i].engine);
+                    console.log("selected car");
+                    console.log("global cost", globalCost, game.player.money);
+                    game.player.money -= globalCost;
+                    globalCost = 0;
+                    selectedCar = null;
+                }
+            }
+        }
 
 
         if(sillySeason) {
@@ -5505,7 +6129,7 @@ function autosim() {
         }
         else {
             if (game.player.mode == "Owner Mode") {
-                document.getElementById("message").innerHTML = "Name: " + game.player.name + " | Mode: " + game.player.mode + " | Team: " + game.player.team + "<br>";
+                document.getElementById("message").innerHTML = "Name: " + game.player.name + " | Mode: " + game.player.mode + " | Team: " + game.player.team;
 
 
 
@@ -5544,9 +6168,9 @@ function autosim() {
                         }
                     }
                 }
-                var html = "Funds: ";
+                var html = "<br>Funds: ";
                 html += game.player.money;
-
+                html += "<br>Upgrade Prices | Driver: $45000 | Engine: $50000 | Chassis: $35000 | Aero: $25000 | Pit Crew: $25000 ";
                 if (carsInOrg.length < 5) {
                     html += "<br>";
                     html += '<input type=\"submit\" style=\"width:250px\" value=\"Create Team\" onclick=\"createTeam(event)\">';
@@ -5557,6 +6181,16 @@ function autosim() {
 
 
                 for (var i = 0; i < carsInOrg.length ; i++) {
+
+                    carsInOrg[i].sponsor1 = carsInOrg[i].sponsor1.replace(/'/g, '′');
+
+                    carsInOrg[i].sponsor2 = carsInOrg[i].sponsor2.replace(/'/g, '′');
+
+
+                    carsInOrg[i].sponsor1 = carsInOrg[i].sponsor1.replace('%u2032', '′');
+
+                    carsInOrg[i].sponsor2 = carsInOrg[i].sponsor2.replace('%u2032', '′');
+
 
                     var src = "../images/num/" + carsInOrg[i].organization.name + carsInOrg[i].number;
 
@@ -5572,7 +6206,11 @@ function autosim() {
 
                     html += carsInOrg[i].driver.name;
 
-                    html += " | Driver Rating: ";
+                    html += " | Years Left On Contract: ";
+
+                    html += carsInOrg[i].yearsLeft;
+
+                    html += "<br>Driver Rating: ";
 
                     var overall = (carsInOrg[i].driver.superspeedway + carsInOrg[i].driver.intermediate + carsInOrg[i].driver.flat +
                         carsInOrg[i].driver.roadCourse + carsInOrg[i].driver.shortTrack) / 5;
@@ -5590,23 +6228,43 @@ function autosim() {
 
                     html += "<br>"
 
-                    console.log("selected car", car)
+
+                    console.log("car2is,xx", car2);
+
                     html += '<input type=\"submit\" style=\"width:260px\" value=\"Upgrade Driver\" onclick="upgradeDriver(event,';
 
-                    var car = JSON.stringify(carsInOrg[i]);
 
-                    selectedCar = JSON.parse(car);
 
-                    car = JSON.stringify(selectedCar);
+                    console.log("carzinorgi is", carsInOrg[i]);
 
-                    var car2 = car.split("\"").join("'");
+                    selectedCar = JSON.parse(JSON.stringify(carsInOrg[i]));
 
+
+                    var car3 = JSON.stringify(selectedCar);
+
+                    var car2 = car3.split("\"").join("'");
+
+                    console.log("car2is,xx", car2);
                     html +=  car2;
                     html += ",";
-                    html +=  10000  ;
+                    html +=  45000  ;
                     html += ')\">';
                     html += '<br>';
-                    console.log("selected car", car)
+
+
+
+                    selectedCar = JSON.parse(JSON.stringify(carsInOrg[i]));
+
+                    var car3 = JSON.stringify(selectedCar);
+
+                    console.log("car3 isxx", car3);
+                    var car2 = car3.split("\"").join("'");
+
+                    console.log("car2 isxx", car2);
+
+
+
+
                     html += '<input type=\"submit\" style=\"width:250px\" value=\"Upgrade Engine\" onclick="upgradeStat(event,';
 
                     var car = JSON.stringify(carsInOrg[i]);
@@ -5638,7 +6296,7 @@ function autosim() {
 
                     html +=  car2;
                     html += ",";
-                    html +=  25000;
+                    html +=  35000;
                     html += ",";
                     html +=  2;
                     html += ')\">';
@@ -5657,7 +6315,7 @@ function autosim() {
 
                     html +=  car2;
                     html += ",";
-                    html +=  50000;
+                    html +=  25000;
                     html += ",";
                     html +=  3;
                     html += ')\">';
@@ -5733,6 +6391,19 @@ function autosim() {
                     }
                     html += '<br>';
 
+                    html += '<input type=\"submit\" style=\"width:250px\" id="\hireSponsor1\" value=\"Shut Down Team\" onclick=\"shutDownTeam(event,';
+
+                    var car = JSON.stringify(carsInOrg[i]);
+
+                    selectedCar = JSON.parse(car);
+
+                    car = JSON.stringify(selectedCar);
+
+                    var car2 = car.split("\"").join("'");
+
+                    html +=  car2;
+                    html += ')\">';
+                    html += '<br>';
 
 
 
@@ -5908,12 +6579,12 @@ function autosim() {
 
         event.preventDefault();
 
-        randomYrs = [1,2,3,4];
-        randomLow = [12500, 15000, 17500];
-        randomMid = [15000, 17500, 20000, 22500, 25000];
-        randomGood = [20000, 22500, 25000, 27500, 30000, 32500, 35000];
+        var randomYrs = [1,2,3,4];
+        var randomLow = [12500, 15000, 17500];
+        var randomMid = [15000, 17500, 20000, 22500, 25000];
+        var randomGood = [20000, 22500, 25000, 27500, 30000, 32500, 35000];
 
-        selectedYr = randomYrs[Math.floor(Math.random() * randomYrs.length)];
+        var selectedYr = randomYrs[Math.floor(Math.random() * randomYrs.length)];
         var contractAmt = 20000;
 
         if (selectedFA.intermediate > 76) {
@@ -5922,13 +6593,151 @@ function autosim() {
         }
         else {
             if (selectedFA.intermediate > 61) {
-                contractAmt  = Math.floor(Math.random() * randomMid.length);
+                var contractAmt1  = Math.floor(Math.random() * randomMid.length);
                 contractAmt = randomMid[contractAmt1];
             }
             else {
-                contractAmt  = Math.floor(Math.random() * randomLow.length);
+                var contractAmt1  = Math.floor(Math.random() * randomLow.length);
                 contractAmt = randomLow[contractAmt1];
             }
+        }
+
+
+        event.preventDefault();
+        if(selectedFA.careerTitles > 0 && selectedFA.age < 43) {
+            contractAmt = contractAmt * 2;
+        }
+        var html = "Name: " + game.player.name + " | Mode: " + game.player.mode + " | Team: " + game.player.team + "<br>";
+
+
+        html += "Funds: ";
+        html += game.player.money;
+
+        html += "<br>";
+
+        html += "<p class='standings'>";
+
+
+        var src = "../images/num/" + selectedCar.organization.name + selectedCar.number;
+
+        console.log("src ", src)
+
+        html += "<table style=\"width:100%\"><tr><th>" +
+            "<img onclick='teamEditor(" + selectedCar + ")' id='team" + 0 + "\" onerror=\"this.src='../images/num/default" + selectedCar.number + ".png\'\" src='" + src + ".png'></object></th><th>";
+
+
+        html += selectedCar.number;
+
+        html += " ";
+
+        html += selectedCar.organization.name;
+
+        html += " ";
+
+        html += selectedCar.organization.manufacture;
+
+        html += " | Car Rating: ";
+
+        var overall = (selectedCar.engine + selectedCar.aero + selectedCar.chassis +
+            selectedCar.pitCrew ) / 4;
+
+        html += overall;
+
+        html += "</table></p>";
+
+        if (((overall < (selectedFA.intermediate - 5)) && overall < 90) || (selectedFA.intermediate > 71 && selectedCar.status == "Part Time")) {
+            html += "<h1>Hire Driver</h1><br><p class='standings'>"
+
+            html += selectedFA.name
+
+            html += " is not interested in driving the "
+
+            html += selectedCar.number;
+
+            html += " car at this time."
+
+            html += '<br>';
+        }
+        else {
+            html += "<h1>Hire Driver</h1><br><p class='standings'>"
+
+            html += selectedFA.name
+
+            html += "'s wants: $"
+
+            html += contractAmt;
+
+            html += " for "
+
+            html += selectedYr;
+
+            html += " years.<br>"
+
+            html += '<input type=\"submit\" style=\"width:250px\" value=\"Accept';
+
+
+            html += '\" onclick=\"hireDriverConfirm2(event, ';
+
+            html += contractAmt
+
+            html += ","
+
+            html += selectedYr
+
+            html += ')\">';
+
+            html += '<br>';
+
+            html += '<input type=\"submit\" style=\"width:250px\" value=\"Deny';
+
+            html += '\" onclick=\"teamManagerReturn(event';
+
+            html += ')\">';
+
+            html += '<br>';
+        }
+
+
+
+
+
+        document.getElementById("message").innerHTML = html;
+
+
+
+    }
+
+    document.getElementById("driversNegotiateSillySeason").onclick = function (event) {
+
+
+
+        event.preventDefault();
+
+        var randomYrs = [1,2,3,4];
+        var randomLow = [12500, 15000, 17500];
+        var randomMid = [15000, 17500, 20000, 22500, 25000];
+        var randomGood = [20000, 22500, 25000, 27500, 30000, 32500, 35000];
+
+        var selectedYr = randomYrs[Math.floor(Math.random() * randomYrs.length)];
+        var contractAmt = 20000;
+
+        if (selectedFA.intermediate > 76) {
+            var contractAmt1  = Math.floor(Math.random() * randomGood.length);
+            contractAmt = randomGood[contractAmt1];
+        }
+        else {
+            if (selectedFA.intermediate > 61) {
+                var contractAmt1  = Math.floor(Math.random() * randomMid.length);
+                contractAmt = randomMid[contractAmt1];
+            }
+            else {
+                var contractAmt1  = Math.floor(Math.random() * randomLow.length);
+                contractAmt = randomLow[contractAmt1];
+            }
+        }
+
+        if(selectedFA.careerTitles > 0 && selectedFA.age < 43) {
+            contractAmt = contractAmt * 2;
         }
 
 
@@ -5937,7 +6746,7 @@ function autosim() {
         var html = "Name: " + game.player.name + " | Mode: " + game.player.mode + " | Team: " + game.player.team + "<br>";
 
 
-        html += "Funds: ";
+        html += "Funds: $";
         html += game.player.money;
         html += "<br>";
 
@@ -5969,39 +6778,69 @@ function autosim() {
 
         html += overall;
 
-
         html += "</table></p>";
 
-        html += "<h1>Hire Driver</h1><br><p class='standings'>"
+        if (overall < (selectedFA.intermediate - 4) || (selectedFA.intermediate > 71 && selectedCar.status == "Part Time")) {
+            html += "<h1>Hire Driver</h1><br><p class='standings'>"
 
-        html += selectedFA.name
+            html += selectedFA.name
 
-        html += "'s wants: $"
+            html += " is not interested in driving the "
 
-        html += toString(contractAmt);
+            html += selectedCar.number;
 
-        html += ", for "
+            html += " car at this time."
 
-        html += toString(selectedYr);
+            html += '<br>';
+        }
+        else {
+            html += "<h1>Hire Driver</h1><br><p class='standings'>"
 
-        html += " years.<br>"
+            html += selectedFA.name
+
+            html += "'s wants: $"
+
+            html += contractAmt;
+
+            html += " for "
+
+            html += selectedYr;
+
+            html += " years.<br>"
+
+            html += '<input type=\"submit\" style=\"width:250px\" value=\"Accept';
 
 
-            html += '<input type=\"submit\" style=\"width:500px\" value=\"Accept';
+            html += '\" onclick=\"hireDriverConfirm2SS(event, ';
 
+            html += contractAmt
 
-            html += '\" onclick=\"hireDriverConfirm2(event';
+            html += ","
+
+            html += selectedYr
 
             html += ')\">';
 
-            html += '<br><br>';
+            html += '<br>';
+
+            html += '<input type=\"submit\" style=\"width:250px\" value=\"Deny';
+
+            html += '\" onclick=\"teamManagerReturnSS(event';
+
+            html += ')\">';
+
+            html += '<br>';
+        }
+
+
+
+
 
         document.getElementById("message").innerHTML = html;
 
 
 
     }
-
 
 
     document.getElementById("driversConfirmHire").onclick = function (event) {
@@ -6011,6 +6850,9 @@ function autosim() {
         event.preventDefault();
 
         selectedCar.driver = selectedFA;
+        selectedCar.yearsLeft = yrsLeft;
+        game.player.money -= globalCost;
+
         for (var i = 0; i < game.carlist.length; i++) {
 
             if (game.carlist[i].number == selectedCar.number) {
@@ -6054,7 +6896,11 @@ function autosim() {
 
         event.preventDefault();
 
+
         selectedCar.driver = selectedFA;
+        selectedCar.yearsLeft = yrsLeft;
+        game.player.money -= globalCost;
+
         for (var i = 0; i < game.carlist.length; i++) {
 
             if (game.carlist[i].number == selectedCar.number) {
@@ -6297,7 +7143,7 @@ function autosim() {
 
                     html += "<p class='standings'>";
 
-                    var payout = 10000;
+                    var payout = 15000;
                     var earnings = 0;
 
                     for (var i = 0; i < results.length; i++) {
@@ -6315,7 +7161,7 @@ function autosim() {
                             earnings += payout;
                         }
 
-                        payout -= 250;
+                        payout -= 350;
 
                     }
 
@@ -6582,6 +7428,8 @@ function autosim() {
 
                     }
 
+
+
                     carsWithNoSponsor = Array();
 
 
@@ -6594,7 +7442,9 @@ function autosim() {
                     console.log(results);
 
                     var html = "<p class='standings'>";
-
+                    if(game.player.mode == "Owner Mode") {
+                        html += '<br><input type="submit"  style="width:210px" id = "teammanage1" name="guess" value="Continue" onclick="sillySeasonTeamManager()">';
+                    }
                     html += ss;
 
                     html += "</p>"
@@ -6614,9 +7464,7 @@ function autosim() {
                     game.dontSkip = true;
                     game.silly = false;
 
-                    if(game.player.mode == "Owner Mode") {
-                        html += '<br><input type="submit"  style="width:210px" id = "teammanage1" name="guess" value="Continue" onclick="sillySeasonTeamManager()">';
-                    }
+
 
                 }
                 else {
@@ -6681,6 +7529,111 @@ function autosim() {
 
 
         document.getElementById("message").innerHTML += html;
+    }
+
+    document.getElementById("shutDownTeam1").onclick = function (event) {
+
+
+        event.preventDefault();
+
+
+        document.getElementById("message").innerHTML = "Name: " + game.player.name + " | Mode: " + game.player.mode + " | Team: " + game.player.team + "<br>";
+
+        console.log("created team");
+        var html = "Funds: $";
+        html += game.player.money;
+        html += "<br>";
+        html += "<p class='standings'>";
+        html += "Shutting Down Team Will Result in a $50000 Payout. Confirm? ";
+        html += '<input type=\"submit\" style=\"width:300px\" value=\"Confirm?\" onclick=\"shutDownTeamSubmit(event)\">';
+        html += "<br>";
+        html += "</p>"
+
+        document.getElementById("message").innerHTML += html;
+
+
+
+        //document.getElementById("teammanager").click();
+
+
+
+
+    }
+
+    document.getElementById("shutDownTeam1SillySeason").onclick = function (event) {
+
+
+        event.preventDefault();
+
+
+        document.getElementById("message").innerHTML = "Name: " + game.player.name + " | Mode: " + game.player.mode + " | Team: " + game.player.team + "<br>";
+
+        console.log("created team");
+        var html = "Funds: $";
+        html += game.player.money;
+        html += "<br>";
+        html += "<p class='standings'>";
+        html += "Shutting Down Team Will Result in a $50000 Payout. Confirm? ";
+        html += '<input type=\"submit\" style=\"width:300px\" value=\"Confirm?\" onclick=\"shutDownTeamSubmitSS(event)\">';
+        html += "<br>";
+        html += "</p>"
+
+        document.getElementById("message").innerHTML += html;
+
+
+
+        //document.getElementById("teammanager").click();
+
+
+
+
+    }
+
+    document.getElementById("shutDownTeam2").onclick = function (event) {
+
+
+        event.preventDefault();
+
+        for (var i = 0; i < game.carlist.length; i++) {
+            if(game.carlist[i].number == selectedCar.number) {
+                game.carlist.splice(i, 1);
+            }
+        }
+
+        game.freeAgents.push(selectedCar.driver);
+
+        selectedCar = null;
+
+
+        teamManagerReturn(event);
+
+
+
+
+    }
+
+    document.getElementById("shutDownTeam2SillySeason").onclick = function (event) {
+
+
+        event.preventDefault();
+
+        for (var i = 0; i < game.carlist.length; i++) {
+            if(game.carlist[i].number == selectedCar.number) {
+                game.carlist.splice(i, 1);
+            }
+        }
+
+        game.freeAgents.push(selectedCar.driver);
+
+        selectedCar = null;
+
+
+        teamManagerReturnSS(event);
+
+
+
+
+
     }
 
     document.getElementById("createTeam1").onclick = function (event) {
@@ -6886,6 +7839,12 @@ function autosim() {
         if(game.player.team == "N/A") {
             game.player.team = document.getElementById("owner-teams").innerHTML;
         }
+
+
+        if(sillySeason) {
+            teamManagerReturnSS();
+        }
+
 
 
         if (game.dontSkip && sillySeason == false) {
@@ -7376,7 +8335,9 @@ function autosim() {
                         console.log(results);
 
                         var html = "<p class='standings'>";
-
+                        if(game.player.mode == "Owner Mode") {
+                            html += '<br><input type="submit"  style="width:210px" id = "teammanage1" name="guess" value="Continue" onclick="sillySeasonTeamManager()"><br>';
+                        }
                         html += ss;
 
                         html += "</p>"
@@ -7396,9 +8357,7 @@ function autosim() {
                         game.dontSkip = true;
                         game.silly = false;
 
-                        if(game.player.mode == "Owner Mode") {
-                            html += '<br><input type="submit"  style="width:210px" id = "teammanage1" name="guess" value="Continue" onclick="sillySeasonTeamManager()">';
-                        }
+
 
                     }
                     else {
@@ -7460,7 +8419,9 @@ function autosim() {
 
                 }
             }
-
+            else {
+                teamManagerReturnSS();
+            }
         }
 
 
@@ -8076,7 +9037,7 @@ function autosim() {
         var html = "Name: " + game.player.name + " | Mode: " + game.player.mode + " | Team: " + game.player.team + "<br>";
 
 
-        html += "Funds: ";
+        html += "Funds: $";
         html += game.player.money;
         html += "<br>";
 
@@ -8327,11 +9288,19 @@ function autosim() {
 
         for (var i = 0; i < sponsorChoices.length; i++) {
             var num1 = i + 1;
+
+            sponsorChoices[i] = sponsorChoices[i].replace(/'/g, '′');
+
+            sponsorChoices[i] = sponsorChoices[i].replace('%u2032', '′');
+
+
             var str1 = sponsorChoices[i] + " | Offer : $" + paymentOptions[i] + ' |<br>'
 
             html += str1;
 
             html += '<input type=\"submit\" style=\"width:500px\" value=\"Accept Offer from ';
+
+
 
             html += sponsorChoices[i];
 
@@ -8520,6 +9489,12 @@ function autosim() {
 
             html += '<input type=\"submit\" style=\"width:500px\" value=\"Accept Offer from ';
 
+            sponsorChoices[i] = sponsorChoices[i].replace(/'/g, '′');
+
+            sponsorChoices[i] = sponsorChoices[i].replace('%u2032', '′');
+
+
+
             html += sponsorChoices[i];
 
             html += '\"onclick=\"hireSponsorConfirmSS(event, \'';
@@ -8546,7 +9521,7 @@ function autosim() {
         var html = "Name: " + game.player.name + " | Mode: " + game.player.mode + " | Team: " + game.player.team + "<br>";
 
 
-        html += "Funds: ";
+        html += "Funds: $";
         html += game.player.money;
         html += "<br>";
 
@@ -8598,7 +9573,9 @@ function autosim() {
 
         for (var i = 0; i < results.length; i++) {
             var num1 = i + 1;
+
             var str1 = results[i].name + " | Age: " + results[i].age + ' |<br>'
+                + 'Rating: ' + (results[i].superspeedway+results[i].intermediate+results[i].roadCourse+results[i].shortTrack+results[i].flat)/5 + " | <br>"
                 + 'Championships: ' + results[i].careerTitles
                 + ' | Career Wins: ' + results[i].careerWins
                 + ' | Career Top Fives: ' + results[i].careerTopFives
@@ -8689,7 +9666,7 @@ function autosim() {
                 + results[i].driver.morale + "~" + results[i].driver.age + "~"
                 + results[i].driver.careerTitles + "~" + results[i].driver.careerWins + "~"
                 + results[i].driver.careerTopFives + "~" + results[i].driver.careerTopTens + "~"
-                + results[i].driver.careerRaces+ "~" + results[i].driver.yearsLeft + "~"
+                + results[i].driver.careerRaces+ "~" + results[i].yearsLeft + "~"
                 + results[i].engine + "~" + results[i].chassis + "~"
                 + results[i].aero + "~" + results[i].pitCrew+ "~"
                 + results[i].prestige + "~" + results[i].schedule+ "~"
